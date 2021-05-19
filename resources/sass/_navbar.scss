@@ -1,0 +1,24 @@
+.default-bg{
+     background: #ffffff;
+     ul>li{
+
+         .nav-link{
+         color:$green !important;
+         }
+     }
+}
+.new-bg{
+  background: $dark-blue;
+  position: fixed !important;
+  top: 0px;
+  transition: 0.5s all;
+  border-bottom: 4px #ffffff;
+  height: 4rem;
+  width: 100%;
+  z-index: 2;
+  ul>li{
+      .nav-link{
+          color:#ffffff !important;
+      }
+  }
+}

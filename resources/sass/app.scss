@@ -1,0 +1,27 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+// Variables
+
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import './variables';
+
+*{
+    padding: 0;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+    overflow-y: hidden;
+}
+
+@import './navbar';
+@import './home';
+@import './media'
