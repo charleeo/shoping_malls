@@ -75,21 +75,23 @@
 
 
 .featured-shops{
-    background: #c5c3c3;
+    background: #f6f9fa;
 }
 
 .shops-details{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 20px;
+    border-bottom: 5px #000000;
 }
 .shops{
-    width: 300px;
+    width: 200px;
     border-radius: 10px;
-    box-shadow: 2px 4px 4px 6px #808080;
+    box-shadow: 2px 4px 4px 6px #ffffff;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 4rem;
+    margin-left: 30px;
     background: $white;
     .shop-image{
         border-bottom: 5px solid #808080;
@@ -103,6 +105,8 @@
             box-shadow: 2px 3px #d8d2d2;
             margin-top: 20px;
             padding: 2px;
+            max-height: 40px;
+            overflow-y: scroll;
         }
         .details{
             background: $dark-blue;

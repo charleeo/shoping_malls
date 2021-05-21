@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light default-bg " id='navbar'>
+<nav class="navbar navbar-expand-lg navbar-light default-bg ">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
         </a>
@@ -8,10 +8,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ">
                 <li class="nav-item">
                     <a href="/shops/create" class="nav-link">
-                        get Started
+                        {{__('get Started')}}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/products" class="nav-link">
+                        {{__('stock up')}}
                     </a>
                 </li>
             </ul>

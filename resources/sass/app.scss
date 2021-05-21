@@ -3,15 +3,12 @@
 
 // Variables
 
-
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
 @import './variables';
 
-*{
-    padding: 0;
-    overflow-x: hidden;
-}
+@import './navbar';
+
+
 a{
     text-decoration: none;
 }
@@ -22,6 +19,55 @@ h1,h2,h3,h4,h5,h6{
     overflow-y: hidden;
 }
 
-@import './navbar';
+
+*{
+overflow-x: hidden;
+padding: 0;
+}
+
+.file-name {
+    position: relative;
+    // bottom: -35px;
+    left: 10px;
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  .file-input label {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background: linear-gradient(40deg, #ff6ec4, #7873f5);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+  }
+
+  input:hover + label,
+input:focus + label {
+  transform: scale(1.02);
+}
+
+input:focus + label {
+  outline: 1px solid #000;
+  outline: -webkit-focus-ring-color auto 2px;
+}
+
+.file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+  }
 @import './home';
-@import './media'
+@import './media';
+
+
+@import '~bootstrap/scss/bootstrap';

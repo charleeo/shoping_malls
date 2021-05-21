@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,5 +25,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/shops/create',[ShopController::class,'createShop']);
 // Route::get('/shops/create','ShopController@createShop');
+
+Route::post('upload', [ UploadController::class, 'uploadFile' ])->name('uploadFile');
+Route::prefix('shops')->group(function () {
+    Route::get('/create',[ShopController::class,'createShop']);
+    Route::post('/create','ShopController@storeShop')->name('shops');
+    Route::post('/profile','ShopController@uploadBusinessImage')->name('business-profile-photo');
+});
+Route::resource('products', 'ProductController');
