@@ -123,6 +123,7 @@ input:focus + label {
   font-size: 2rem;
   text-transform: uppercase;
   color: #d8d2d2;
+  text-align: center;
   text-shadow: 3px 2px #000000;
   line-height: 1.6;
 }

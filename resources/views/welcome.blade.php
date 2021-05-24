@@ -7,16 +7,15 @@
 <section class="hero">
 
     <div class="welcome-text">
-        <h1 class="">
+        <h1 class="text-center">
            {{-- shoping experiance you will love --}}
            inovation for everyone
         </h1>
     </div>
         <div class="img">
-            <div class="div-1">
-                <p>
+            <div class="div-1" style="width: 100% !important">
+                <p class="text-center" style="text-align: center !important">
                     {{-- there could be different sellers, different buyers or even different
-
                      products but there can only be that single platform for all your needs --}}
                      we are your inovation and entreprenureship hub 
                 </p>
@@ -26,7 +25,7 @@
             </div>
             <div>
                 <button class='learn-more'>learn more</button>
-                <button class="get-started"><a href="/register" class="text-white">get started</a></button>
+                <button class="get-started"><a href="/create-account" class="text-white">get started</a></button>
             </div>
         </div>
     </div>
