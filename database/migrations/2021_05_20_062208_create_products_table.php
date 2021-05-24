@@ -20,7 +20,9 @@ class CreateProductsTable extends Migration
             $table->string('quantity')->nullable();
             $table->string('location')->nullable();
             $table->text('product_description');
-            $table->string('product_images');
+            $table->mediumText('product_images');
+            $table->string('delivery_status');
+            $table->enum('status',['available','sold'])->default('available');
             $table->integer('product_shop_id');
             $table->integer('product_category');
             $table->timestamps();

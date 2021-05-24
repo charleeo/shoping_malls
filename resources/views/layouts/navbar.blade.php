@@ -1,17 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-light default-bg ">
+<nav class="navbar navbar-expand-lg  default-bg" id='navbar'>
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Laravel') }}
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler border-dark " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            {{-- <span class="navbar-toggler-icon"></span> --}}
+            <span class="fa fa-bars"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav ">
+            {{-- <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a href="/shops/create" class="nav-link">
+                    <a href="{{route('products.create')}}" class="nav-link">
                         {{__('get Started')}}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('products.index')}}" class="nav-link">
+                        {{__('Products')}}
                     </a>
                 </li>
                 <li class="nav-item">
@@ -19,7 +25,7 @@
                         {{__('stock up')}}
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -31,11 +37,12 @@
                         </li>
                     @endif
 
-                    @if (Route::has('register'))
+                    {{-- @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
-                    @endif
+                    @endif --}}
+                    <li class="nav-item"><a href="/create-account" class="nav-link">Register</a></li>
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

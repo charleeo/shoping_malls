@@ -1,8 +1,8 @@
 
 <section class="featured-products shadow-lg py-4">
     <div class="shops-heading">
-        <h2 class="mr-3">FEATURED PRODUCTS</h2>
-        <small ><a href="/shops" class="shop-btn">Start Shopping</a></small>
+        <h2 class="featured">FEATURED PRODUCTS</h2>
+        <small ><a href="/shops" class="shop-btn start-shop">Start Shopping</a></small>
     </div>
     <div class="shops-details">
         <div class="shops">

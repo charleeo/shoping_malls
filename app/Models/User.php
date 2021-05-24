@@ -16,10 +16,13 @@ class User extends Authenticatable
      *
      * @var array
      */
+    //for mass assignment prefill the model with the attributes to sent to database
     protected $fillable = [
-        'name',
+        'fullname',
         'email',
         'password',
+        'phone',
+        'age'
     ];
 
     /**

@@ -1,7 +1,7 @@
 
 <section class="featured-shops shadow-lg">
     <div class="shops-heading">
-        <h2 class="mr-3">FEATURED SHOPS</h2>
+        <h2 class="featured">FEATURED SHOPS</h2>
         <small ><a href="/shops" class="shop-btn">Start Shopping</a></small>
     </div>
     <div class="shops-details">

@@ -1,18 +1,22 @@
 .default-bg{
-     background: #ffffff;
+     background: $white;
      ul>li{
          .nav-link{
-         color:$green !important;
+         color:#000000 !important;
+         text-transform: uppercase;
+         &:hover{
+             color: #0000;
+         }
          }
         //  overflow-y: hidden;
      }
 }
 .new-bg{
-  background: $dark-blue;
+  background: $white;
   position: fixed !important;
   top: 0px;
   transition: 0.5s all;
-  border-bottom: 4px #ffffff;
+  border-bottom: 4px #b8b1b1;
   height: 4rem;
   width: 100%;
   z-index: 2;

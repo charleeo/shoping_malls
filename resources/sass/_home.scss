@@ -1,29 +1,33 @@
 .hero
 {
+    // background: url("/assets/images/bg/landing4.jpg");
+    // linear-gradient(to left, #ffffff 100%,#0000);
     min-height: 100vh;
-    background: url("/assets/images/bg/shopping.jpg"),linear-gradient(to left, #08021f 10%,#000000);
+
     background-size: cover;
     background-blend-mode: overlay;
     background-position: top;
+    background:$dark-blue;
     padding: 2rem;
     .img{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         .div-1{
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             p{
                 text-transform: uppercase;
                 text-decoration: initial;
-                color: $white;
+                color: #ffffff;
                 margin: auto;
                 padding-top:5rem;
             }
             .second-p{
-                color: #808080;
+                // color: #06276e;
+                color:#ffffff;
                 margin-bottom: 2rem;
                 font-size: 1.5rem;
                 font-weight: 900;
@@ -37,19 +41,20 @@
 
 .welcome-text{
     h1{
-        text-align: left;
-        font-size: 3rem;
+        font-size: 2rem;
         text-transform: uppercase;
-        padding: 3rem 0px;
-        color: $dark-blue;
-        padding-left: 20px;
+        // color: #0c458f;
+        color: #d8d2d2;
+
         text-shadow: 3px 2px $dark;
+        line-height: 1.6;;
     }
 }
 
 .learn-more{
     background: inherit;
     border: 2px solid #808080 ;
+    border: inherit;
     &:hover{
         background: #808080;
         transition: 1s all;
@@ -57,7 +62,7 @@
 }
 
 .get-started{
-    background: $dark-blue;
+    background: inherit;
     border: inherit;
     &:hover{
         background: #808080;
@@ -65,7 +70,7 @@
     }
 }
 .get-started,.learn-more{
-    color: $white;
+    color: #07b4c0;
     padding: 5px;
     text-transform: capitalize;
     font-size: 2rem;
@@ -75,23 +80,23 @@
 
 
 .featured-shops{
-    background: #f6f9fa;
+    background: #ecf0f0;
 }
 
 .shops-details{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
+    // padding: 20px;
     border-bottom: 5px #000000;
 }
 .shops{
-    width: 200px;
+    width: 190px;
     border-radius: 10px;
     box-shadow: 2px 4px 4px 6px #ffffff;
     padding: 10px;
-    margin-bottom: 4rem;
-    margin-left: 30px;
+    margin-bottom: 2rem;
+    margin-right: 30px;
     background: $white;
     .shop-image{
         border-bottom: 5px solid #808080;
@@ -138,7 +143,7 @@
 }
 
 .testimonials{
-    background: #c5c3c3;
+    background: #ffffff;
     padding: 2rem;
 }
 
@@ -146,23 +151,28 @@
 {
     display: flex;
     flex-direction: column;
-    width: 700px;
+    width: 350px;
     margin: auto;
     box-shadow: 20px 10px 30px 10px #000000;
     border-radius: 20px;
     padding:30px;
     .testifyer{
-        margin: auto;
+        margin-bottom: 20px;
+        text-align: start;
         img{
-           width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-top:40px ;
+           width: 100px;
+            height: 100px;
+            border-radius: 50%;
         }
-    }
-    .testimonies{
-        margin: auto;
     }
 }
 
+.featured{
+    margin-right: 2rem;
+    color: #ffffff;
+}
 
+.start-shop{
+    position: relative;
+    top: 1px;
+}

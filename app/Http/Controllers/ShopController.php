@@ -45,7 +45,7 @@ class ShopController extends Controller
             'description'=>$description,
             'shop_owner_id'=>$owner,
             'business_category_id'=>$category_id ,
-            'shop_picture'=>'it is enmpty'
+            'shop_picture'=>'not available'
             ]
         );
         return back()->with('success',$message);

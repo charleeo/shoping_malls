@@ -27,10 +27,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Route::get('/shops/create','ShopController@createShop');
 
-Route::post('upload', [ UploadController::class, 'uploadFile' ])->name('uploadFile');
 Route::prefix('shops')->group(function () {
     Route::get('/create',[ShopController::class,'createShop']);
     Route::post('/create','ShopController@storeShop')->name('shops');
     Route::post('/profile','ShopController@uploadBusinessImage')->name('business-profile-photo');
 });
 Route::resource('products', 'ProductController');
+
+
+Route::get('/create-account','RegisterController@showRegisterForm');
+
+Route::post('/save-users','RegisterController@storeUsers');
+
+
+
+
