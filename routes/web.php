@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Auth;
@@ -35,9 +36,9 @@ Route::prefix('shops')->group(function () {
 Route::resource('products', 'ProductController');
 
 
-Route::get('/create-account','RegisterController@showRegisterForm');
+Route::get('/create-account',[RegisterController::class,'showRegisterForm']);
 
-Route::post('/save-users','RegisterController@storeUsers');
+Route::post('/save-users',[RegisterController::class,'storeUsers']);
 
 
 
