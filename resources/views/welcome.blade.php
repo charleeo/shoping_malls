@@ -5,34 +5,52 @@
 @section('content')
 
 <section class="hero">
-
-    <div class="welcome-text">
-        <h1 class="text-center">
-           {{-- shoping experiance you will love --}}
-           inovation for everyone
-        </h1>
+    <h1 class="welcome-text">
+        shoping experiance you will love
+    </h1>
+    <div class="pitch">
+        <p>
+            there could be different sellers, different buyers or even different products but there can only be that single platform for all your needs
+            shop for anything, anytime, and most importantly from anywhere
+        </p>
+        {{-- <p class="second-p">
+            shop for anything, anytime, and most importantly from anywhere
+        </p> --}}
     </div>
-        <div class="img">
-            <div class="div-1" style="width: 100% !important">
-                <p class="text-center" style="text-align: center !important">
-                    {{-- there could be different sellers, different buyers or even different
-                     products but there can only be that single platform for all your needs --}}
-                     we are your inovation and entreprenureship hub 
-                </p>
-                <p class="second-p">
-                    {{-- shop for anything, anytime, and most importantly from anywhere --}}
-                </p>
+    <div id="learnmore-div">
+        <a  href='#'class='learn-more'>learn more</a>
+        <a class="get-started"href="/register" >get started</a>
+    </div>
+</section>
+
+<section class="business-model">
+    <h2>Business Model Not A Barrier</h2>
+    <div class="different-models ">
+    <p>
+        Your business model is could be a barrier in the past, but now, anything you have for sales or any service you have to render has a shop for it.
+        Quickly put that your shop or business on line at a button click
+    </p>
+        <div class="model-row ">
+            <div class="">
+                <img src='{{asset('assets/images/general/market1.jpg')}}'class='models-images'/>
             </div>
-            <div>
-                <button class='learn-more'>learn more</button>
-                <button class="get-started"><a href="/create-account" class="text-white">get started</a></button>
+            <div class="">
+                <img src='{{asset('assets/images/general/farm1.jpg')}}'class='models-images'/>
+            </div>
+        </div>
+        <div class="model-row  ">
+            <div class="">
+                <img src='{{asset('assets/images/general/market2.jpg')}}'class='models-images'/>
+            </div>
+            <div class="">
+                <img src='{{asset('assets/images/general/barber1.jpg')}}'class='models-images'/>
             </div>
         </div>
     </div>
 </section>
  {{-- Featured shops --}}
-{{-- @include('pages.featured_shops')
+@include('pages.featured_shops')
 @include('pages.featured_products')
-@include('pages.testomonial') --}}
+@include('pages.testomonial')
 
 @endsection

@@ -1,28 +1,22 @@
 @media(max-width:627px){
     .hero
-{
-    padding: 2rem;
-    .img{
-        .div-1{
-
+    {
+    min-height: 100vh;
+    padding: 20px 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .pitch{
+    width: 100%;
             p{
-                padding-top:2rem;
+                line-height: 2.5;
+                text-align: left !important;
             }
-            .second-p{
-                margin-bottom: 1rem;
-                font-size: 1rem;
-                // text-align: start;
-            }
-        }
     }
-
 }
 
+
 .welcome-text{
-    h1{
         font-size: 1.2rem;
-        margin-bottom: 12px;;
-    }
 }
 
 
@@ -53,4 +47,20 @@
         margin-right: 1.3rem;
     }
 
+    .model-imges-wrapper{
+        width: 380px;
+    }
+
+
+    .models-images{
+       width: 130px;
+       margin: 10px;
+       height: 130px;
+       border-radius: 10%;
+    }
+
+    .different-models>p{
+        width: inherit;
+        justify-content: left;
+    }
 }

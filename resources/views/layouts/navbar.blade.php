@@ -9,9 +9,9 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            {{-- <ul class="navbar-nav ">
+            <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a href="{{route('products.create')}}" class="nav-link">
+                    <a href="shops/create" class="nav-link">
                         {{__('get Started')}}
                     </a>
                 </li>
@@ -21,11 +21,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/products" class="nav-link">
+                    <a href="{{route('products.create')}}" class="nav-link">
                         {{__('stock up')}}
                     </a>
                 </li>
-            </ul> --}}
+            </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -37,12 +37,12 @@
                         </li>
                     @endif
 
-                    {{-- @if (Route::has('register'))
+                    @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
-                    @endif --}}
-                    <li class="nav-item"><a href="/create-account" class="nav-link">Register</a></li>
+                    @endif
+                    {{-- <li class="nav-item"><a href="/second-register" class="nav-link">Get Started 2</a></li> --}}
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -30,10 +30,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::prefix('shops')->group(function () {
     Route::get('/create',[ShopController::class,'createShop']);
-    Route::post('/create','ShopController@storeShop')->name('shops');
-    Route::post('/profile','ShopController@uploadBusinessImage')->name('business-profile-photo');
+    Route::post('/create',[ShopController::class,'storeShop'])->name('shops');
+    Route::post('/profile',[ShopController::class,'uploadBusinessImage'])->name('business-profile-photo');
 });
-Route::resource('products', 'ProductController');
+
+Route::prefix('products')->group(function(){
+    Route::get('/create',[ProductController::class,'create'])->name('products.create');
+    Route::get('/',[ProductController::class,'index'])->name('products.index');
+    Route::post('/store',[ProductController::class,'store'])->name('products.store');
+    Route::get('/show/{product}',[ProductController::class,'show'])->name('products.show');
+    Route::delete('/delete/{product}',[ProductController::class,'destroy'])->name('products.destroy');
+});
+// Route::resource('/products', ProductController::class);
 
 
 Route::get('/create-account',[RegisterController::class,'showRegisterForm']);

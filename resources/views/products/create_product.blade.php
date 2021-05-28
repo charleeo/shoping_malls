@@ -1,13 +1,25 @@
 @extends('layouts.app')
-@section('title','store stocking|')
-@section('content')
 
+@if (isset($product))
+   @section('title','Updating stock')
+   @else
+   @section('title','store stocking|')
+@endif
+
+@php
+$deliveryStatus =["pay on delivery","payment before delivery","Either of the two" ];
+@endphp
+
+@section('content')
  <section class="create-product">
      <div class="row justify-content-center">
          <div class="col-md-7 col-sm-9">
              <div class="card shadow-lg border-0">
                  <div class="card-header">
-                     <h3 class="text-center">Stock Up Your Store</h3>
+                     @if (isset($product))
+                     <h3 class="text-center">Update Your Store</h3>
+                     @else <h3 class="text-center">Stock Up Your Store</h3>
+                     @endif
                  </div>
                  {{-- {{$product->product_name}} --}}
                  <div class="card-body">
@@ -25,20 +37,20 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="quantities">Quantities (Optional) </label>
-                        <input type="number"  min="0" name="quantities" class="form-control"
-                        value="{{ old('quantites', (isset($product->quantity))? $product->quantity: '') }}">
+                        <label for="quantity">Quantities (Optional) </label>
+                        <input type="number"  min="0" name="quantity" class="form-control"
+                        value="{{ old('quantity', (isset($product->quantity))? $product->quantity: '') }}">
                     </div>
 
 
 
                     <div class="form-group">
-                        <label for="categories">Categories</label>
-                        <select  name="categories" class="form-control">
+                        <label for="product_category">Product Category</label>
+                        <select  name="product_category" class="form-control">
                             <option value="">choose</option>
                             @foreach ($product_categories as $cat )
                                 <option value="{{$cat->id}}"
-                                    {{ old('categories') == $cat->id?"selected" :"" }}
+                                    {{ old('product_category') == $cat->id?"selected" :"" }}
                                     {{isset($product->product_category) && $product->product_category===$cat->id?'selected':''
                                     }}
                                     >
@@ -48,23 +60,27 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="description">Descripton</label>
-                        <textarea name="description" id="" cols="30" rows="10" placeholder="enter item descripton here" class="form-control"
-                        >{{ old('description', (isset($product->product_description))? $product->product_description: '') }}</textarea>
+                        <label for="product_description">Descripton</label>
+                        <textarea name="product_description" id="" cols="30" rows="10" placeholder="enter item descripton here" class="form-control"
+                        >{{ old('product_description', (isset($product->product_description))? $product->product_description: '') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="delivery-status">Delivery Status</label>
+                        <label for="delivery_status">Delivery Status</label>
                         <select name="delivery_status" id="" class="form-control">
                             <option value="">choose</option>
-                            <option value="pay-on-delivery">Payment On Delivery</option>
-                            <option value="payment-before-delivery">Payment Before Delivery</option>
-                            <option value="both">Either of the two</option>
+                            @foreach ($deliveryStatus as  $status)
+                              <option value="{{$status}}"
+                              {{ old('delivery_status') == $status?"selected" :"" }}
+                                    {{isset($product->delivery_status) && $product->delivery_status===$status?'selected':''
+                                    }}
+                              >{{strToUpper($status)}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="visibility">Visibility</label>
-                        <input type="text" name="visibility" placeholder="enter where and where your product can be accessed" class="form-control"
-                        value="{{ old('visibility', (isset($product->location))? $product->location: '') }}">
+                        <label for="location">Location</label>
+                        <input type="text" name="location" placeholder="enter where and where your product can be accessed" class="form-control"
+                        value="{{ old('location', (isset($product->location))? $product->location: '') }}">
                     </div>
                     <div class="form-group">
                         <div class="file-input">
@@ -75,18 +91,18 @@
                             </label>
                           </div>
                           @if(isset($product))
-                          <form action="{{route('products.destroy',['product'=>$product->id])}}">
+                          {{-- <form action="{{route('products.destroy',['product'=>$product->id])}}"> --}}
                             @foreach ($images as $image )
                                 <img src="{{asset("$image")}}" alt="{{$product->product_name}}" style="height:90px; width:90px; margin:20px">
                             @endforeach
-                            </form>
+                            {{-- </form> --}}
                             <p>You can change the images at anytime</p>
                           @endif
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-sm btn-primary">Create</button>
+                        <button class="btn  btn-primary">{{$text}}</button>
                     </div>
-                    <input type="hidden" name="product_id" value="">
+                    <input type="hidden" name="product_id" value="{{isset($product)?$product->id:''}}">
                    </form>
                  </div>
              </div>
