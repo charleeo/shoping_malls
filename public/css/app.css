@@ -84,7 +84,7 @@ input:focus + label {
 }
 
 .hero {
-  height: 70vh;
+  height: 95vh;
   background-size: cover;
   background-blend-mode: overlay;
   background-position: top;
