@@ -1,8 +1,8 @@
 .default-bg{
-     background: $white;
+     background: $dark-blue;
      ul>li{
          .nav-link{
-         color:#000000 !important;
+         color:#ffffff !important;
          text-transform: uppercase;
          &:hover{
              color: #0000;
@@ -22,7 +22,7 @@
   z-index: 2;
   ul>li{
       .nav-link{
-          color:#ffffff !important;
+          columns: #000000 !important;
       }
   }
 }

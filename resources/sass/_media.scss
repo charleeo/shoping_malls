@@ -3,13 +3,13 @@
     {
     min-height: 100vh;
     padding: 20px 1rem;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    // align-items: center;
     .pitch{
     width: 100%;
             p{
                 line-height: 2.5;
-                text-align: left !important;
+                text-align: center !important;
             }
     }
 }
@@ -17,6 +17,7 @@
 
 .welcome-text{
         font-size: 1.2rem;
+        text-align: center;
 }
 
 
@@ -62,5 +63,12 @@
     .different-models>p{
         width: inherit;
         justify-content: left;
+    }
+    .shops-details{
+
+        justify-content: space-evenly;
+    }
+    .shops{
+        margin-right: 0;
     }
 }

@@ -1,10 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik);
 @charset "UTF-8";
 .default-bg {
-  background: #ffffff;
+  background: #0a0649;
 }
 .default-bg ul > li .nav-link {
-  color: #000000 !important;
+  color: #ffffff !important;
   text-transform: uppercase;
 }
 .default-bg ul > li .nav-link:hover {
@@ -22,7 +22,8 @@
   z-index: 2;
 }
 .new-bg ul > li .nav-link {
-  color: #ffffff !important;
+  -moz-columns: #000000 !important;
+       columns: #000000 !important;
 }
 
 a {
@@ -88,7 +89,7 @@ input:focus + label {
   background-size: cover;
   background-blend-mode: overlay;
   background-position: top;
-  background: #080253;
+  background: #0a0649;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -168,7 +169,7 @@ input:focus + label {
   overflow-y: scroll;
 }
 .shops .shop-description .details {
-  background: #080253;
+  background: #0a0649;
   color: #eee8aa;
   border-radius: 6px;
   padding: 4px;
@@ -179,7 +180,7 @@ input:focus + label {
 }
 
 .shop-btn {
-  background: #080253;
+  background: #0a0649;
   padding: 4px;
   border-radius: 3px;
   text-transform: uppercase;
@@ -274,19 +275,19 @@ input:focus + label {
   .hero {
     min-height: 100vh;
     padding: 20px 1rem;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
   }
   .hero .pitch {
     width: 100%;
   }
   .hero .pitch p {
     line-height: 2.5;
-    text-align: left !important;
+    text-align: center !important;
   }
 
   .welcome-text {
     font-size: 1.2rem;
+    text-align: center;
   }
 
   .get-started, .learn-more {
@@ -332,6 +333,14 @@ input:focus + label {
   .different-models > p {
     width: inherit;
     justify-content: left;
+  }
+
+  .shops-details {
+    justify-content: space-evenly;
+  }
+
+  .shops {
+    margin-right: 0;
   }
 }
 /*!
