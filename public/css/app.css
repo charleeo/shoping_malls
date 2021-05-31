@@ -17,7 +17,7 @@
   top: 0px;
   transition: 0.5s all;
   border-bottom: 4px #b8b1b1;
-  height: 4rem;
+  min-height: 4rem;
   width: 100%;
   z-index: 2;
 }
@@ -336,11 +336,11 @@ input:focus + label {
   }
 
   .shops-details {
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   .shops {
-    margin-right: 0;
+    margin: 15px;
   }
 }
 /*!
