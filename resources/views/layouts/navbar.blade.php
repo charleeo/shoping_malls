@@ -11,7 +11,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a href="shops/create" class="nav-link">
+                    <a href="/shops/create" class="nav-link">
                         {{__('get Started')}}
                     </a>
                 </li>
