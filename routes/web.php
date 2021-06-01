@@ -29,8 +29,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/shops/create','ShopController@createShop');
 
 Route::prefix('shops')->group(function () {
-    Route::get('/create',[ShopController::class,'createShop']);
-    Route::post('/create',[ShopController::class,'storeShop'])->name('shops');
+    Route::get('/create',[ShopController::class,'createBusiness']);
+    Route::post('/create',[ShopController::class,'storeBusiness'])->name('shops');
     Route::post('/profile',[ShopController::class,'uploadBusinessImage'])->name('business-profile-photo');
 });
 

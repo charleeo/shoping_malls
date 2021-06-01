@@ -17,48 +17,59 @@ class ShopController extends Controller
    public function getAuthUser(){
        return Auth::user()->id;
    }
-    public function createShop(){
+    public function createBusiness(){
         $userID= Auth::user()->id;
-        $shopDetails= Shop::where('shop_owner_id','=',$userID)->first();
-        $categories =BusinessCategory::get()->toArray();
-        return view('shops.create_shops',compact(['categories','shopDetails']));
+        $businessDetails= Shop::where('business_owner_id','=',$userID)->first();
+        return view('shops.create_shops',compact(['businessDetails']));
     }
 
     /**Here we store the shop or business information into the database. We will be using a simple approach to insert or update the records */
-   public function storeShop(Request $request){
-      $message= 'Your business record has been created';
+   public function storeBusiness(Request $request){
       $request->validate([
-           'business_name' =>['required','string','min:3', 'max:20'],
+           'business_domain' =>['required','string','min:1', 'max:20'],
            'description' =>['required', 'string', 'min:10'],
-           'business_category_id'=>['required', 'integer']
+           'business_name'=>'required|min:2|max:225'
        ]);
+       $specialChars =['@','!','>','<','\/','/','=','+','[]','%','#','.','|'];
+       $name= str_replace(' ', '',$request->business_domain);
+       $nameArray = str_split($name,1);
+
+       foreach($nameArray as $n){
+           if(is_numeric($n[0]) || $n[0] =='_'){
+               return back()->withInput()->with('error',"Your business domain canot start with $n[0]");
+           }
+           if(in_array($n,$specialChars)){
+
+               return back()->withInput()->with('error',"Your domain name contains the wrong characters $n");
+           }
+       }
+
         $owner= Auth::user()->id;
-        $idCheck = Shop::where(['shop_owner_id'=>$owner]);
-        if($idCheck !==null)$message = "Your business record has been updated";
-        $name= str_replace(' ', '',$request->business_name);
+        $idCheck = Shop::where(['business_owner_id'=>$owner]);
+        $message = !empty($idCheck)?"Your business record has been updated":"Your business record has been created";
+
         $description= $request->description;
-        $category_id= $request->business_category_id;
         Shop::updateOrCreate(
-            ['shop_owner_id'=>$owner],
+            ['business_owner_id'=>$owner],
             [
-            'shop_name'=>$name,
+            'business_domain'=>$name,
             'description'=>$description,
-            'shop_owner_id'=>$owner,
-            'business_category_id'=>$category_id ,
-            'shop_picture'=>'not available'
+            'business_owner_id'=>$owner,
+            'business_picture'=>'not available',
+            'business_name'=>$request->business_name,
             ]
         );
         return back()->with('success',$message);
     }
 
-    
+
 
     public function uploadBusinessImage(Request $request){
 
             $request->validate([
                 'profile_photo' => ['required', 'image']
             ]);
-            
+
             $extensions = ['jpg', 'png', 'jpeg', 'gif'];
             $profilePhoto = $request->file('profile_photo');
             $extension = $request->profile_photo->getClientOriginalExtension();
@@ -77,7 +88,7 @@ class ShopController extends Controller
             ($profilePhoto->move(public_path($fullPath), $fileName));
             $business->update(['shop_picture'=> "$fullPath/$fileName"]);
             return back()->with('success', 'Profile Image Uploaded successfully');
-        
+
     }
 
 

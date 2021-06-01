@@ -5,32 +5,39 @@
     <div class="row justify-content-center">
         <div class="col-md-6 col-sm-10">
             <div class="card shadow-sm">
-                <div class="card-header"><h3>Create A Business</h3></div>
+                <div class="card-header"><h3 class='text-center'>Create A Business</h3></div>
                 <div class="card-body">
                     <form action="{{route('shops')}}" method="POST">
                       @csrf
                         <div class="form-group">
-                            <label for="name">Business Name</label>
+                            <label for="name">Business Domain </label> <br>
+                            <small>Note:  don't include (<b> @, !, >, <, \/, /, =, +,[], %, #, ., |</b>). must not start with number or <em>_</em></small>
+                            <input type="text" name='business_domain' class="form-control" placeholder="enter business name"
+                            value="{{ old('business_domain', (isset($businessDetails->business_domain))? $businessDetails->business_domain: '') }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Business Name </label> <br>
                             <input type="text" name='business_name' class="form-control" placeholder="enter business name"
-                            value="{{ old('business_name', (isset($shopDetails->shop_name))? $shopDetails->shop_name: '') }}">
+                            value="{{ old('business_name', (isset($businessDetails->business_name))? $businessDetails->business_name: '') }}">
                         </div>
                         <div class="form-group">
                             <label for="name">Businnes Description</label>
                             <input type="text" name='description' class="form-control" placeholder="enter shop location"
-                            value="{{ old('description', (isset($shopDetails->description))? $shopDetails->description: '') }}">
+                            value="{{ old('description', (isset($businessDetails->description))? $businessDetails->description: '') }}">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="name">Business Category</label>
                             <select name="business_category_id" id="" class="form-control">
                                 <option value="">select a category</option>
                                 @foreach ($categories as $category )
                                 <option value="{{$category['id']}}"
                                 {{ old('business_category_id') == $category['id']?"selected" :"" }}
-                                {{isset($shopDetails->business_category_id) && $shopDetails->business_category_id===$category['id']?'selected':''
+                                {{isset($businessDetails->business_category_id) && $businessDetails->business_category_id===$category['id']?'selected':''
                                 }}>{{strtoupper($category['category_name'])}}</option>
                               @endforeach
                             </select>
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <button class="btn btn-primary">Submit</button>
                         </div>
@@ -42,7 +49,7 @@
     {{-- Upload a business profile image to be in the home page --}}
 
     {{-- Only do this if there is already a business profile created --}}
-    @if ($shopDetails)
+    @if ($businessDetails)
         <div class="row justify-content-center shadow-sm p-3">
             <div class="col-md-5 col-sm-8">
                 <div class="card shadow-lg p-5 border-0">
@@ -59,7 +66,7 @@
                             <div class="form-group">
                                 <button class="btn btn-primary btn-sm">Upload File</button>
                             </div>
-                            <input type="hidden" name="business_id" value="{{$shopDetails->id}}">
+                            <input type="hidden" name="business_id" value="{{$businessDetails->id}}">
                         </form>
                     </div>
                 </div>

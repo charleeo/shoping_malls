@@ -15,11 +15,11 @@ class Shops extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
-            $table->string('shop_name')->unique();
+            $table->string('business_domain')->unique();
+            $table->string('business_name')->unique();
             $table->string('description');
-            $table->string('shop_picture');
-            $table->integer('shop_owner_id');
-            $table->integer('business_category_id');
+            $table->string('business_picture');
+            $table->integer('business_owner_id');
             $table->timestamps();
         });
     }
