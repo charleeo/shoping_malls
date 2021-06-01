@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BusinessCategory;
 use App\Models\Shop;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -28,27 +27,39 @@ class ShopController extends Controller
       $request->validate([
            'business_domain' =>['required','string','min:1', 'max:20'],
            'description' =>['required', 'string', 'min:10'],
-           'business_name'=>'required|min:2|max:225'
+           'business_name'=>'required|min:2|max:225',
+           'business_phone_number' =>'required|numeric'
        ]);
        $specialChars =['@','!','>','<','\/','/','=','+','[]','%','#','.','|'];
        $name= str_replace(' ', '',$request->business_domain);
-       $nameArray = str_split($name,1);
-
+       $nameArray = str_split($name);
+    
+    //Validate the subdomain for special characters and number starting it
+    if(is_numeric($nameArray[0]) || $nameArray[0] =='_'){
+        return back()->withInput()->with('error',"Your business domain canot start with $nameArray[0]");
+    }
        foreach($nameArray as $n){
-           if(is_numeric($n[0]) || $n[0] =='_'){
-               return back()->withInput()->with('error',"Your business domain canot start with $n[0]");
-           }
            if(in_array($n,$specialChars)){
-
                return back()->withInput()->with('error',"Your domain name contains the wrong characters $n");
            }
        }
 
         $owner= Auth::user()->id;
-        $idCheck = Shop::where(['business_owner_id'=>$owner]);
-        $message = !empty($idCheck)?"Your business record has been updated":"Your business record has been created";
 
+        $idCheck = Shop::where(['business_owner_id'=>$owner])->get(['id'])->first();
+        $message = !empty($idCheck)?"Your business record has been updated":"Your business record has been created";
         $description= $request->description;
+        // Check if it is a new record and make sure the business_domain does not conflict
+        if(empty($idCheck->id)){
+          $request->validate(['business_domain'=>['unique:shops']]);
+        }else if(!empty($idCheck)){
+        //check to make sure when a record is being updated, that we don't send an already subdomain for update which will cause sql integrity violation error
+         $domain = Shop::where(['business_domain'=>$name])->get(['business_domain','id'])->first();
+         if(!empty($domain) AND (int) $domain->id != (int)$idCheck->id){
+            return back()->withInput()->with('error',"The domain name `$name` you entered is already in use. Please try a different name");
+         }
+        }
+
         Shop::updateOrCreate(
             ['business_owner_id'=>$owner],
             [
@@ -57,6 +68,8 @@ class ShopController extends Controller
             'business_owner_id'=>$owner,
             'business_picture'=>'not available',
             'business_name'=>$request->business_name,
+            'business_phone_number'=>$request->business_phone_number,
+            'business_email'=>$request->business_email,
             ]
         );
         return back()->with('success',$message);
@@ -76,7 +89,7 @@ class ShopController extends Controller
             if(!in_array($extension, $extensions)) return back()->with('error', 'supported file types are: jpg, gif, png, jpeg');
             $id = $request->business_id;
             $userID=Auth::user()->id;
-            $business = Shop::where(['id'=>$id, 'shop_owner_id'=>$userID])->first();
+            $business = Shop::where(['id'=>$id, 'business_owner_id'=>$userID])->first();
             // dd($business);
             $businessOldFileString = $business->shop_picture;
             $pathToFle = public_path($businessOldFileString);
@@ -86,7 +99,7 @@ class ShopController extends Controller
             $fileName = time().'.'.$profilePhoto->getClientOriginalExtension();
             $fullPath='assets/images/business_profiles/';
             ($profilePhoto->move(public_path($fullPath), $fileName));
-            $business->update(['shop_picture'=> "$fullPath/$fileName"]);
+            $business->update(['business_picture'=> "$fullPath/$fileName"]);
             return back()->with('success', 'Profile Image Uploaded successfully');
 
     }
