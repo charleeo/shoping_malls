@@ -54,7 +54,7 @@ Route::post('/save-users',[RegisterController::class,'storeUsers']);
     Route::get('/businesses',[BusinessDomainController::class,'index'])->name('businesses');
 // Route::domain('{domain}.'.env('APP_DOMAIN'))->group(function(){
 // });
-Route::subdomain();
+// Route::subdomain();
 
 Route::domain('{domain}.'.env('APP_DOMAIN'))->group(function(){
     Route::get('/home',[BusinessDomainController::class,'show'])->name('home-page');
