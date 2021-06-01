@@ -273,14 +273,17 @@ input:focus + label {
 
 @media (max-width: 627px) {
   .hero {
-    min-height: 100vh;
-    padding: 20px 1rem;
-    justify-content: center;
+    height: 75vh;
+    padding: 5rem 0px 1rem 0px;
+    justify-content: flex-start !important;
+    align-items: center;
   }
   .hero .pitch {
     width: 100%;
   }
   .hero .pitch p {
+    padding-top: 3rem;
+    margin-bottom: 2rem;
     line-height: 2.5;
     text-align: center !important;
   }
