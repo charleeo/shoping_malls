@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
-@if (isset($product))
-   @section('title','Updating stock')
-   @else
-   @section('title','store stocking|')
-@endif
+
+   @section('title','It time to go digital with your business|')
 
 @php
 $deliveryStatus =["pay on delivery","payment before delivery","Either of the two" ];

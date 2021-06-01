@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title','create your online shop fast and easy')
 @section('content')
 <section class="create-business">
     <div class="row justify-content-center">
@@ -38,9 +38,9 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
     {{-- Upload a business profile image to be in the home page --}}
-   
+
     {{-- Only do this if there is already a business profile created --}}
     @if ($shopDetails)
         <div class="row justify-content-center shadow-sm p-3">
