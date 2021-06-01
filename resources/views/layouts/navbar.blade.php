@@ -25,6 +25,12 @@
                         {{__('stock up')}}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('businesses')}}" class="nav-link">
+                        {{__('business')}}
+                    </a>
+                </li>
+                
             </ul>
 
             <!-- Right Side Of Navbar -->

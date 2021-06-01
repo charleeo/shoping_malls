@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BusinessDomainController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
@@ -48,6 +49,14 @@ Route::get('/create-account',[RegisterController::class,'showRegisterForm']);
 
 Route::post('/save-users',[RegisterController::class,'storeUsers']);
 
+// Subdomain route group
 
+    Route::get('/businesses',[BusinessDomainController::class,'index'])->name('businesses');
+// Route::domain('{domain}.'.env('APP_DOMAIN'))->group(function(){
+// });
+
+Route::domain('{domain}.'.env('APP_DOMAIN'))->group(function(){
+    Route::get('/',[BusinessDomainController::class,'show'])->name('home-page');
+});
 
 

@@ -33,13 +33,12 @@ class ShopController extends Controller
        ]);
        $specialChars =['@','!','>','<','\/','/','=','+','[]','%','#','.','|'];
        $name= str_replace(' ', '',$request->business_domain);
-       $nameArray = str_split($name);
-    
+       
     //Validate the subdomain for special characters and number starting it
-    if(is_numeric($nameArray[0]) || $nameArray[0] =='_'){
-        return back()->withInput()->with('error',"Your business domain canot start with $nameArray[0]");
+    if(is_numeric($name[0]) || $name[0] ==='_'|| $name[0]==='-'){
+        return back()->withInput()->with('error',"Your business domain canot start with $name[0]");
     }
-       foreach($nameArray as $n){
+       foreach(str_split($name) as $n){
            if(in_array($n,$specialChars)){
                return back()->withInput()->with('error',"Your domain name contains the wrong characters $n");
            }
