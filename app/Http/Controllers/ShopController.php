@@ -28,7 +28,8 @@ class ShopController extends Controller
            'business_domain' =>['required','string','min:1', 'max:20'],
            'description' =>['required', 'string', 'min:10'],
            'business_name'=>'required|min:2|max:225',
-           'business_phone_number' =>'required|numeric'
+           'business_phone_number' =>'required|numeric',
+           'business_email'=>['nullable','email']
        ]);
        $specialChars =['@','!','>','<','\/','/','=','+','[]','%','#','.','|'];
        $name= str_replace(' ', '',$request->business_domain);

@@ -13,13 +13,8 @@
                         <div class="form-group">
                             <label for="name">Business Domain <sup>*</sup> </label> <br>
                             <small>Note:  don't include (<b> @, !, >, <, \/, /, =, +,[], %, #, ., |</b>). must not start with number or <em>_</em></small>
-                            <input type="text" name='business_domain' class="form-control" placeholder="enter business name"
+                            <input type="text" name='business_domain' class="form-control" placeholder="enter business domain"
                             value="{{ old('business_domain', (isset($businessDetails->business_domain))? $businessDetails->business_domain: '') }}">
-                            @error('business_domain')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -34,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label for="business_email">Business Email Address  </label> 
-                            <input type="text" name='business_email' class="form-control" placeholder="enter business phone number"
+                            <input type="text" name='business_email' class="form-control" placeholder="enter business email adress"
                             value="{{ old('business_email', (isset($businessDetails->business_email))? $businessDetails->business_email: '') }}">
                         </div>
                         <div class="form-group">
