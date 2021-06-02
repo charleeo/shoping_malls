@@ -13,7 +13,7 @@
   }
 
 .sidebar-menu{
-    color:#f3f1f799;
+    color:#ffffff;
     font-size: 1rem;
     font-family: 'Rubbik',sans-serif;
     font-style:normal;
@@ -22,8 +22,11 @@
     border-bottom: 1px solid #302e2e;
     text-align: center;
     text-transform: uppercase;
+    padding: 0.6rem 1px ;
     &:hover{
-        color: #302e2e;
+        color: #c2af06;
+        transition: 1s ease-in-out;
+        background: #0a0a0a;
     }
 }
 .toggler{
@@ -46,4 +49,22 @@
 .flex-zero{
     opacity: 0;
     height: 0;
+}
+
+.sidebar-dropdown-paranet{
+    background: #302e2e;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.sidebar-dropdwn-menu{
+    color: #ffffff;
+    padding: 5px 1px;
+    border-bottom: 2px solid #c2af06;
+    z-index: 2;
+    &:hover{
+        color: #c2af06;
+        transition: 0.5s ease-in-out;
+    }
 }

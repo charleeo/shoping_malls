@@ -24,4 +24,29 @@ function toggleSidebar(ele){
    }
 }
 
-toggleSidebar('.toggler')
+toggleSidebar('.toggler');
+
+let parentDropdown = document.querySelectorAll('.side-parent-dropdown');
+// let sidebarParentMenu = document.querySelector('.sidebar-dropdown-paranet');
+function displayDropdown(e){
+    let menus = document.querySelector(e)
+    try {
+        
+        parentDropdown.forEach(el=>{
+            el.addEventListener('click',function(e){
+              if(menus.style.display=='flex'){
+                  menus.style.display ='none';
+              }else{
+                menus.style.display ='flex';
+              }
+            })
+        })
+    } catch (error) {
+        
+    }
+}
+
+displayDropdown('.sidebar-dropdown-paranet')
+
+
+

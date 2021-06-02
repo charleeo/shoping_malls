@@ -33,6 +33,7 @@ Route::prefix('shops')->group(function () {
     Route::get('/create',[ShopController::class,'createBusiness']);
     Route::post('/create',[ShopController::class,'storeBusiness'])->name('shops');
     Route::post('/profile',[ShopController::class,'uploadBusinessImage'])->name('business-profile-photo');
+    Route::get('/create-photo',[ShopController::class,'createProfilePhoto'])->name('shops.image');
 });
 
 Route::prefix('products')->group(function(){

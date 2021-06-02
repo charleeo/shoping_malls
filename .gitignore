@@ -11,3 +11,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+sidebar2.blade.php
+public/assets/images/business_profiles
+public/assets/images/product_images
+
