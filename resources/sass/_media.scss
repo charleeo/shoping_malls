@@ -39,6 +39,20 @@
     width: 130px;
     margin-right: 1.5rem;
 }
+.toggler{
+    display: block;
+    text-align: start;
+    padding-left: 10px;
+    background: $dark-blue;
+    cursor: pointer;
+    
+}
+#sidebar{
+    opacity: 0;
+    height: 0;
+    width: 0 !important;
+    flex: 0;
+}
 }
 
 @media(max-width:466px){
@@ -73,4 +87,5 @@
     .shops{
         margin: 15px ;
     }
+   
 }

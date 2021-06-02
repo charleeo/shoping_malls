@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <ul>
                         @foreach ($businesses as $business )
-                             <li><a href="{{route('home-page',['domain'=>$business->business_domain])}}">{{$business->business_domain}}</a></li>
+                             <li><a href="{{route('home-page',['details'=>$business->business_domain])}}">{{$business->business_domain}}</a></li>
                         @endforeach
                     </ul>
                 </div>

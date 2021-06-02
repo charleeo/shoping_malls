@@ -9,7 +9,7 @@ class BusinessDomainController extends Controller
 {
     private $domain;
     public function __construct(Request $requst){
-        $this->domain = $requst->domain;
+        $this->domain = $requst->details;
     }
 
    public function index(){

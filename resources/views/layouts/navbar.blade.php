@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg  default-bg" id='navbar'>
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+            {{ __('ASM') }}
         </a>
         <button class="navbar-toggler border-dark " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             {{-- <span class="navbar-toggler-icon"></span> --}}

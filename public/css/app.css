@@ -26,6 +26,52 @@
        columns: #000000 !important;
 }
 
+#sidebar {
+  height: 100vh;
+  transition: margin 0.25s ease-out;
+  padding-bottom: 30px;
+  background: #0a0649;
+  transition: all 0.7s;
+  padding-top: 2rem;
+}
+
+.sidebar-menu {
+  color: #f3f1f799;
+  font-size: 1rem;
+  font-family: "Rubbik", sans-serif;
+  font-style: normal;
+  font-weight: bolder;
+  display: block;
+  border-bottom: 1px solid #302e2e;
+  text-align: center;
+  text-transform: uppercase;
+}
+.sidebar-menu:hover {
+  color: #302e2e;
+}
+
+.toggler {
+  display: none;
+}
+
+.flex-content {
+  display: flex;
+}
+
+.main {
+  flex: 10;
+  padding: 1rem 2rem !important;
+}
+
+#sidebar {
+  flex: 2;
+}
+
+.flex-zero {
+  opacity: 0;
+  height: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -310,6 +356,21 @@ input:focus + label {
   .shops {
     width: 130px;
     margin-right: 1.5rem;
+  }
+
+  .toggler {
+    display: block;
+    text-align: start;
+    padding-left: 10px;
+    background: #0a0649;
+    cursor: pointer;
+  }
+
+  #sidebar {
+    opacity: 0;
+    height: 0;
+    width: 0 !important;
+    flex: 0;
   }
 }
 @media (max-width: 466px) {

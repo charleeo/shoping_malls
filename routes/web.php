@@ -28,7 +28,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Route::get('/shops/create','ShopController@createShop');
-
+// Creating shops
 Route::prefix('shops')->group(function () {
     Route::get('/create',[ShopController::class,'createBusiness']);
     Route::post('/create',[ShopController::class,'storeBusiness'])->name('shops');
@@ -42,22 +42,25 @@ Route::prefix('products')->group(function(){
     Route::get('/show/{product}',[ProductController::class,'show'])->name('products.show');
     Route::delete('/delete/{product}',[ProductController::class,'destroy'])->name('products.destroy');
 });
-// Route::resource('/products', ProductController::class);
-
 
 Route::get('/create-account',[RegisterController::class,'showRegisterForm']);
 
 Route::post('/save-users',[RegisterController::class,'storeUsers']);
 
-// Subdomain route group
-
     Route::get('/businesses',[BusinessDomainController::class,'index'])->name('businesses');
-// Route::domain('{domain}.'.env('APP_DOMAIN'))->group(function(){
-// });
-// Route::subdomain();
 
-Route::domain('{domain}.'.env('APP_DOMAIN'))->group(function(){
-    Route::get('/business-profile',[BusinessDomainController::class,'show'])->name('home-page');
+// Business or shops details
+
+Route::prefix('{details}')->group(function(){
+    Route::get('/',[BusinessDomainController::class,'show'])->name('home-page');
+    // Route::get('/',[BusinessDomainController::class,'index'])->name('products.index');
+    // Route::post('/store',[BusinessDomainController::class,'store'])->name('products.store');
+    // Route::get('/show/{product}',[BusinessDomainController::class,'show'])->name('products.show');
+    // Route::delete('/delete/{product}',[BusinessDomainController::class,'destroy'])->name('products.destroy');
 });
+
+// Route::domain('{domain}.'.env('APP_DOMAIN'))->group(function(){
+//     Route::get('/business-profile',[BusinessDomainController::class,'show'])->name('home-page');
+// });
 
 
