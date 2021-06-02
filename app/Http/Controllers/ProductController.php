@@ -27,7 +27,7 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-            $shopID = Shop::where(['shop_owner_id'=>Auth::user()->id])->first();
+            $shopID = Shop::where(['business_owner_id'=>Auth::user()->id])->first();
             $request->validate([
             'product_description' =>['required','min:12'],
             'price' =>['required', 'numeric'],
@@ -58,7 +58,7 @@ class ProductController extends Controller
                }
                $imagesToDB = implode('|', $imagesToDB['files_to_db']);
             //    Unlink the old images
-            if(count($imagesFromDB)>1){
+            if(count($imagesFromDB)>0){
                     foreach($imagesFromDB as $im){
                     $imageToRemove = \public_path($im);
                     if(File::exists($imageToRemove)){

@@ -92,7 +92,9 @@ class ShopController extends Controller
             $business = Shop::where(['id'=>$id, 'business_owner_id'=>$userID])->first();
             // dd($business);
             $businessOldFileString = $business->shop_picture;
+            
             $pathToFle = public_path($businessOldFileString);
+            
 
             if(file_exists($pathToFle)){unlink($pathToFle);}
 
