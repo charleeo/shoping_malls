@@ -22,8 +22,7 @@
   z-index: 2;
 }
 .new-bg ul > li .nav-link {
-  -moz-columns: #000000 !important;
-       columns: #000000 !important;
+  color: #000000 !important;
 }
 
 #sidebar {
