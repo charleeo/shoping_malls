@@ -1,3 +1,20 @@
+@php
+    $menus = [
+    ['path'=>'/shops/create','text'=>'get started'],
+    ['path'=>route('products.create'),'text'=>'create ads'],
+    ['path'=>route('businesses'),'text'=>'shops'],
+];
+if(!Auth::user()){
+    $menus[]=['path'=>route('register'),'text'=>'register'];
+   $menus[]= ['path'=>route('login'),'text'=>'login'];
+}else {
+    $menus[]=['path'=>route('home'),'text'=>Auth::user()->name];
+}
+
+ $path ='http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+ 
+@endphp
+
 <nav class="navbar navbar-expand-lg  default-bg" id='navbar'>
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ __('ASM') }}
@@ -9,65 +26,20 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav ">
+            <ul class="navbar-nav "> 
                 <li class="nav-item">
-                    <a href="/shops/create" class="nav-link">
-                        {{__('get Started')}}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('products.index')}}" class="nav-link">
-                        {{__('Products')}}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('products.create')}}" class="nav-link">
-                        {{__('stock up')}}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('businesses')}}" class="nav-link">
-                        {{__('business')}}
-                    </a>
-                </li>
-                
+                    <a href="/" 
+                    class="nav-link {{ $_SERVER['REQUEST_URI']=='/'?'active':''}} ">Home</a>
+                </li>     
             </ul>
-
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                    @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
-
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                    {{-- <li class="nav-item"><a href="/second-register" class="nav-link">Get Started 2</a></li> --}}
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-            </ul>
+                @foreach ($menus as $menu )
+                <li class="nav-item">
+                    <a href="{{$menu['path']}}"
+                    class="nav-link {{$path==$menu['path']?'active':''}}" 
+                    >{{ $menu['text']}}</a>
+                </li>
+                @endforeach
         </div>
     </nav>

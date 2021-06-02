@@ -40,12 +40,11 @@
     margin-right: 1.5rem;
 }
 .toggler{
-    display: block;
+    display: block !important;
     text-align: start;
     padding-left: 10px;
     background: $dark-blue;
-    cursor: pointer;
-    
+    cursor: pointer;    
 }
 #sidebar{
     opacity: 0;

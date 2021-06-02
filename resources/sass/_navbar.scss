@@ -2,13 +2,13 @@
      background: $dark-blue;
      ul>li{
          .nav-link{
-         color:#ffffff !important;
+         color:#ffffff;
          text-transform: uppercase;
          &:hover{
-             color: #0000;
+             color: #a09606 !important;
+             transition: 1s ease-in-out;
          }
-         }
-        //  overflow-y: hidden;
+        }
      }
 }
 .new-bg{
@@ -20,9 +20,19 @@
   min-height: 4rem;
   width: 100%;
   z-index: 2;
+  text-transform: uppercase;
   ul>li{
       .nav-link{
-          color: #000000 !important;
+          color: #c2af06;
+          &:hover{
+            color: #292828 !important;
+            transition: 1s ease-in-out;
+        }
       }
   }
+}
+
+.active{
+    color:#c2af06 !important;
+    text-shadow:  1px 2px #686767;
 }

@@ -4,11 +4,12 @@
   background: #0a0649;
 }
 .default-bg ul > li .nav-link {
-  color: #ffffff !important;
+  color: #ffffff;
   text-transform: uppercase;
 }
 .default-bg ul > li .nav-link:hover {
-  color: #0000;
+  color: #a09606 !important;
+  transition: 1s ease-in-out;
 }
 
 .new-bg {
@@ -20,9 +21,19 @@
   min-height: 4rem;
   width: 100%;
   z-index: 2;
+  text-transform: uppercase;
 }
 .new-bg ul > li .nav-link {
-  color: #000000 !important;
+  color: #c2af06;
+}
+.new-bg ul > li .nav-link:hover {
+  color: #292828 !important;
+  transition: 1s ease-in-out;
+}
+
+.active {
+  color: #c2af06 !important;
+  text-shadow: 1px 2px #686767;
 }
 
 #sidebar {
@@ -358,7 +369,7 @@ input:focus + label {
   }
 
   .toggler {
-    display: block;
+    display: block !important;
     text-align: start;
     padding-left: 10px;
     background: #0a0649;
