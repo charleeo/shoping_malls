@@ -5,8 +5,8 @@
 
 <section class="products-page">
     <h1 class="text-center">Featured Products</h1>
-    <div class="products-flex-deplay">
-    @foreach ($products as $product )
+<div class="products-flex-deplay">
+     @foreach ($products as $product )
         <div class="products-details">
             <div class="product-images">
                 @php ($images = explode('|',$product->product_images))

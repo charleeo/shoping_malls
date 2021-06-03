@@ -507,22 +507,28 @@ input:focus + label {
     margin: 15px;
   }
 
+  .products-flex-deplay {
+    justify-content: center;
+  }
+
   .products-details {
     margin-right: 10px;
-    width: 120px;
+    width: 110px;
+    padding: 3px 2px;
   }
 
   .product-prices-name {
     flex-direction: column-reverse;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .add-cart {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 3px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 347px) {
   .products-details {
     margin-bottom: 30px;
     width: 200px;
