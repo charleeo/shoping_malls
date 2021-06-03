@@ -53,7 +53,7 @@ Route::post('/save-users',[RegisterController::class,'storeUsers']);
 // Business or shops details
 
 Route::prefix('{details}')->group(function(){
-    Route::get('/',[BusinessDomainController::class,'show'])->name('home-page');
+    // Route::get('/',[BusinessDomainController::class,'show'])->name('home-page');
     // Route::get('/',[BusinessDomainController::class,'index'])->name('products.index');
     // Route::post('/store',[BusinessDomainController::class,'store'])->name('products.store');
     // Route::get('/show/{product}',[BusinessDomainController::class,'show'])->name('products.show');
@@ -65,3 +65,4 @@ Route::prefix('{details}')->group(function(){
 // });
 
 
+Route::get('/phpinfo',[ProductController::class,'info']);

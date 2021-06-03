@@ -147,4 +147,9 @@ class ProductController extends Controller
         $product_categories = ProductCategory::all();
         return view('products.update_product',compact('product','product_categories','images','text'));
     }
+    public function info()
+    {
+        $info= phpinfo();
+        return view('info')->with('info',$info);
+    }
 }
