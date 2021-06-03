@@ -24,6 +24,9 @@
                     <li class="list-group-item">
                         {{$domain->business_email}}
                     </li>
+                    <li class="list-group-item">
+                       <img src="{{$domain->business_picture}}" alt="{{$domain->business_name}}"> 
+                    </li>
                 </ul>
             </div>
         </div>
