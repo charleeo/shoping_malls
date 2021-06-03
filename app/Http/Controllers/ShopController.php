@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Intervention\Image\Facades\Image;
 use App\Models\Shop;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -101,7 +101,8 @@ class ShopController extends Controller
 
             $fileName = time().'.'.$profilePhoto->getClientOriginalExtension();
             $fullPath='assets/images/business_profiles/';
-            ($profilePhoto->move(public_path($fullPath), $fileName));
+            Image::make($profilePhoto)->resize(200,200)->save(public_path($fullPath.$fileName));
+            // ($profilePhoto->move(public_path($fullPath), $fileName));
             $business->update(['business_picture'=> "$fullPath/$fileName"]);
             return back()->with('success', 'Profile Image Uploaded successfully');
 
