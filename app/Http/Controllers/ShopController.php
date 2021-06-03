@@ -82,6 +82,7 @@ class ShopController extends Controller
             $request->validate([
                 'profile_photo' => ['required', 'image']
             ]);
+            $path = 'assets/images/business_profiles/';
 
             $extensions = ['jpg', 'png', 'jpeg', 'gif'];
             $profilePhoto = $request->file('profile_photo');
@@ -91,12 +92,12 @@ class ShopController extends Controller
             $userID=Auth::user()->id;
             $business = Shop::where(['id'=>$id, 'business_owner_id'=>$userID])->first();
             // dd($business);
-            $businessOldFileString = $business->shop_picture;
+            $businessOldFileString = $business->business_picture;
             
-            $pathToFle = public_path($businessOldFileString);
+            // $pathToFle = public_path($businessOldFileString);
             
 
-            if(file_exists($pathToFle)){unlink($pathToFle);}
+            // if(file_exists($pathToFle)){unlink($pathToFle);}
 
             $fileName = time().'.'.$profilePhoto->getClientOriginalExtension();
             $fullPath='assets/images/business_profiles/';

@@ -3,7 +3,7 @@
     ['path'=>'/shops/create','text'=>'get started'],
     ['path'=>route('products.create'),'text'=>'create ads'],
     ['path'=>route('businesses'),'text'=>'shops'],
-    ['path'=>route('products.index'),'text'=>'Produtc'],
+    ['path'=>route('products.index'),'text'=>'Products'],
 ];
 if(!Auth::user()){
     $menus[]=['path'=>route('register'),'text'=>'register'];
