@@ -88,7 +88,32 @@
     }
 
     .products-details{
-        margin: 0px 0 20px 0px;
+        margin-right:10px;
+        width: 120px;
+    }
+    .product-prices-name{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .add-cart{
+        flex-direction: column;
+        align-items: center;
     }
    
+}
+
+@media(max-width:360px){
+    .products-details{
+        margin-bottom: 30px;
+        width: 200px;
+    }
+    .product-prices-name{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .add-cart{
+        flex-direction: row;
+        justify-content: center;
+    }
+
 }
