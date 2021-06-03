@@ -82,7 +82,7 @@ class ShopController extends Controller
             $request->validate([
                 'profile_photo' => ['required', 'image']
             ]);
-            $path = 'assets/images/business_profiles/';
+            $fullPath = 'assets/images/business_profiles/';
 
             $extensions = ['jpg', 'png', 'jpeg', 'gif'];
             $profilePhoto = $request->file('profile_photo');
@@ -95,12 +95,12 @@ class ShopController extends Controller
             $businessOldFileString = $business->business_picture;
             
             $pathToFle = public_path($businessOldFileString);
-            
-
             if(file_exists($pathToFle)){unlink($pathToFle);}
-
             $fileName = time().'.'.$profilePhoto->getClientOriginalExtension();
-            $fullPath='assets/images/business_profiles/';
+            
+            if(!is_dir($fullPath) AND !file_exists($fullPath)){ //make a dir for 
+                mkdir($fullPath,0777,true);
+            }
             Image::make($profilePhoto)->resize(200,200)->save(public_path($fullPath.$fileName));
             // ($profilePhoto->move(public_path($fullPath), $fileName));
             $business->update(['business_picture'=> "$fullPath/$fileName"]);

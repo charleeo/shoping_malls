@@ -4,7 +4,7 @@
     ['path'=>route('products.create'),'text'=>'create ads'],
     ['path'=>route('businesses'),'text'=>'shops'],
     ['path'=>route('products.index'),'text'=>'Products'],
-    ['path'=>'/about','text'=>'about-us'],
+    ['path'=>route('about'),'text'=>'about-us'],
 ];
 if(!Auth::user()){
     $menus[]=['path'=>route('register'),'text'=>'register'];

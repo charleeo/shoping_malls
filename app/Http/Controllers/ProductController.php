@@ -117,9 +117,7 @@ class ProductController extends Controller
                $maxSize =$size/1000;
                 $error= "$fileRealName has a size of $checkedSize kilobytes which is larger than $maxSize kilobytes maximum size ";
             }
-        
             $filesToDB[] = $path.$files;
-
             if(!is_dir($path) AND !file_exists($path)){ //make a dir for 
                 mkdir($path,0777,true);
             }
@@ -147,9 +145,5 @@ class ProductController extends Controller
         $product_categories = ProductCategory::all();
         return view('products.update_product',compact('product','product_categories','images','text'));
     }
-    public function info()
-    {
-        $info= phpinfo();
-        return view('info')->with('info',$info);
-    }
+    
 }

@@ -21,5 +21,4 @@ class BusinessDomainController extends Controller
         return view('subdomain.show')->with('domain',$domain);
     }
 
-
 }
