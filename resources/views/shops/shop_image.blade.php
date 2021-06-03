@@ -4,8 +4,8 @@
 
 @if ($businessDetails)
         <div class="row justify-content-center shadow-sm p-3">
-            <div class="col-md-8 col-sm-10">
-                <div class="card shadow-lg p-5 border-0">
+            <div class="col-md-8 col-sm-12">
+                <div class="card shadow-lg  border-0">
                     <div class="card-header">
                         <h4 class="text-center">Upload a profile picture for your business</h4>
                     </div>
