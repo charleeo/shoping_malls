@@ -7,6 +7,7 @@ use App\Models\Shop;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -116,8 +117,14 @@ class ProductController extends Controller
                $maxSize =$size/1000;
                 $error= "$fileRealName has a size of $checkedSize kilobytes which is larger than $maxSize kilobytes maximum size ";
             }
+        
             $filesToDB[] = $path.$files;
-            $image->move(public_path($path),$files);
+
+            if(!is_dir($path) AND !file_exists($path)){ //make a dir for 
+                mkdir($path,0777,true);
+            }
+            Image::make($image)->resize(200,200)->save(public_path($path.$files));
+            // $image->move(public_path($path),$files);
         }
             $filesArray['files_to_db']= $filesToDB;
             $filesArray['error'] = $error;

@@ -91,7 +91,7 @@ class ShopController extends Controller
             $id = $request->business_id;
             $userID=Auth::user()->id;
             $business = Shop::where(['id'=>$id, 'business_owner_id'=>$userID])->first();
-            // dd($business);
+            
             $businessOldFileString = $business->business_picture;
             
             $pathToFle = public_path($businessOldFileString);
