@@ -18,7 +18,13 @@ class ProductController extends Controller
 
     public function index(){
         $products = Product::all();
-        return view('products.all_products',compact('products'));
+        $productImages =[];
+        if($products){
+            foreach($products as $pr){
+                $productImages[]= $pr->product_images;
+            }
+        }
+        return view('products.all_products',compact('products','productImages'));
     }
 
     public function create(){
@@ -79,7 +85,7 @@ class ProductController extends Controller
             $imagesToDB= $this->uploadFiles($images,$extensions,$size,$path);
             $error = $imagesToDB['error'];
             if($error){
-                return back()->with('error',"$error");
+                return back()->with('error',$error);
             }
             $imagesToDB = $imagesToDB['files_to_db'];
             $imagesToDB=(implode('|',$imagesToDB));

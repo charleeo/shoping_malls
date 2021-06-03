@@ -1,21 +1,3 @@
-@php
-    $menus = [
-    ['path'=>'/shops/create','text'=>'get started'],
-    ['path'=>route('products.create'),'text'=>'create ads'],
-    ['path'=>route('businesses'),'text'=>'shops'],
-    ['path'=>route('products.index'),'text'=>'Products'],
-    ['path'=>route('about'),'text'=>'about-us'],
-];
-if(!Auth::user()){
-    $menus[]=['path'=>route('register'),'text'=>'register'];
-   $menus[]= ['path'=>route('login'),'text'=>'login'];
-}else {
-    $menus[]=['path'=>route('home'),'text'=>Auth::user()->name];
-}
-
- $path ='http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
- 
-@endphp
 
 <nav class="navbar navbar-expand-lg  default-bg" id='navbar'>
         <a class="navbar-brand" href="{{ url('/') }}">

@@ -3,12 +3,17 @@
 <div  class="sidebar-wrapper" id="sidebar-wrapper">
     <div class="my-sidebar-color" id="sidebar-menu-wrapper">
         <div class="sidebar-dropown">
-            <div class="sidebar-menu side-parent-dropdown">
+            <div class="sidebar-menu side-parent-dropdown {{$path=='/shops/create'||$path=='/shops/create-photo'?'active':''}} ">
                 Manage Shop <i class="fas fa-caret-down"></i>
                 <div class="sidebar-dropdown-paranet">
-                    <a href="{{route('shops')}}" class="sidebar-dropdwn-menu">Create</a>
-                    <a href="{{route('shops.image')}}" class="sidebar-dropdwn-menu">Photo</a>
-                    <a href="/" class="sidebar-dropdwn-menu">edit</a>
+                @foreach ($dropdown1 as $drop )
+                    <a 
+                    href="{{$drop['path']}}" 
+                    class="sidebar-dropdwn-menu {{$path==$drop['path']?'active':''}} "
+                    >
+                    {{$drop['text']}}
+                    </a>
+                @endforeach
                 </div>
             </div>
         </div>
