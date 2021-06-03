@@ -94,10 +94,10 @@ class ShopController extends Controller
             // dd($business);
             $businessOldFileString = $business->business_picture;
             
-            // $pathToFle = public_path($businessOldFileString);
+            $pathToFle = public_path($businessOldFileString);
             
 
-            // if(file_exists($pathToFle)){unlink($pathToFle);}
+            if(file_exists($pathToFle)){unlink($pathToFle);}
 
             $fileName = time().'.'.$profilePhoto->getClientOriginalExtension();
             $fullPath='assets/images/business_profiles/';
