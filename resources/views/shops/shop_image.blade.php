@@ -4,16 +4,16 @@
 
 @if ($businessDetails)
         <div class="row justify-content-center shadow-sm p-3">
-            <div class="col-md-8 col-sm-12">
-                <div class="card shadow-lg  border-0">
+            <div class="col-md-8 col-sm-12 py-5">
+                <div class="card shadow-lg py-4 border-0">
                     <div class="card-header">
-                        <h4 class="text-center">Upload a profile picture for your business</h4>
+                        <h4 >Your Business Image Or Logo</h4>
                     </div>
                     <div class="card-body shadow-lg">
                         <form action="{{route('business-profile-photo')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="">PROFILE PICTURE</label>
+                                <label for="profile_photo">PROFILE PICTURE</label>
                                 <input type="file" class="form-control"name='profile_photo'>
                             </div>
                             <div class="form-group">
