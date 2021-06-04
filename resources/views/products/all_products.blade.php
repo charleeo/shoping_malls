@@ -24,7 +24,7 @@
             <a href='{{route('products.show',["product"=>$product->id])}}'class="details-link">Details</a>
         </div>
         <div class='add-cart'>
-            <span class="quantitis">{{isset($product->quantity)?$product->quantity." available":''}}</span>
+            <span class="quantitis">{{isset($product->quantity)?$product->quantity." available":'not specified'}}</span>
             <small class="add-to-cart">{{_('Add to Cart')}} </small>
         </div>
     </div>

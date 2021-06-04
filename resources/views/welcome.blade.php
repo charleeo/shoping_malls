@@ -24,6 +24,7 @@
 </section>
 
 @include('pages.other_features')
+@include('pages.featured_shops')
 
 <section class="business-model pt-4">
     <h2>What Are You Selling?</h2> <hr>
@@ -51,7 +52,6 @@
     </div>
 </section>
  {{-- Featured shops --}}
-@include('pages.featured_shops')
 @include('pages.featured_products')
 @include('pages.testomonial')
 

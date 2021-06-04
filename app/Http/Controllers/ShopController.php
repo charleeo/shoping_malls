@@ -66,7 +66,6 @@ class ShopController extends Controller
             'business_domain'=>$name,
             'description'=>$description,
             'business_owner_id'=>$owner,
-            'business_picture'=>'not available',
             'business_name'=>$request->business_name,
             'business_phone_number'=>$request->business_phone_number,
             'business_email'=>$request->business_email,

@@ -18,7 +18,7 @@ class Shops extends Migration
             $table->string('business_domain')->unique();
             $table->string('business_name')->unique();
             $table->string('description');
-            $table->string('business_picture');
+            $table->string('business_picture')->default('images/icon/no-image.jpg');
             $table->string('business_email')->nullable();
             $table->string('business_phone_number');
             $table->integer('business_owner_id');
