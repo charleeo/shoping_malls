@@ -194,3 +194,29 @@
     border-bottom: 6px solid #08021f;
     color: $dark;
 }
+.other_features{
+   background: url("/assets/images/bg/landing4.jpg");
+//    ,linear-gradient(to left, #141313 50%,#0000);
+   background-size: contain;
+    background-repeat:repeat-x;
+    background-attachment: fixed;
+    // background-blend-mode: overlay;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 30px;
+}
+.wrapper-for-other-fearture{
+    width: 500px;
+    padding: 50px;
+    background: #808080;
+    box-shadow: 2px 3px 5px 6px #eee8aa;
+    p{
+        color: #ffffff;
+        text-transform: capitalize;
+        font-weight: bolder;
+        font-size: 1.2rem;
+    }
+}

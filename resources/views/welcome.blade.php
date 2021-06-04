@@ -23,8 +23,10 @@
     </div>
 </section>
 
-<section class="business-model">
-    <h2>Business Model Not A Barrier</h2>
+@include('pages.other_features')
+
+<section class="business-model pt-4">
+    <h2>What Are You Selling?</h2> <hr>
     <div class="different-models ">
     <p>
         Your business model is could be a barrier in the past, but now, anything you have for sales or any service you have to render has a shop for it.

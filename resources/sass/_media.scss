@@ -14,6 +14,7 @@
                 text-align: center !important;
             }
     }
+    
 }
 
 
@@ -118,6 +119,13 @@
         flex-direction: column;
         align-items: flex-start;
         margin-top: 3px;
+    }
+    .wrapper-for-other-fearture{
+        padding: 10px !important;
+        p{
+            font-size: 1rem;
+
+        }
     }
    
 }
