@@ -472,6 +472,22 @@ input:focus + label {
     width: 0 !important;
     flex: 0;
   }
+
+  .products-details {
+    margin-left: 10px;
+    width: 150px;
+  }
+
+  .product-prices-name {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .add-cart {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 3px;
+  }
 }
 @media (max-width: 466px) {
   h1, h2, h3, h4, h5, h6 {
@@ -512,9 +528,9 @@ input:focus + label {
   }
 
   .products-details {
-    margin-right: 10px;
-    width: 110px;
-    padding: 3px 2px;
+    margin-left: 5px;
+    width: 140px;
+    padding: 3px 10px;
   }
 
   .product-prices-name {
