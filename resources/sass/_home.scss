@@ -211,12 +211,13 @@
 .wrapper-for-other-fearture{
     width: 500px;
     padding: 50px;
-    background: #808080;
-    box-shadow: 2px 3px 5px 6px #eee8aa;
+    background: #ffffff;
+    box-shadow: 2px 3px 5px 6px #9c9c98;
     p{
-        color: #ffffff;
+        color: $dark;
         text-transform: capitalize;
         font-weight: bolder;
         font-size: 1.2rem;
+        line-height: 1.5;
     }
 }
