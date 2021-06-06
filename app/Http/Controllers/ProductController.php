@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\Shop;
+use App\Models\User;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,14 +18,16 @@ class ProductController extends Controller
     }
 
     public function index(){
-        $products = Product::all();
+        $userID = Auth::user()->id;
+        $shopID= Shop::where(['business_owner_id'=>$userID])->get('id')->first();
+        $products = Product::where(['product_shop_id'=> $shopID->id])->get();
         $productImages =[];
         if($products){
             foreach($products as $pr){
                 $productImages[]= $pr->product_images;
             }
         }
-        return view('products.all_products',compact('products','productImages'));
+        return view('products.all-created',compact('products','productImages'));
     }
 
     public function create(){
@@ -124,7 +127,7 @@ class ProductController extends Controller
                 $error= "$fileRealName has a size of $checkedSize kilobytes which is larger than $maxSize kilobytes maximum size ";
             }
             $filesToDB[] = $path.$files;
-            if(!is_dir($path) AND !file_exists($path)){ //make a dir for 
+            if(!is_dir($path) AND !file_exists($path)){ //make a dir for
                 mkdir($path,0777,true);
             }
             Image::make($image)->resize(200,200)->save(public_path($path.$files));
@@ -143,13 +146,13 @@ class ProductController extends Controller
             return $filesArray;
     }
 
-    public function show($id){
-        $product = Product::where(['id'=>$id])->first();
+
+    public function edit($id){
+        $product = Product::where(['id'=>$id,])->first();
         $images = $product->product_images;
         $images = explode('|',$images);
         $text="Update";
         $product_categories = ProductCategory::all();
-        return view('products.update_product',compact('product','product_categories','images','text'));
+        return view('products.edit_product',compact('product','product_categories','images','text'));
     }
-    
 }

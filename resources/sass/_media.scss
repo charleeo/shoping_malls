@@ -2,7 +2,7 @@
     .hero
     {
     height: 85vh;
-    padding: 5rem 0px 1rem 0px;
+    padding: 2rem 0px 1rem 0px;
     justify-content: flex-start !important;
     align-items: center;
     .pitch{
@@ -14,7 +14,7 @@
                 text-align: center !important;
             }
     }
-    
+
 }
 
 
@@ -45,7 +45,7 @@
     text-align: start;
     padding-left: 10px;
     background: $dark-blue;
-    cursor: pointer;    
+    cursor: pointer;
 }
 #sidebar{
     opacity: 0;
@@ -127,7 +127,7 @@
 
         }
     }
-   
+
 }
 
 @media(max-width:347px){

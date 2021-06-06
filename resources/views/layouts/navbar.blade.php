@@ -1,5 +1,10 @@
 
 <nav class="navbar navbar-expand-lg  default-bg" id='navbar'>
+    @if(Auth::check() AND !Request::is('/') )
+        <div class="toggler">
+            <i class="fas fa-arrow-left nav-link-item " style="color: #f3f1f799">sidebar</i>
+        </div>
+    @endif
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ __('ASM') }}
         </a>
@@ -10,18 +15,18 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav "> 
+            <ul class="navbar-nav ">
                 <li class="nav-item">
-                    <a href="/" 
+                    <a href="/"
                     class="nav-link {{ $_SERVER['REQUEST_URI']=='/'?'active':''}} ">Home</a>
-                </li>     
+                </li>
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 @foreach ($menus as $menu )
                 <li class="nav-item">
                     <a href="{{$menu['path']}}"
-                    class="nav-link {{$path==$menu['path']?'active':''}}" 
+                    class="nav-link {{$path==$menu['path']?'active':''}}"
                     >{{ $menu['text']}}</a>
                 </li>
                 @endforeach

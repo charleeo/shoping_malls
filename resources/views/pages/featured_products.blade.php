@@ -1,5 +1,5 @@
 @if (isset($products))
-    
+
 <section class="featured-products shadow-lg py-4">
         <h2 class="text-center text-white">FEATURED PRODUCTS</h2>
     <div class="products-flex-deplay">
@@ -11,14 +11,14 @@
                 </div>
            <div class="product-prices-name">
                <div class="prices">
-                   <span class="prices">&#8358;<b>{{number_format($product->price)}}</b></span> 
+                   <span class="prices">&#8358;<b>{{number_format($product->price)}}</b></span>
                </div>
                <div>
                    <span class="name"><b>{{$product->product_name}}</b></span>
                </div>
             </div>
             <div class="details">
-                <a href='{{route('products.show',["product"=>$product->id])}}'class="details-link">Details</a>
+                <a href='{{route('products.show',["product"=>$product->id,'name'=>$product->product_name])}}'class="details-link">Details</a>
             </div>
             <div class='add-cart'>
                <span class="quantitis">{{isset($product->quantity)?$product->quantity." available":'not specified'}}</span>

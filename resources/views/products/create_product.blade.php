@@ -58,7 +58,7 @@ $deliveryStatus =["pay on delivery","payment before delivery","Either of the two
                     </div>
                     <div class="form-group">
                         <label for="product_description">Descripton</label>
-                        <textarea name="product_description" id="" cols="30" rows="10" placeholder="enter item descripton here" class="form-control"
+                        <textarea name="product_description" id="" cols="5" rows="2" placeholder="enter item descripton here" class="form-control"
                         >{{ old('product_description', (isset($product->product_description))? $product->product_description: '') }}</textarea>
                     </div>
                     <div class="form-group">

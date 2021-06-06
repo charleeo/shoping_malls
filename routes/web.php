@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\BusinessDomainController;
+use App\Http\Controllers\DisplayProductsController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductController;
@@ -38,9 +39,14 @@ Route::prefix('shops')->group(function () {
 
 Route::prefix('products')->group(function(){
     Route::get('/create',[ProductController::class,'create'])->name('products.create');
-    Route::get('/',[ProductController::class,'index'])->name('products.index');
+    Route::get('/all-created',[ProductController::class,'index'])->name('products.all-created');
+    Route::get('/{id}/edit',[ProductController::class,'edit'])->name('products.edit');
     Route::post('/store',[ProductController::class,'store'])->name('products.store');
-    Route::get('/show/{product}',[ProductController::class,'show'])->name('products.show');
+
+    Route::get('/',[DisplayProductsController::class,'index'])->name('products.index');
+
+    Route::get('/{name}/{product}',[DisplayProductsController::class,'show'])->name('products.show');//for all users
+
     Route::delete('/delete/{product}',[ProductController::class,'destroy'])->name('products.destroy');
 });
 

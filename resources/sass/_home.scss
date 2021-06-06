@@ -1,22 +1,23 @@
 .hero
 {
-    // background: url("/assets/images/bg/landing4.jpg");
-    // linear-gradient(to left, #ffffff 100%,#0000);
+    background: url("/assets/images/bg/image1.jpg"),#08060433;
+    // linear-gradient(to left, #ffffff 10%,#0000);
     height: 95vh;
     background-size: cover;
     background-blend-mode: overlay;
-    background-position: top;
-    background:$dark-blue;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding-top: 4rem;
     .pitch{
         width: 630px;
             p{
                 text-transform: uppercase;
                 text-decoration: initial;
-                color: #ffffff;
+                color: #e4da72;
+                text-shadow: 3px 2px $dark;
                 margin: auto;
                 padding-top:5rem;
                 line-height: 3;
@@ -39,7 +40,7 @@
 
 
 .get-started,.learn-more{
-    background: inherit;
+    background: #08021f;
     &:hover{
         background: #808080;
         transition: 1s all;
@@ -195,29 +196,32 @@
     color: $dark;
 }
 .other_features{
-   background: url("/assets/images/bg/landing4.jpg");
+//    background: url("/assets/images/bg/image5.jpg");
 //    ,linear-gradient(to left, #141313 50%,#0000);
-   background-size: contain;
-    background-repeat:repeat-x;
+background: #d8d2d2;
+   background-size: cover;
+    background-repeat:no-repeat;
     background-attachment: fixed;
     // background-blend-mode: overlay;
     background-position: top;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 50vh;
+    align-items: flex-start;
+    height: 70vh;
     padding: 30px;
+    padding-top: 5rem;
 }
 .wrapper-for-other-fearture{
     width: 500px;
     padding: 50px;
-    background: #ffffff;
-    box-shadow: 2px 3px 5px 6px #9c9c98;
+    // background: #a8a7a7;
+    box-shadow: 2px 3px 5px 6px #f8f8f7;
+    border-radius: 6px;
     p{
-        color: $dark;
+        color: #2c2c2c;
         text-transform: capitalize;
-        font-weight: bolder;
+        font-weight: lighter;
         font-size: 1.2rem;
-        line-height: 1.5;
+        line-height: 2;
     }
 }

@@ -1,14 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik);
 @charset "UTF-8";
 .default-bg {
-  background: #0a0649;
+  background: #08060433;
 }
 .default-bg ul > li .nav-link {
-  color: #ffffff;
+  color: #0a0a0a;
   text-transform: uppercase;
 }
 .default-bg ul > li .nav-link:hover {
-  color: #a09606 !important;
+  color: #4d4d4b !important;
   transition: 1s ease-in-out;
 }
 
@@ -24,25 +24,25 @@
   text-transform: uppercase;
 }
 .new-bg ul > li .nav-link {
-  color: #c2af06;
+  color: #292927;
 }
 .new-bg ul > li .nav-link:hover {
-  color: #292828 !important;
+  color: #802525 !important;
   transition: 1s ease-in-out;
 }
 
 .active {
-  color: #c2af06 !important;
-  text-shadow: 1px 2px #686767;
+  color: #865050 !important;
+  text-shadow: 1px 2px #3a3939;
 }
 
 #sidebar {
-  height: 100vh;
+  height: inherit;
   transition: margin 0.25s ease-out;
   padding-bottom: 30px;
   background: #0a0649;
   transition: all 0.7s;
-  padding-top: 2rem;
+  padding-top: 5rem;
 }
 
 .sidebar-menu {
@@ -235,15 +235,16 @@ input:focus + label {
 }
 
 .hero {
+  background: url("/assets/images/bg/image1.jpg"), #08060433;
   height: 95vh;
   background-size: cover;
   background-blend-mode: overlay;
-  background-position: top;
-  background: #0a0649;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 4rem;
 }
 .hero .pitch {
   width: 630px;
@@ -251,7 +252,8 @@ input:focus + label {
 .hero .pitch p {
   text-transform: uppercase;
   text-decoration: initial;
-  color: #ffffff;
+  color: #e4da72;
+  text-shadow: 3px 2px #000000;
   margin: auto;
   padding-top: 5rem;
   line-height: 3;
@@ -266,7 +268,7 @@ input:focus + label {
 }
 
 .get-started, .learn-more {
-  background: inherit;
+  background: #08021f;
 }
 .get-started:hover, .learn-more:hover {
   background: #808080;
@@ -422,36 +424,37 @@ input:focus + label {
 }
 
 .other_features {
-  background: url("/assets/images/bg/landing4.jpg");
-  background-size: contain;
-  background-repeat: repeat-x;
+  background: #d8d2d2;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: top;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 50vh;
+  align-items: flex-start;
+  height: 70vh;
   padding: 30px;
+  padding-top: 5rem;
 }
 
 .wrapper-for-other-fearture {
   width: 500px;
   padding: 50px;
-  background: #ffffff;
-  box-shadow: 2px 3px 5px 6px #9c9c98;
+  box-shadow: 2px 3px 5px 6px #f8f8f7;
+  border-radius: 6px;
 }
 .wrapper-for-other-fearture p {
-  color: #000000;
+  color: #2c2c2c;
   text-transform: capitalize;
-  font-weight: bolder;
+  font-weight: lighter;
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 2;
 }
 
 @media (max-width: 627px) {
   .hero {
     height: 85vh;
-    padding: 5rem 0px 1rem 0px;
+    padding: 2rem 0px 1rem 0px;
     justify-content: flex-start !important;
     align-items: center;
   }
@@ -598,6 +601,24 @@ input:focus + label {
     justify-content: space-between;
   }
 }
+footer {
+  background: #040130;
+  text-align: center;
+  padding: 20px 3px;
+  color: #c09e09;
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  color: #ffffff;
+}
+
+.footer-right address {
+  color: #838583;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

@@ -34,12 +34,18 @@ class AppServiceProvider extends ServiceProvider
             ['path'=>'/shops/create','text'=>'create/Edit shop'],
             ['path'=>'/shops/create-photo','text'=>'upload logo'],
         ];
-        
+
+        $dropdown2 = [
+            ['path'=>'/products/create','text'=>'Create'],
+            ['path'=>'/products/manage','text'=>'view/Edit'],
+            ['path'=>'/products/all-created','text'=>'view all'],
+        ];
+
         $menus = [
             ['path'=>'/shops/create','text'=>'get started'],
             ['path'=>'/products/create','text'=>'post an ad'],
             ['path'=>'/businesses','text'=>'shops'],
-            ['path'=>'/products','text'=>'Products'],
+            ['path'=>'/products','text'=>'Markets'],
             ['path'=>'/about','text'=>'about-us'],
         ];
 
@@ -50,7 +56,12 @@ class AppServiceProvider extends ServiceProvider
             $menus[]= ['path'=>'/login','text'=>'login'];
         }
         $path= $_SERVER['REQUEST_URI'];
-         $view->with(['dropdown1'=>$dropdown1,'path'=>$path,'menus'=>$menus] );
+         $view->with([
+             'dropdown1'=>$dropdown1,
+             'path'=>$path,
+             'menus'=>$menus,
+             'dropdown2'=>$dropdown2,
+             ] );
     });
         //  view()->share(['dropdown1'=>$dropdown1,'path'=>$path,'menus'=>$menus] );
     }

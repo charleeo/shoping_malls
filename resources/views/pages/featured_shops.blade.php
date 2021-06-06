@@ -1,9 +1,9 @@
 @if ($products)
-    
+
 <section class="featured-shops pt-4 bg-white">
-    
+
         <h2 class="text-center">FEATURED SHOPS</h2>
-    
+
     <div class="products-flex-deplay">
         @foreach ($shops as $shop )
         <div class="products-details">
@@ -19,7 +19,7 @@
                 <span class="quantitis">{{$shop->description}}</span>
             </div>
             <div class="details">
-                <a href='{{route('products.show',["product"=>$shop->id])}}'class="details-link">View Page</a>
+                <a href='/'class="details-link">View Page</a>
             </div>
         </div>
         @endforeach

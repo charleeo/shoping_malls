@@ -1,11 +1,11 @@
 .default-bg{
-     background: $dark-blue;
+     background: #08060433;
      ul>li{
          .nav-link{
-         color:#ffffff;
+         color:#0a0a0a;
          text-transform: uppercase;
          &:hover{
-             color: #a09606 !important;
+             color: #4d4d4b !important;
              transition: 1s ease-in-out;
          }
         }
@@ -23,9 +23,9 @@
   text-transform: uppercase;
   ul>li{
       .nav-link{
-          color: #c2af06;
+          color: #292927;
           &:hover{
-            color: #292828 !important;
+            color: #802525 !important;
             transition: 1s ease-in-out;
         }
       }
@@ -33,6 +33,6 @@
 }
 
 .active{
-    color:#c2af06 !important;
-    text-shadow:  1px 2px #686767;
+    color:#865050 !important;
+    text-shadow:  1px 2px #3a3939;
 }

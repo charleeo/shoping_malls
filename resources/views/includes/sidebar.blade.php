@@ -3,12 +3,12 @@
 <div  class="sidebar-wrapper" id="sidebar-wrapper">
     <div class="my-sidebar-color" id="sidebar-menu-wrapper">
         <div class="sidebar-dropown">
-            <div class="sidebar-menu side-parent-dropdown {{$path=='/shops/create'||$path=='/shops/create-photo'?'active':''}} ">
+            <div class="sidebar-menu side-parent-dropdown {{$path=='/shops/create'||$path=='/shops/create-photo'?'active':''}} " id="first">
                 Manage Shop <i class="fas fa-caret-down"></i>
-                <div class="sidebar-dropdown-paranet">
+                <div class="sidebar-dropdown-paranet first">
                 @foreach ($dropdown1 as $drop )
-                    <a 
-                    href="{{$drop['path']}}" 
+                    <a
+                    href="{{$drop['path']}}"
                     class="sidebar-dropdwn-menu {{$path==$drop['path']?'active':''}} "
                     >
                     {{$drop['text']}}
@@ -17,9 +17,21 @@
                 </div>
             </div>
         </div>
-    <a href="{{route('products.create')}}" class="sidebar-menu">
-        Side bar
-    </a>
+        <div class="sidebar-dropown">
+            <div class="sidebar-menu side-parent-dropdown {{$path=='/products/create'?'active':''}} " id="second">
+                Manage Ads<i class="fas fa-caret-down"></i>
+                <div class="sidebar-dropdown-paranet second">
+                @foreach ($dropdown2 as $drop )
+                    <a
+                    href="{{$drop['path']}}"
+                    class="sidebar-dropdwn-menu {{$path==$drop['path']?'active':''}} "
+                    >
+                    {{$drop['text']}}
+                    </a>
+                @endforeach
+                </div>
+            </div>
+        </div>
     <a href="{{route('products.create')}}" class="sidebar-menu">
         Side bar
     </a>

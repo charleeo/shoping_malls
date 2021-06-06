@@ -1,5 +1,5 @@
   #sidebar{
-    height: 100vh;
+    height: inherit;
     -webkit-transition: margin .25s ease-out;
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
@@ -8,7 +8,7 @@
     background: $dark-blue;
     transition: all 0.7s ;
     // overflow: hidden;
-    padding-top: 2rem;
+    padding-top: 5rem;
 
   }
 

@@ -24,8 +24,8 @@
             <a href='{{route('products.show',["product"=>$product->id,"name"=>$product->product_name])}}'class="details-link">Details</a>
         </div>
         <div class='add-cart'>
-            <span class="quantitis">{{isset($product->quantity)?$product->quantity." available":'not specified'}}</span>
-            <small class="add-to-cart">{{_('Add to Cart')}} </small>
+            <span class="btn btn-default btn-sm">Send front</span>
+            <a href="{{route('products.edit',['id'=>$product->id])}}" class=" btn btn-primary btn-sm">{{_('Edit')}} </a>
         </div>
     </div>
     @endforeach
@@ -33,16 +33,4 @@
 </section>
 
 @endsection
-{{-- @foreach ($products as $product )
 
-@php ($images = explode('|',$product->product_images))
-<img src="{{asset($images[1])}}" alt="">
-@endforeach --}}
-
-{{-- @foreach ($products as $product )
-
-<p><a href="{{route('products.show',['product'=>$product->id]) }}">{{$product->product_name}}</a></p>
-<p>{{$product->shop->business_name}}</p>
-{{dd($product)}}
-
-@endforeach --}}
