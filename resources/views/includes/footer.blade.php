@@ -1,4 +1,4 @@
-<hr>
+
 <footer>
     <div class="footer-left">
         <h5>Quick Links</h5>
@@ -40,4 +40,3 @@
     </div>
 </footer>
 
- 
