@@ -10,51 +10,91 @@
   margin-top: 20px;
 }
 .products-details{
-    width: 200px;
+    width: 220px;
     margin: 0px 0 20px 20px;
-    box-shadow: 5px 5px 6px 5px #b8b5b5;
+    box-shadow: 1px 1px 1px 1px #b8b5b5;
     padding: 10px 15px;
     margin-bottom: 20px;
     border-radius: 10px;
+    background: inherit;
 }
 
 .product-prices-name{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
     padding: 0 4px;
     margin-bottom: 5px;
-    border-bottom: 3px solid #b8b5b5;
-    border-top: 3px solid #b8b5b5;
+    .prices{
+        color: #1d1d1b;
+    }
+    .name{
+        color: #2b2a2a;
+    }
 }
 
 .details{
-    background: $dark-blue;
+    // background: $dark-blue;
     padding: 0px 12px;
-    border-radius: 10px;
     .details-link{
-        color: $white;
+        color: $dark;
         display: block;
         text-align: center;
     }
 }
-.add-to-cart{
+.add-cart{
     background: $dark-blue;
     color: #c9ac09;
-    padding: 2px;
-    border-radius: 5px;
-}
-.add-cart{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 5px;
-    margin-top: 10px;
-}
-.product-images{
     padding: 10px;
-    box-shadow: 2px 3px 2px 3px #b8b5b5;
-    border-radius: 10px;
+    border-radius: 5px;
+    .add-to-cart{
+        display: block;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+.product-images{
+    padding: 5px;
+    // box-shadow: 2px 3px 2px 3px #b8b5b5;
+    // background: #ffffff;
     margin-bottom: 10px;
     .images-class{
+        border-radius: 10px;
         width: 100%;
     }
 }
+
+.product-details-section{
+    background:$white;
+    min-height: 100vh;
+}
+.product-big-image{
+ border-radius: 500px;
+}
+.thumb-nails{
+    margin: 0px 3px;
+    img{
+
+        height:60px;
+        width: 60px;
+        cursor: pointer;
+    }
+}
+
+
+#gallery-modal-body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+}
+.business-image{
+    width: 100px;
+    height: 100px;
+}
+
+
+

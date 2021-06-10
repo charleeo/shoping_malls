@@ -1,6 +1,6 @@
 @if ($products)
 
-<section class="featured-shops pt-4 bg-white">
+<section class="featured-shops pt-4">
 
         <h2 class="text-center">FEATURED SHOPS</h2>
 
@@ -14,9 +14,6 @@
                <div>
                    <h4 class="name"><b>{{$shop->business_domain}}</b></h4>
                 </div>
-            </div>
-            <div class='add-cart shadow-lg p-2 mb-4'>
-                <span class="quantitis">{{$shop->description}}</span>
             </div>
             <div class="details">
                 <a href='/'class="details-link">View Page</a>

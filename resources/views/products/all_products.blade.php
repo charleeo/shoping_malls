@@ -21,11 +21,10 @@
             </div>
         </div>
         <div class="details">
-            <a href='{{route('products.show',["product"=>$product->id,"name"=>$product->product_name])}}'class="details-link">Details</a>
+            <a href='{{route('products.show',["product"=>$product->id,"name"=>$product->product_name])}}?category={{$product->productCategory->id}}&shop={{$product->shop->id}}'class="details-link">Details</a>
         </div>
         <div class='add-cart'>
-            <span class="quantitis">{{isset($product->quantity)?$product->quantity." available":'not specified'}}</span>
-            <small class="add-to-cart">{{_('Add to Cart')}} </small>
+            <small class="add-to-cart">{{_('Add to Cart')}} <i class="fa fa-shopping-cart"></i> </small>
         </div>
     </div>
     @endforeach

@@ -130,7 +130,7 @@ class ProductController extends Controller
             if(!is_dir($path) AND !file_exists($path)){ //make a dir for
                 mkdir($path,0777,true);
             }
-            Image::make($image)->resize(200,200)->save(public_path($path.$files));
+            Image::make($image)->resize(300,300)->save(public_path($path.$files));
             // $image->move(public_path($path),$files);
         }
             $filesArray['files_to_db']= $filesToDB;

@@ -1,12 +1,9 @@
-@extends('layouts.app')
+@if (!empty($createdBySameSeller) && !Auth::user())
 
-@section('title','smart and sharp product|')
-@section('content')
-
-<section class="products-page">
-    <h1 class="text-center">Featured Products</h1>
-<div class="products-flex-deplay">
-     @foreach ($products as $product )
+<section class="realted-items pt-5">
+    <h1 class="text-center">Items By Same Seller</h1>
+    <div class="products-flex-deplay">
+        @foreach ($createdBySameSeller as $product )
         <div class="products-details">
             <div class="product-images">
                 @php ($images = explode('|',$product->product_images))
@@ -23,14 +20,15 @@
         <div class="details">
             <a href='{{route('products.show',["product"=>$product->id,"name"=>$product->product_name])}}?category={{$product->productCategory->id}}&shop={{$product->shop->id}}'class="details-link">Details</a>
         </div>
+
         <div class='add-cart'>
-            <span class="btn btn-default btn-sm">Send front</span>
-            <a href="{{route('products.edit',['id'=>$product->id])}}" class=" btn btn-primary btn-sm">{{_('Edit')}} </a>
+            <small class="add-to-cart">{{_('Add to Cart')}} <i class="fa fa-shopping-cart"></i> </small>
         </div>
     </div>
-    @endforeach
-</div>
+        @endforeach
+    </div>
 </section>
+@endif
 
-@endsection
+
 

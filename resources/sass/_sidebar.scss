@@ -6,10 +6,8 @@
     transition: margin .25s ease-out;
     padding-bottom: 30px;
     background: $dark-blue;
-    transition: all 0.7s ;
-    // overflow: hidden;
+    transition: all 0.7s;
     padding-top: 5rem;
-
   }
 
 .sidebar-menu{
@@ -63,7 +61,6 @@
     padding: 10px 0px;
     padding-left: 10px;
     border-bottom: 1px solid #c2af06;
-    font-family: inherit;
     z-index: 2;
     &:hover{
         color: #090909;

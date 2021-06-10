@@ -1,7 +1,6 @@
 @if (isset($products))
-
 <section class="featured-products shadow-lg py-4">
-        <h2 class="text-center text-white">FEATURED PRODUCTS</h2>
+        <h2 class="text-center text-dark">FEATURED PRODUCTS</h2>
     <div class="products-flex-deplay">
         @foreach ($products as $product )
         <div class="products-details">
@@ -18,10 +17,9 @@
                </div>
             </div>
             <div class="details">
-                <a href='{{route('products.show',["product"=>$product->id,'name'=>$product->product_name])}}'class="details-link">Details</a>
+                <a href='{{route('products.show',["product"=>$product->id,'name'=>$product->product_name])}}?category={{$product->productCategory->id}}&shop={{$product->shop->id}}'class="details-link">Details</a>
             </div>
             <div class='add-cart'>
-               <span class="quantitis">{{isset($product->quantity)?$product->quantity." available":'not specified'}}</span>
                <small class="add-to-cart">{{_('Add to Cart')}} </small>
             </div>
         </div>
@@ -29,51 +27,6 @@
     </div>
 </section>
 @endif
-{{-- <div class="shops-details">
-    <div class="shops">
-        <div class="shop-image">
-            <img src="{{asset('assets/images/bg/shopping.jpg')}}" alt="shop name">
-        </div>
-        <div class="shop-description">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae dicta accusantium modi, deserunt sequi perferendis neque porro maiores fuga sit, omnis id assumenda provident. Dicta eligendi tenetur quos iste.
-            </p>
-            <button class="details">Details</button>
-        </div>
-    </div>
-    <div class="shops">
-        <div class="shop-image">
-            <img src="{{asset('assets/images/bg/shopping.jpg')}}" alt="shop name">
-        </div>
-        <div class="shop-description">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae dicta accusantium modi, deserunt sequi perferendis neque porro maiores fuga sit, omnis id assumenda provident. Dicta eligendi tenetur quos iste.
-            </p>
-            <button class="details">Details</button>
-        </div>
-    </div>
 
-    <div class="shops">
-        <div class="shop-image">
-            <img src="{{asset('assets/images/bg/shopping.jpg')}}" alt="shop name">
-        </div>
-        <div class="shop-description">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae dicta accusantium modi, deserunt sequi perferendis neque porro maiores fuga sit, omnis id assumenda provident. Dicta eligendi tenetur quos iste.
-            </p>
-            <button class="details">Details</button>
-        </div>
-    </div>
 
-    <div class="shops">
-        <div class="shop-image">
-            <img src="{{asset('assets/images/bg/shopping.jpg')}}" alt="shop name">
-        </div>
-        <div class="shop-description">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae dicta accusantium modi, deserunt sequi perferendis neque porro maiores fuga sit, omnis id assumenda provident. Dicta eligendi tenetur quos iste.
-            </p>
-            <button class="details">Details</button>
-        </div>
-    </div>
-</div> --}}
+

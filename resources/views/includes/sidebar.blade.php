@@ -24,7 +24,7 @@
                 @foreach ($dropdown2 as $drop )
                     <a
                     href="{{$drop['path']}}"
-                    class="sidebar-dropdwn-menu {{$path==$drop['path']?'active':''}} "
+                    class="sidebar-dropdwn-menu {{$path==$drop['path']?'active':''}}/ "
                     >
                     {{$drop['text']}}
                     </a>

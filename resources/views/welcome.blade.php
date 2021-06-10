@@ -28,7 +28,7 @@
     <div class="wrapper-for-other-fearture">
         <h4 class="text-center">Our Mission</h4>
         <p>
-            We have made a point of duty to make your business thrive. This is why we have to always put and your business first by putting your in front of the world. The world will always to get the notice whatsoever your have to sell or offer.
+            We have made a it point of duty to make your business thrive. This is why we have to always put and your business first by putting your in front of the world. The world will always to get the notice whatsoever your have to sell or offer.
         </p>
         <p>
             So if got a business, bring it here let's sell it and resell it and keep selling it.
@@ -36,10 +36,12 @@
     </div>
 </section>
 
+{{-- Featured shops --}}
+@include('pages.featured_products')
 <section class="business-model pt-4">
-    <h2>What Are You Selling?</h2> <hr>
+    <h2 class="pt-4">What Are You Selling?</h2> <hr>
     <div class="different-models ">
-    <p>
+    <p class="pb-5">
         Your business model  could be a barrier in the past, but now, anything you have for sales or any service you have to render has a shop for it.
         Quickly put that your shop or business online at a button click
         <a href="{{route('shops')}}" target="parent">Get Started</a>
@@ -62,8 +64,6 @@
         </div>
     </div>
 </section>
- {{-- Featured shops --}}
-@include('pages.featured_products')
 
 <hr>
 <section class="other_features bg-white">

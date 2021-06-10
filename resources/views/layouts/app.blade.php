@@ -14,6 +14,7 @@
                 </main>
             </div>
         </div>
+        @include('includes.footer')
         @else
         <div class="container-flui">
             <div>
