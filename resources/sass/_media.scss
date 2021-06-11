@@ -51,9 +51,9 @@
 #sidebar{
     opacity: 0;
     height: 0;
-    width: 0 !important;
     flex: 0;
 }
+
 
 .products-details{
     margin-left:10px;
@@ -63,7 +63,7 @@
 
 }
 
-@media(max-width:466px){
+@media(max-width:526px){
     h1,h2,h3,h4,h5,h6{
         font-size: 1rem !important;
     }

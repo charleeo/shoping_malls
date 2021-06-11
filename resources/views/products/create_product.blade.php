@@ -34,6 +34,13 @@ $deliveryStatus =["pay on delivery","payment before delivery","Either of the two
                     </div>
 
                     <div class="form-group">
+                        <label for="quantity">Previous Price (Optional, it is to show discount on your item) </label>
+                        <input type="number"  min="0" name="discount" class="form-control"
+                        value="{{ old('discount', (isset($product->discount))? $product->discount: '') }}">
+                    </div>
+
+
+                    <div class="form-group">
                         <label for="quantity">Quantities (Optional) </label>
                         <input type="number"  min="0" name="quantity" class="form-control"
                         value="{{ old('quantity', (isset($product->quantity))? $product->quantity: '') }}">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\Shop;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DisplayProductsController extends Controller
@@ -26,6 +28,8 @@ class DisplayProductsController extends Controller
         $product_categories = ProductCategory::all();
         $category = $request->category;
         $shopID= $request->shop;
+        $shop= Shop::find($shopID);
+        $user = User::find($shop->id);
         $createdBySameSeller= Product::where(['product_shop_id'=>$shopID])
         ->where('product_category','!=',$category)
         ->inRandomOrder()
@@ -37,10 +41,7 @@ class DisplayProductsController extends Controller
         ->paginate(6);
         // ->get(['id','product_name','price','quantity','product_description','delivery_status','location','product_images']);
 
-        return view('products.product_details',compact('product','product_categories','images','relatedItems','createdBySameSeller'));
+        return view('products.product_details',compact('product','product_categories','images','relatedItems','createdBySameSeller','user'));
     }
 
-    public function getRelatedItems($relationship){
-
-    }
 }

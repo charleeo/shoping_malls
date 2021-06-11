@@ -15,6 +15,7 @@
         <div class="product-prices-name">
             <div class="prices">
                 <span class="prices">&#8358;<b>{{number_format($product->price)}}</b></span>
+                 <strike>&#8358;{{$product->discount}}</strike>
             </div>
             <div>
                 <span class="name"><b>{{$product->product_name}}</b></span>

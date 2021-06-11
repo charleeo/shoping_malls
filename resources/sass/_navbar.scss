@@ -1,8 +1,8 @@
 .default-bg{
-     background: #08060433;
+     background: $dark-blue;
      ul>li{
          .nav-link{
-         color:#0a0a0a;
+         color:#b8b1b1;
          text-transform: uppercase;
          &:hover{
              color: #4d4d4b !important;

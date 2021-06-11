@@ -16,7 +16,7 @@ class Shops extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
             $table->string('business_domain')->unique();
-            $table->string('business_name')->unique();
+            $table->string('business_name');
             $table->string('description');
             $table->string('business_picture')->default('images/icon/no-image.jpg');
             $table->string('business_email')->nullable();
@@ -25,7 +25,7 @@ class Shops extends Migration
             $table->timestamps();
         });
     }
-
+    // ALTER TABLE `shops` DROP INDEX `shops_business_name_unique`;
     /**
      * Reverse the migrations.
      *

@@ -1,7 +1,8 @@
 .hero
 {
-    background: url("/assets/images/bg/image1.jpg"),rgba(80, 80, 79, 0.5);
+    // background: url("/assets/images/bg/image1.jpg"),rgba(80, 80, 79, 0.5);
     // linear-gradient(to left, #ffffff 10%,#0000);
+    background: $dark-blue;
     height: 95vh;
     background-size: cover;
     background-blend-mode: overlay;

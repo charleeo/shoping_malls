@@ -12,4 +12,8 @@ class Shop extends Model
     public function products(){
         return $this->hasMany([Product::class,'product_shop_id','id']);
     }
+
+    public function user(){
+        return $this->belongsTo([User::class,'business_owner_id','id']);
+    }
 }

@@ -14,7 +14,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-       $this->middleware(['auth']);
+       $this->middleware(['auth','shop']);
     }
 
     public function index(){
@@ -45,7 +45,8 @@ class ProductController extends Controller
             'delivery_status'=>['required'],
             'location'=>['required'],
             'product_name'=>['required','min:2','max:35'],
-            'quantity' =>['nullable','numeric']
+            'quantity' =>['nullable','numeric'],
+            'discount'=>['nullable','numeric']
             ]);
 
             $path = 'assets/images/product_images/';
