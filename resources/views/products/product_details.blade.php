@@ -50,14 +50,16 @@
                       </p>
                     </div>
                     <div class="cart pl-3">
-                        <form action="">
-                            <div class="row justify-content-cente">
-                                <div class="col-md-5 col-sm-5 p-3">
-                                    <input type="number" name="quantity" class="py-1" placeholder="quantities">
+                        <form action="" method="POST">
+                            @csrf
+                            <div class="row product_data">
+                                <div class="col-md-3 col-sm-5 p-3">
+                                    <input type="number" name="quantity" class="form-control qty" placeholder="quantities">
                                 </div>
                                 <div class="col-md-5 col-sm-5 p-3">
-                                    <button class="btn btn-sm btn-primary">Add to cart <i class="fas fa-shopping-cart"></i> </button>
+                                    <button class="btn add-to-cart btn-primary">Add to cart <i class="fas fa-shopping-cart"></i> </button>
                                 </div>
+                                <input type="hidden" value="{{$product->id}}" class="product_id" name="product_id">
                             </div>
                         </form>
                     </div>
@@ -83,37 +85,7 @@
             </div>
         </div>
     </div>
-    <div class="product-business px-4 ">
-        <div class="row justify-content-center">
-            <div class="col-md-5 col-sm-10 ">
-                <h3 class="text-center">Seller's Data</h3>
-                <ul class="list-group">
-                    <li class="list-group-item text-center">
-                        <img src="{{asset($product->shop->business_picture)}}" alt="{{$product->shop->business_name}}"
-                        class="rounded-circle business-image">
-                    </li>
-                    <li class="list-group-item">Name: {{$product->shop->business_name}}</li>
-                    <li class="list-group-item">
-                     <i class="fas fa-globe"></i>:  <a href="/{{$product->shop->business_domain}}">
-                          Visit page for more
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <i class="fas fa-envelope"></i>: 
-                        <a href="mailto:{{$product->shop->business_email}}">
-                       {{$product->shop->business_email}}
-                    </a>
-
-                    </li>
-                    <li class="list-group-item">
-                        <i class="fas fa-phone"></i>:  
-                        <a href="tel:{{$product->shop->business_phone_number}}">{{$product->shop->business_phone_number}}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+      @include('products.seller_data')
     </section>
     @include('products.related_products')
     @include('products.create_by_same_seller');

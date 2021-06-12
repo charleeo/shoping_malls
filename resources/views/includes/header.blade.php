@@ -26,4 +26,5 @@
  <script src="{{asset('js/main.js')}}" defer></script>
  <script src="{{asset('js/sidebar.js')}}" defer></script>
  <script src="{{asset('js/gallery.js')}}" defer></script>
+ <script src="{{asset('js/shopping_cart.js')}}" defer></script>
 </head>

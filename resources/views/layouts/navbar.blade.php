@@ -30,5 +30,14 @@
                     >{{ $menu['text']}}</a>
                 </li>
                 @endforeach
+                <li class='nav-item'>
+                    <a href="/cart" class="nav-link">
+                        <i class="fa fa-shopping-cart text-white"></i>
+                        <span class="basket-item-count">
+                            <span class="badge badge-pill red"> 0 </span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>

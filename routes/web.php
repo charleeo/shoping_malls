@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutusController;
+use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\BusinessDomainController;
 use App\Http\Controllers\DisplayProductsController;
 use App\Http\Controllers\HomepageController;
@@ -59,6 +60,13 @@ Route::post('/save-users',[RegisterController::class,'storeUsers']);
 // Business or shops details
 
 Route::get('/about',[AboutusController::class,'aboutUs'])->name('about');
+
+Route::prefix('cart')->group(function(){
+    Route::get('/',[AddToCartController::class,'index']);
+    Route::post('/add-to-cart', [AddToCartController::class,'addToCart']);
+    Route::get('/load-data',[AddToCartController::class,'loadCartData']);
+});
+
 Route::prefix('{details}')->group(function(){
     Route::get('/',[BusinessDomainController::class,'show'])->name('home-page');
     // Route::get('/',[BusinessDomainController::class,'index'])->name('products.index');

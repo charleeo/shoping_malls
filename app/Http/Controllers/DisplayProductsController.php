@@ -8,6 +8,8 @@ use App\Models\Shop;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isEmpty;
+
 class DisplayProductsController extends Controller
 {
     public function index(){
@@ -40,6 +42,7 @@ class DisplayProductsController extends Controller
         ->inRandomOrder()
         ->paginate(6);
         // ->get(['id','product_name','price','quantity','product_description','delivery_status','location','product_images']);
+    
 
         return view('products.product_details',compact('product','product_categories','images','relatedItems','createdBySameSeller','user'));
     }

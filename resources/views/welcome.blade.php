@@ -38,7 +38,7 @@
 
 {{-- Featured shops --}}
 @include('pages.featured_products')
-<section class="business-model pt-4">
+{{-- <section class="business-model pt-4">
     <h2 class="pt-4">What Are You Selling?</h2> <hr>
     <div class="different-models ">
     <p class="pb-5">
@@ -65,7 +65,7 @@
     </div>
 </section>
 
-<hr>
+<hr> --}}
 <section class="other_features bg-white">
     <div class="wrapper-for-other-fearture">
         <h4 class="text-center">Our Short Story</h4>
