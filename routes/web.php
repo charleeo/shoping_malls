@@ -3,11 +3,13 @@
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\BusinessDomainController;
+use App\Http\Controllers\DeleteItemFromCartController;
 use App\Http\Controllers\DisplayProductsController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\UpdateCartController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -65,6 +67,9 @@ Route::prefix('cart')->group(function(){
     Route::get('/',[AddToCartController::class,'index']);//to display cart data
     Route::post('/add-to-cart', [AddToCartController::class,'addToCart']);
     Route::get('/load-data',[AddToCartController::class,'loadCartData']);
+    Route::post('/update-cart',[UpdateCartController::class,'updateCart']);
+    Route::delete('/delete',[DeleteItemFromCartController::class,'deletefromcart']);
+    Route::get('/clear',[DeleteItemFromCartController::class,'clearCart']);
 });
 
 Route::prefix('{details}')->group(function(){

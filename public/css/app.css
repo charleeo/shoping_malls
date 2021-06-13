@@ -216,14 +216,22 @@
 
 .cart-grand-total {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding-right: 40px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
 .grand small, .sub small {
   font-size: 1rem;
+}
+
+.clear-cart {
+  flex: 6;
+}
+
+.grand-sub {
+  flex: 6;
 }
 
 a {

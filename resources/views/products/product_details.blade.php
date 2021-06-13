@@ -60,10 +60,10 @@
                                     <input type="number" name="quantity" class="form-control qty" placeholder="qty">
                                 </div>
                                 <div class="col-md-5 col-sm-5 p-3">
-                                    <button class="btn add-to-cart btn-primary">Add to cart <i class="fas fa-shopping-cart"></i> </button>
+                                    <button class="btn add-to-cart btn-primary">Add to cart <i class="fas fa-shopping-cart"></i> </button> <br> <br>
+                                    <small class="response   "></small>
                                 </div>
                                
-                                <p class="response text-success pl-4  "></p>
                                 {{-- Response willbe here --}}
                                 <input type="hidden" value="{{$product->id}}" class="product_id" name="product_id">
                             </div>

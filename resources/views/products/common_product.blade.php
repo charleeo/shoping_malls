@@ -34,7 +34,7 @@
                         <button class="add-to-cart ">{{_('Add  Cart')}} <i class="fa fa-shopping-cart"></i>
                         </button>
                     </div>
-                    <small class="response text-success pl-4  "></small>
+                    <small class="response pl-4  "></small>
                     <input  type="hidden" value="{{$product->id}}" name="product_id" class=" product_id">
                 </div>
             </form>

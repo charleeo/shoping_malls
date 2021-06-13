@@ -33,9 +33,7 @@
                 <li class='nav-item'>
                     <a href="/cart" class="nav-link">
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="basket-item-count">
-                            <span class="badge badge-pill red"> 0 </span>
-                        </span>
+                        <span class="basket-item-count">{{-- Cart count willbe here on page load--}} </span>
                     </a>
                 </li>
             </ul>

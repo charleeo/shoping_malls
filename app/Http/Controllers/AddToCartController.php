@@ -12,7 +12,7 @@ class AddToCartController extends Controller
         $cookie_data = stripslashes(Cookie::get('shopping_cart'));
         $cart_data = json_decode($cookie_data, true);
         // return $cart_data;
-        return view('cart.index')
+        return view('cart.cart_details')
             ->with('cart_data',$cart_data)
         ;
     }
