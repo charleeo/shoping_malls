@@ -11,7 +11,7 @@ $(document).ready(function () {
         let quantity = $(this).closest('.product_data').find('.qty').val()
         let responseSpan = $(this).closest('.product_data').find('.response');
         
-        if(quantity ==''){//ensure that quantity is specify
+        if(quantity =='' || quantity >1){//ensure that quantity is specify
            responseSpan.text('Please specify quantity')
            setTimeout(function(){responseSpan.text('')},2000)
            return;
