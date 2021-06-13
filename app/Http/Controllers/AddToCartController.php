@@ -83,13 +83,13 @@ class AddToCartController extends Controller
             $cart_data = json_decode($cookie_data, true);
             $totalcart = count($cart_data);
 
-            echo json_encode(array('totalcart' => $totalcart)); 
+            echo json_encode(['totalcart' => $totalcart]); 
             return;
         }
         else
         {
             $totalcart = "0";
-            echo json_encode(array('totalcart' => $totalcart)); 
+            echo json_encode(['totalcart' => $totalcart]); 
             return;
         }
     }

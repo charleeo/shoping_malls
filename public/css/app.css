@@ -209,6 +209,23 @@
   justify-content: flex-start;
 }
 
+.item-name-action {
+  display: flex;
+  justify-content: center;
+}
+
+.cart-grand-total {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 40px;
+}
+
+.grand small, .sub small {
+  font-size: 1rem;
+}
+
 a {
   text-decoration: none;
 }

@@ -27,9 +27,9 @@
             @endforeach
         </div>
         </div>
-        </div>
+    </div>
         {{-- Details Section or second column--}}
-        <div class="col-md-5 col-sm-10 p-4">
+    <div class="col-md-5 col-sm-10 p-4">
             <div class="card border-0">
                 <div class="card-body">
                     <small class="st-group-item">
@@ -46,7 +46,10 @@
                         </b>  
                       </h2> 
                       <p>
-                         <strike>&#8358;: {{number_format($product->discount)}}</strike>
+                        <strike> @if($product->discount)
+                            &#8358;: {{$product->discount}}
+                            @endif
+                        </strike>
                       </p>
                     </div>
                     <div class="cart pl-3">
@@ -54,11 +57,14 @@
                             @csrf
                             <div class="row product_data">
                                 <div class="col-md-3 col-sm-5 p-3">
-                                    <input type="number" name="quantity" class="form-control qty" placeholder="quantities">
+                                    <input type="number" name="quantity" class="form-control qty" placeholder="qty">
                                 </div>
                                 <div class="col-md-5 col-sm-5 p-3">
                                     <button class="btn add-to-cart btn-primary">Add to cart <i class="fas fa-shopping-cart"></i> </button>
                                 </div>
+                               
+                                <p class="response text-success pl-4  "></p>
+                                {{-- Response willbe here --}}
                                 <input type="hidden" value="{{$product->id}}" class="product_id" name="product_id">
                             </div>
                         </form>

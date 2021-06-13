@@ -7,8 +7,15 @@ $(document).ready(function () {
             }
         });
 
-        var product_id = $(this).closest('.product_data').find('.product_id').val();
-        var quantity = $(this).closest('.product_data').find('.qty').val();
+        let product_id = $(this).closest('.product_data').find('.product_id').val();
+        let quantity = $(this).closest('.product_data').find('.qty').val()
+        let responseSpan = $(this).closest('.product_data').find('.response');
+        
+        if(quantity ==''){//ensure that quantity is specify
+           responseSpan.text('Please specify quantity')
+           setTimeout(function(){responseSpan.text('')},2000)
+           return;
+        }
 
         $.ajax({
             url: "/cart/add-to-cart",
@@ -18,9 +25,11 @@ $(document).ready(function () {
                 'product_id': product_id,
             },
             success: function (response) {
-                // alert(response.status)
-                alertify.set('notifier','position','top-right');
-                alertify.success(response.status);
+                cartload();//provide a realtime update of the cart items
+                responseSpan.text(response.status)
+                setTimeout(function(){
+                    responseSpan.text('')
+                },2000)
             },
         });
     });
@@ -29,7 +38,7 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-    cartload();
+    cartload(); //also update the cart on page load
 });
 
 function cartload()
@@ -46,8 +55,8 @@ function cartload()
         success: function (response) {
             $('.basket-item-count').html('');
             var parsed = jQuery.parseJSON(response)
-            var value = parsed; //Single Data Viewing
-            $('.basket-item-count').append($('<span class="badge badge-pill red">'+ value['totalcart'] +'</span>'));
+            var value = parsed; 
+            $('.basket-item-count').append($('<span class="badge badge-pill text-success">'+ value['totalcart'] +'</span>'));
         }
     });
 }

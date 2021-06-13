@@ -62,7 +62,7 @@ Route::post('/save-users',[RegisterController::class,'storeUsers']);
 Route::get('/about',[AboutusController::class,'aboutUs'])->name('about');
 
 Route::prefix('cart')->group(function(){
-    Route::get('/',[AddToCartController::class,'index']);
+    Route::get('/',[AddToCartController::class,'index']);//to display cart data
     Route::post('/add-to-cart', [AddToCartController::class,'addToCart']);
     Route::get('/load-data',[AddToCartController::class,'loadCartData']);
 });

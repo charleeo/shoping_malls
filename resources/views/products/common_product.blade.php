@@ -30,12 +30,12 @@
                         class=" qty border-0  rounded text-center" placeholder="qty:0" style="width: 100%" required
                         >
                     </div>
-
                     <div class="col-md-6 col-sm-6">
                         <button class="add-to-cart ">{{_('Add  Cart')}} <i class="fa fa-shopping-cart"></i>
                         </button>
                     </div>
-                    <input  type="hidden" value="{{$product->id}}" name="product_id" class="data product_id">
+                    <small class="response text-success pl-4  "></small>
+                    <input  type="hidden" value="{{$product->id}}" name="product_id" class=" product_id">
                 </div>
             </form>
         </div>
