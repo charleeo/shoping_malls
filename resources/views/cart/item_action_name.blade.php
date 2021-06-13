@@ -1,5 +1,5 @@
 <div class="{{$data['item_id']}}">
-    <div class="item-name-action  ">
+    <div class="item-name-action pt-3 ">
         <div class="col-md-4 col-sm-5">
             <small>Name: <b>{{$data['item_name']}}</b> </small>
         </div>

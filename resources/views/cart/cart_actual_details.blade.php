@@ -20,7 +20,7 @@
                 <div class="col-md-3 col-sm-3">
     
                   <input type="text" value="{{number_format($data['item_quantity'] * $data['item_price'],2)}}" 
-                  readonly class="item_sub_price pr-3"
+                  readonly class="item_sub_price pr-3 border-0"
                   />
                 </div>
             @php

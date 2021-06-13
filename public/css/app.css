@@ -219,7 +219,6 @@
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
 }
 
 .grand small, .sub small {

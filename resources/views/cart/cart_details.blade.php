@@ -12,6 +12,7 @@
             </div>
         </div>
     </div>
+    <hr>
     
     @if (isset($cart_data) && Cookie::get('shopping_cart') && count($cart_data)>0)
         @php  $grandTotal =0;@endphp

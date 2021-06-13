@@ -70,6 +70,7 @@ Route::prefix('cart')->group(function(){
     Route::post('/update-cart',[UpdateCartController::class,'updateCart']);
     Route::delete('/delete',[DeleteItemFromCartController::class,'deletefromcart']);
     Route::get('/clear',[DeleteItemFromCartController::class,'clearCart']);
+    Route::post('/check-quantities',[UpdateCartController::class,'checkQuantities']);
 });
 
 Route::prefix('{details}')->group(function(){

@@ -45,7 +45,7 @@ class ProductController extends Controller
             'delivery_status'=>['required'],
             'location'=>['required'],
             'product_name'=>['required','min:2','max:35'],
-            'quantity' =>['nullable','numeric'],
+            'quantity' =>['required','numeric'],
             'discount'=>['nullable','numeric']
             ]);
 

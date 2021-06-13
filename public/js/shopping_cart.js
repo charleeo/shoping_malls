@@ -171,8 +171,11 @@ $(document).ready(function () {
             }
         });
     });
-   $('.empty-cart').click(function(){
-       if(!confirm('You are about to empty your shopping cart. Click "Ok" to proceed '))return;
+   $('.empty-cart').click(function(e){
+       if(!confirm('You are about to empty your shopping cart. Click "Ok" to proceed ')){
+        e.preventDefault()
+           return;
+       }
    })
 });
 

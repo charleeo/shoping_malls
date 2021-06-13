@@ -2,13 +2,13 @@
     <div class="grand-sub">
         <div class="sub">
          <small>Sub Total: &#8358; 
-            <input type="text" value="{{number_format($grandTotal,2)}}" class="sub-total" readonly/>
+            <input type="text" value="{{number_format($grandTotal,2)}}" class="sub-total border-0" readonly/>
         </small>
          <hr>
          </div>
          <div class="grand">
              <small>Grand Total: &#8358; 
-                 <input type="text" value="{{number_format($grandTotal,2)}}" class="grand-total" readonly/> 
+                 <input type="text" value="{{number_format($grandTotal,2)}}" class="grand-total border-0" readonly/> 
              </small>
              <hr>
          </div>

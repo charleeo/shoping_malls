@@ -19,8 +19,15 @@ class AddToCartController extends Controller
     public function addtocart(Request $request)
     {
 
-       $prod_id = $request->input('product_id');
+        $prod_id = $request->input('product_id');
         $quantity = $request->quantity;
+        
+        /*Check to make sure people don't order for more than what is in stock*/
+        $availableQuantities = Product::find($prod_id);
+        $availableQuantities= $availableQuantities->quantity;
+        if($quantity > $availableQuantities){
+            return response()->json(['status'=>"Available QTY is '$availableQuantities'"]);
+        }
 
         if(Cookie::get('shopping_cart'))
         {
@@ -70,7 +77,7 @@ class AddToCartController extends Controller
                 $item_data = json_encode($cart_data);
                 $minutes = 60;
                 Cookie::queue(Cookie::make('shopping_cart', $item_data, $minutes));
-                return response()->json(['status'=>'"'.$prod_name.'" Added to Cart']);
+                return response()->json(['status'=>'"'.$prod_name.'" Added to Cart',]);
             }
         }
     }

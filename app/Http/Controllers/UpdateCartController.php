@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 
@@ -12,6 +13,13 @@ class UpdateCartController extends Controller
         $prod_id = $request->product_id;
         $quantity = $request->quantity;
         $grandTotal =0;
+        /*Check to make sure people don't order for more than what is in stock*/
+        $availableQuantities = Product::find($prod_id);
+        $availableQuantities= $availableQuantities->quantity;
+    
+        if($quantity > $availableQuantities){
+            return response()->json(['status'=>"Total QTY is '$availableQuantities'. Reduce by 1"]);
+        }
          
         if(Cookie::get('shopping_cart'))
         {
@@ -58,5 +66,18 @@ class UpdateCartController extends Controller
         },$quantities,$price);
         $grandTotal += array_sum($arrayMap);
         return $grandTotal;
+    }
+
+    /*Check to make sure people don't order for more than what is in stock*/
+    public static function checkQuantities(Request $request){
+        $prod_id= $request->product_id;
+        $quantity = $request->quantity;
+        $availableQuantities = Product::find($prod_id);
+        $availableQuantities= $availableQuantities->quantity;
+        if($quantity > $availableQuantities){
+            return response()->json(['status'=>"Available QTY is '$availableQuantities'"]);
+        }else{
+            return response()->json(['status'=>"OK"]);
+        }
     }
 }
