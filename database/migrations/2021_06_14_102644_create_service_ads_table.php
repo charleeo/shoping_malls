@@ -18,7 +18,7 @@ class CreateServiceAdsTable extends Migration
             $table->string('service_name');
             $table->string('price');
             $table->text('service_description');
-            $table->mediumText('service_images')->nullable()->default('no-image.png');
+            $table->mediumText('service_images')->nullable();
             $table->integer('service_shop_id');
             $table->integer('service_category')->nullable();
             $table->timestamps();
