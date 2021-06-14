@@ -15,7 +15,7 @@
         </div>
     </div>
     <hr>
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed table-bordered table-responsive">
         <thead>
             <tr>
                 <th>Name</th>
