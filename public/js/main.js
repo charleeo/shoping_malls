@@ -18,7 +18,6 @@ function changeNvabarColor(){
 window.addEventListener('scroll', changeNvabarColor);
 
 $(document).ready(function() {
-    var isValid = false;
     $("#submit-btn").click(function(e){
         e.preventDefault();
         var _token = $("input[name='_token']").val();

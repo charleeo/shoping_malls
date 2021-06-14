@@ -36,18 +36,21 @@ class AppServiceProvider extends ServiceProvider
         ];
 
         $dropdown2 = [
-            ['path'=>'/products/create','text'=>'Create'],
+            ['path'=>'/ads','text'=>'Create'],
             ['path'=>'/products/manage','text'=>'view/Edit'],
-            ['path'=>'/products/all-created','text'=>'view all'],
+            ['path'=>'/ads/manage','text'=>'view all'],
         ];
 
         $menus = [
             ['path'=>'/shops/create','text'=>'get started'],
             ['path'=>'/products/create','text'=>'post an ad'],
             ['path'=>'/businesses','text'=>'shops'],
-            ['path'=>'/products','text'=>'Markets'],
             ['path'=>'/about','text'=>'about-us'],
+            ['path'=>'/products','text'=>'Products'],
+            ['path'=>'/services','text'=>'services'],
         ];
+
+        $deliveryStatus =["pay on delivery","payment before delivery","Either of the two" ];
 
         if (Auth::check()) {
             $menus[]=['path'=>'/home','text'=>Auth::user()->name];
@@ -61,6 +64,7 @@ class AppServiceProvider extends ServiceProvider
              'path'=>$path,
              'menus'=>$menus,
              'dropdown2'=>$dropdown2,
+             'deliveryStatus'=>$deliveryStatus
              ] );
     });
         //  view()->share(['dropdown1'=>$dropdown1,'path'=>$path,'menus'=>$menus] );

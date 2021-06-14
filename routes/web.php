@@ -4,10 +4,14 @@ use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\BusinessDomainController;
 use App\Http\Controllers\DeleteItemFromCartController;
+use App\Http\Controllers\DeleteProductController;
 use App\Http\Controllers\DisplayProductsController;
+use App\Http\Controllers\DisplayServicesController;
+use App\Http\Controllers\GeneralPurposeController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ServiceAdsController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UpdateCartController;
 use Illuminate\Support\Facades\Auth;
@@ -43,14 +47,26 @@ Route::prefix('shops')->group(function () {
 Route::prefix('products')->group(function(){
     Route::get('/create',[ProductController::class,'create'])->name('products.create');
     Route::get('/all-created',[ProductController::class,'index'])->name('products.all-created');
+
+    Route::get('/{product}/delete',[DeleteProductController::class,'deleteProduct'])->name('destroy');
+
     Route::get('/{id}/edit',[ProductController::class,'edit'])->name('products.edit');
+
     Route::post('/store',[ProductController::class,'store'])->name('products.store');
 
     Route::get('/',[DisplayProductsController::class,'index'])->name('products.index');
 
-    Route::get('/{name}/{product}',[DisplayProductsController::class,'show'])->name('products.show');//for all users
+    Route::get('/{product}/{name}',[DisplayProductsController::class,'show'])->name('products.show');//for all users
+});
 
-    Route::delete('/delete/{product}',[ProductController::class,'destroy'])->name('products.destroy');
+
+Route::prefix('services')->group(function(){
+    Route::post('/store',[ServiceAdsController::class,'store'])->name('services.store');
+    Route::get('/create',[ServiceAdsController::class,'create'])->name('services.create');
+    Route::get('/all-created',[ServiceAdsController::class,'index'])->name('services.all-created');
+    Route::get('/{id}/edit', [ServiceAdsController::class,'edit'])->name('services.edit');
+    Route::get('/{service}/{name}/',[DisplayServicesController::class,'show'])->name('services.show');//for all users
+    Route::get('/',[DisplayServicesController::class,'index'])->name('services.index');
 });
 
 Route::get('/create-account',[RegisterController::class,'showRegisterForm']);
@@ -71,6 +87,11 @@ Route::prefix('cart')->group(function(){
     Route::delete('/delete',[DeleteItemFromCartController::class,'deletefromcart']);
     Route::get('/clear',[DeleteItemFromCartController::class,'clearCart']);
     Route::post('/check-quantities',[UpdateCartController::class,'checkQuantities']);
+});
+
+Route::prefix('ads')->group(function () {
+    Route::get('/',[GeneralPurposeController::class,'createAds'] );
+    Route::get('manage',[GeneralPurposeController::class,'showServicesAndProducts']);
 });
 
 Route::prefix('{details}')->group(function(){

@@ -98,7 +98,7 @@ class ShopController extends Controller
             $fileName = time().'.'.$profilePhoto->getClientOriginalExtension();
             
             if(!is_dir($fullPath) AND !file_exists($fullPath)){ //make a dir for 
-                mkdir($fullPath,0777,true);
+                mkdir($fullPath,0775,true);
             }
             Image::make($profilePhoto)->resize(200,200)->save(public_path($fullPath.$fileName));
             // ($profilePhoto->move(public_path($fullPath), $fileName));

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Models\ServiceAd;
 use App\Models\Shop;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class DisplayProductsController extends Controller
         return view('products.all_products',compact('products','productImages'));
     }
 
-    public function show($name, $id, Request $request){
+    public function show($id,$name, Request $request){
         $product = Product::where(['id'=>$id])->first();
         $images = $product->product_images;
         $images = explode('|',$images);

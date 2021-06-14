@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\Shop;
-use App\Models\User;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,7 +61,7 @@ class ProductController extends Controller
                 $imagesFromDB = $productDetails->product_images;
                 $imagesFromDB = explode('|',$imagesFromDB);
                 $images = $request->file('image');
-               $imagesToDB= $this->uploadFiles($images,$extensions,$size,$path);
+               $imagesToDB= self::uploadFiles($images,$extensions,$size,$path);
                $error = $imagesToDB['error'];
                if($error){
                    return back()->with('error',"$error");
@@ -110,7 +109,7 @@ class ProductController extends Controller
      * **
      * @return #you should just get the file you want to upload get specify the extension you want and size. You can upload unlimited number of files
       */
-    public function uploadFiles($images,$extensions,$size,$path){
+    public static function uploadFiles($images,$extensions,$size,$path){
         $filesArray=[];
         $filesToDB =[];
         $error='';

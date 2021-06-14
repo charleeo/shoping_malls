@@ -200,6 +200,11 @@
   align-items: center;
 }
 
+.position-center {
+  display: flex;
+  justify-content: center;
+}
+
 .item-image {
   width: 60px;
 }
