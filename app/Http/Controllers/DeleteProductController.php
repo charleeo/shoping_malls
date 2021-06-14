@@ -20,7 +20,9 @@ class DeleteProductController extends Controller
     /**Delete a Product or an ad from the system */
     public function deleteProduct($id){
         $product = Product::find($id);
-        self::deleteFunction($product,'product_shop_id','product_images');
+        if(self::deleteFunction($product,'product_shop_id','product_images')){
+            return back()->with('success',"Item deleted Successfuly");
+        }
     }
     
     public static function deleteFunction($product,$product_shop_id,$product_images){
@@ -39,7 +41,7 @@ class DeleteProductController extends Controller
                         }
                 }
                 if( $product->delete()){
-                    return back()->with('success',"Item deleted Successfuly");
+                    return true;
                 }else{
                     throw new Exception('Error');
                 }
@@ -49,7 +51,9 @@ class DeleteProductController extends Controller
 
     public function deleteService($id)
     {
-        $service = ServiceAd::find($id);
-        self::deleteFunction($service,'service_shop_id','service_images');
+       $service = ServiceAd::find($id);
+       if(self::deleteFunction($service,'service_shop_id','service_images')){
+        return back()->with('success',"Item deleted Successfuly");
+       }
     }
 }
