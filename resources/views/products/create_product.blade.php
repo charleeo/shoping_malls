@@ -9,6 +9,19 @@ $deliveryStatus =["pay on delivery","payment before delivery","Either of the two
 
 @section('content')
  <section class="create-product">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-2 py-3">
+                <h5>
+                    <a href="/" class="text-dark">Home</a> 
+                    › <a href='/shops/create' class="text-dark">Business Details</a>
+                    › <a href='/products/all-created' class="text-dark">Posted Ads</a>
+                    › Creating Ads
+                </h5>
+            </div>
+        </div>
+    </div>
+    <hr>
      <div class="row justify-content-center">
          <div class="col-md-7 col-sm-9">
              <div class="card shadow-lg border-0">
@@ -41,7 +54,7 @@ $deliveryStatus =["pay on delivery","payment before delivery","Either of the two
 
 
                     <div class="form-group">
-                        <label for="quantity">Quantities (Optional) </label>
+                        <label for="quantity">Quantities  </label>
                         <input type="number"  min="0" name="quantity" class="form-control"
                         value="{{ old('quantity', (isset($product->quantity))? $product->quantity: '') }}">
                     </div>

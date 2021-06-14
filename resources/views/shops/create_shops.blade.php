@@ -2,6 +2,19 @@
 @section('title','create your online shop fast and easy')
 @section('content')
 <section class="create-business pt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-2 py-3">
+                <h5>
+                    <a href="/" class="text-dark">Home</a> 
+                    › <a href='/products/create' class="text-dark">Post Ads</a>
+                    ›Business 
+                </h5>
+            </div>
+        </div>
+    </div>
+    <hr>
+ 
     <div class="row justify-content-center">
         <div class="col-md-6 col-sm-10">
             <div class="card shadow-sm">

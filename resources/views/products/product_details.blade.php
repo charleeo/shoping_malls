@@ -3,9 +3,18 @@
 @section('content')
 
 <section class="product-details-section py-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-2">
+                <h5><a href="/" class="text-dark">Home</a> 
+                    › <a href='/products'>Markets</a> › Details</h5>
+            </div>
+        </div>
+    </div>
+    <hr>
     <div class="row justify-content-center mb-5">
         {{-- First Column or gallery section --}}
-        <div class="col-md-7 col-sm-10  p-5">
+        <div class="col-md-7 col-sm-10  px-5">
             <div class="gallery-slide row justify-content-center">
             {{-- Carousel Section --}}
             <div class="col-md-7 col-sm-12 mb-4">
