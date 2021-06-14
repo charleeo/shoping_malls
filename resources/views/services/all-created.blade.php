@@ -32,7 +32,7 @@
                         <a href='{{route('services.show',["service"=>$service->id,"name"=>$service->service_name])}}?shop={{$service->shop->id}}'class="btn btn-sm btn-default">view <i class="fas fa-eye"></i> </a>
                     </td>
                     <td>
-                        <a href="{{route('destroy',['product'=>$service->id])}}" class="btn btn-default btn-sm"> <i class="fas fa-trash text-danger"></i> Del </a>
+                        <a href="{{route('services.delete',['service'=>$service->id])}}" class="btn btn-default btn-sm"> <i class="fas fa-trash text-danger"></i> Del </a>
                     </td>
                </tr>              
               @endforeach

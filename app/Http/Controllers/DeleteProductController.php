@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ServiceAd;
 use App\Models\Shop;
 use Exception;
 use Illuminate\Support\Facades\File;
@@ -19,14 +20,17 @@ class DeleteProductController extends Controller
     /**Delete a Product or an ad from the system */
     public function deleteProduct($id){
         $product = Product::find($id);
+        self::deleteFunction($product,'product_shop_id','product_images');
+    }
+    
+    public static function deleteFunction($product,$product_shop_id,$product_images){
         $user = Auth::user()->id;
-
         $shop = Shop::where('business_owner_id','=',$user)->firstOrFail();
-        if($product AND $product->product_shop_id !==$shop->id){
+        if($product AND $product->$product_shop_id !==$shop->id){
             return back()->with('error',"You are trying to delete a resources you didn't create");
         }else{
             if($product){
-                $productImages = $product->product_images;
+                $productImages = $product->$product_images;
                 $productImages = explode('|',$productImages);
                 foreach($productImages as $image){
                     $imageToRemove= \public_path($image);
@@ -41,6 +45,11 @@ class DeleteProductController extends Controller
                 }
             }
         }
-        
+    }
+
+    public function deleteService($id)
+    {
+        $service = ServiceAd::find($id);
+        self::deleteFunction($service,'service_shop_id','service_images');
     }
 }

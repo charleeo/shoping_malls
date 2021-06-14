@@ -61,6 +61,9 @@ Route::prefix('products')->group(function(){
 
 
 Route::prefix('services')->group(function(){
+   
+    Route::get('/{service}/delete',[DeleteProductController::class,'deleteService'])->name('services.delete');
+
     Route::post('/store',[ServiceAdsController::class,'store'])->name('services.store');
     Route::get('/create',[ServiceAdsController::class,'create'])->name('services.create');
     Route::get('/all-created',[ServiceAdsController::class,'index'])->name('services.all-created');
