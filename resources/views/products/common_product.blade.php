@@ -1,7 +1,7 @@
 <div class="products-details">
     <div class="product-images">
         @php ($images = explode('|',$product->product_images))
-        <img class="images-class" src="{{asset($images[1])}}" alt="">
+        <img class="images-class" src="{{asset($images[0])}}" alt="">
     </div>
     <div class="product-footer">
         <div class="product-prices-name">

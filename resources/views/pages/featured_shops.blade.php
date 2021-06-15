@@ -1,4 +1,4 @@
-@if ($products)
+@if(count($shops)>0)
 
 <section class="featured-shops pt-4">
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "Your number online malls and stores |")
+@section('title', "Your number 1 online shopping malls and stores |")
 
 @section('content')
 
