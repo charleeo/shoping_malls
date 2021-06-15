@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ProductCategory;
 use App\Models\ServiceAd;
 use App\Models\Shop;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,17 +47,17 @@ class ServiceAdsController extends Controller
         $path = 'assets/images/service_images/';
         $extensions = ['jpg','png','jpeg','gif'];
         $size = 2084000;
-        $productID = $request->product_id;
-        $message= $productID?
+        $serviceID = $request->service_id;
+        $message= $serviceID?
        'Your store records has been updated':
        'New store records created successfully';
         //old resource update with file upload
-        if($productID && $request->hasFile('image')){
-            $productDetails = ServiceAd::where(['id'=>$productID])->first();
-            $imagesFromDB = $productDetails->product_images;
+        if($serviceID && $request->hasFile('image')){
+            $serviceDetails = ServiceAd::where(['id'=>$serviceID])->first();
+            $imagesFromDB = $serviceDetails->service_images;
             $imagesFromDB = explode('|',$imagesFromDB);
             $images = $request->file('image');
-           $imagesToDB= $this->uploadFiles($images,$extensions,$size,$path);
+           $imagesToDB= ProductController::uploadFiles($images,$extensions,$size,$path);
            $error = $imagesToDB['error'];
            if($error){
                return back()->with('error',"$error");
@@ -66,18 +67,18 @@ class ServiceAdsController extends Controller
         if(count($imagesFromDB)>0){
                 foreach($imagesFromDB as $im){
                 $imageToRemove = \public_path($im);
-                if(file_exists($imageToRemove)){
-                unlink($imageToRemove);
+                if(File::exists($imageToRemove)){
+                    unlink($imageToRemove);
                 }
             }
         }
     }//old resource update without file upload
-    elseif($productID && !$request->hasFile('image')){
-        $productDetails = ServiceAd::where(['id'=>$productID])->first();
-        $imagesFromDB = $productDetails->product_images;
+    elseif($serviceID && !$request->hasFile('image')){
+        $serviceDetails = ServiceAd::where(['id'=>$serviceID])->first();
+        $imagesFromDB = $serviceDetails->service_images;
         $imagesToDB = $imagesFromDB;//return old images path back to DB
     }//for new resource creation
-    else if(!$productID){
+    else if(!$serviceID){
         $request->validate(['image'=>['required']]);
         $images = $request->file('image');
         $imagesToDB= ProductController::uploadFiles($images,$extensions,$size,$path);
@@ -89,12 +90,12 @@ class ServiceAdsController extends Controller
         $imagesToDB=(implode('|',$imagesToDB));
     }
 
-     $data = $request->except(['image','_token','service_id']);
+     $data = $request->except(['image','_token','service_id','input_image_path','product_id','ads_type']);
 
      $data['service_images'] =$imagesToDB;
      $data['service_shop_id'] = $shopID->id;
      $result=ServiceAd::updateOrCreate(
-        ['id'=>$productID],
+        ['id'=>$serviceID],
         $data
     );
 

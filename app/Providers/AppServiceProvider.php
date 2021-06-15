@@ -53,7 +53,7 @@ class AppServiceProvider extends ServiceProvider
         $deliveryStatus =["pay on delivery","payment before delivery","Either of the two" ];
 
         if (Auth::check()) {
-            $menus[]=['path'=>'/home','text'=>Auth::user()->name];
+            $menus[]=['path'=>'/home','text'=>'dashboard'];
         }else {
             $menus[]=['path'=>'/register','text'=>'register'];
             $menus[]= ['path'=>'/login','text'=>'login'];

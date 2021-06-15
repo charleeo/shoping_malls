@@ -2,19 +2,9 @@
 @section('title','smart and sharp product|')
 @section('content')
 <section class="products-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 mt-2 py-3">
-                <h5>
-                    <a href="/" class="text-dark">Home</a> 
-                    › <a href='/shops/create' class="text-dark">Business Details</a>
-                    › <a href='/products/create' class="text-dark">Post Ads</a>
-                    › Posted Ads
-                </h5>
-            </div>
-        </div>
-    </div>
-    <hr>
+
+    @include('ads_type.ads_heading2')
+
     <div class="position-center">
         <table class="table table-striped table-condensed table-bordered table-responsive">
             <thead>
@@ -26,6 +16,7 @@
                 </tr>
             </thead>
             <tbody>
+            @if(count($products) >0)
               @foreach ($products as $product )
                <tr>
                    <td>{{$product->product_name}}</td>
@@ -48,9 +39,15 @@
                     </td>
                </tr>              
               @endforeach
+              @else
+              <tr>
+                  <td colspan="4">No Data Found</td>
+              </tr>
+              @endif
             </tbody>
         </table>
     </div>
 </section>
+
 @endsection
 

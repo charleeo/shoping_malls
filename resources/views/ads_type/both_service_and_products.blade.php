@@ -3,7 +3,7 @@
 @section('title','Manage Advert records |')
 
 @section('content')
-@include('ads_type.ads_heading')
+@include('ads_type.ads_heading2')
 <section class="ads-type-page py-5">
     <p class="text-center mb-3">
         Note: Use any of the cards to access your records

@@ -95,7 +95,10 @@ Route::prefix('cart')->group(function(){
 Route::prefix('ads')->group(function () {
     Route::get('/',[GeneralPurposeController::class,'createAds'] );
     Route::get('manage',[GeneralPurposeController::class,'showServicesAndProducts']);
+    Route::post('/delete_form_image',[GeneralPurposeController::class,'delete_form_image']);
 });
+
+
 
 Route::prefix('{details}')->group(function(){
     Route::get('/',[BusinessDomainController::class,'show'])->name('home-page');

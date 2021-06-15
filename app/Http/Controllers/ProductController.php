@@ -93,7 +93,8 @@ class ProductController extends Controller
             $imagesToDB = $imagesToDB['files_to_db'];
             $imagesToDB=(implode('|',$imagesToDB));
         }
-         $data = $request->except(['image','_token','product_id']);
+         $data = $request->except(['image','_token','service_id','input_image_path','product_id','ads_type']);
+         
          $data['product_images'] =$imagesToDB;
          $data['product_shop_id'] = $shopID->id;
          $result=Product::updateOrCreate(

@@ -14,6 +14,7 @@
                 </tr>
             </thead>
             <tbody>
+            @if(count($services) >0)
               @foreach ($services as $service )
                <tr>
                    <td>{{$service->service_name}}</td>
@@ -36,6 +37,11 @@
                     </td>
                </tr>              
               @endforeach
+              @else
+              <tr>
+                  <td colspan="4">No data found</td>
+              </tr>
+              @endif
             </tbody>
         </table>
     </div>

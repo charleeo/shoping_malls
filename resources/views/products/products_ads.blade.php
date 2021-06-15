@@ -73,23 +73,7 @@
            <input type="text" name="location" placeholder="enter where and where your product can be accessed" class="form-control"
            value="{{ old('location', (isset($product->location))? $product->location: '') }}">
        </div>
-       <div class="form-group">
-           <div class="file-input">
-               <input type="file" id="file" name="image[]" multiple class="file">
-               <label for="file">
-                   <i class="fa fa-upload fa-2x " id="my-file"></i>
-                 <p class="file-name"></p>
-               </label>
-             </div>
-             @if(isset($product))
-             {{-- <form action="{{route('products.destroy',['product'=>$product->id])}}"> --}}
-               @foreach ($images as $image )
-                   <img src="{{asset("$image")}}" alt="{{$product->product_name}}" style="height:90px; width:90px; margin:20px">
-               @endforeach
-               {{-- </form> --}}
-               <p>You can change the images at anytime</p>
-             @endif
-       </div>
+       @include('ads_type.multitple_file_input')
        <div class="form-group">
            <button class="btn  btn-primary">{{$text}}</button>
        </div>
