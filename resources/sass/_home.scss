@@ -167,3 +167,43 @@
         line-height: 2;
     }
 }
+.mission{
+    height:70vh;
+    background:#eaebe695;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.mss-text{
+    color: #000000;
+    font-size: 1.4rem;
+    font-family: fantasy;
+    line-height: 2;
+}
+
+.some-headers{
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    color: #161615;
+    text-align: left;
+    font-family: fantasy;
+}
+
+.mission-1{
+    background: #08021f;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.mission-t{
+    color: #f8f8f5;
+    font-size: 1.5rem;
+    font-family: 'krut',sans-serif;
+    line-height: 2;
+}
+

@@ -6,35 +6,28 @@
 @media(max-width:647px){
     .hero
     {
-    height: 85vh;
-    padding: 2rem 0px 1rem 0px;
+    min-height: 90vh;
+    padding: 1rem ;
     justify-content: flex-start !important;
     align-items: center;
     .pitch{
     width: 100%;
     p{
         padding-top: 3rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2.5rem;
             line-height: 1.8;
             text-align: center !important;
-            font-size: 1.1rem;
+            font-size: 1.7rem;
+            border-bottom: 2px dashed #222222;
         }
     }
 
 }
 
-
-.welcome-text{
-        font-size: 1.2rem;
-        text-align: center;
-}
-
-
 .get-started,.learn-more{
     color: $white;
     padding: 2px;
     text-transform: capitalize;
-    font-size: 1rem;
     border-radius: 5px;
     margin: 5px;
 }
@@ -68,9 +61,7 @@
 }
 
 @media(max-width:526px){
-    h1,h2,h3,h4,h5,h6{
-        font-size: 1.5rem;
-    }
+   
     .shops{
         width: 120px;
         margin-right: 1.3rem;
@@ -102,7 +93,7 @@
       }
 
     .products-details{
-        width: 200px;
+        width: 300px;
     }
 
 
@@ -118,7 +109,7 @@
 
 @media(max-width:347px){
     .products-details{
-        width: 200px;
+        width: 220px;
     }
 }
 

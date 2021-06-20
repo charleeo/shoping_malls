@@ -21,23 +21,21 @@
 </section>
 
 @include('pages.other_features')
-@include('pages.featured_shops')
+@include('pages.featured_products')
 
-<hr>
-<section class="other_features bg-white">
-    <div class="wrapper-for-other-fearture">
-        <div class='card '>
-            <div class="card-body">
-                <h4 class="text-center">Our Mission</h4>
-                <p class="text-dark">
+
+<section class="mission-1">
+        <div class='row justify-content-center '>
+            <div class="col-md-6 col-sm-10">
+                <h4 class='some-headers'>Our Mission</h4>
+                <p class=" mission-t">
                     We have made a it point of duty to make your business thrive. This is why we have to always put and your business first by putting your in front of the world. The world will always to get the notice whatsoever your have to sell or offer.
                 </p>
-                <p>
-                    So if got a business, bring it here let's sell it and resell it and keep selling it.
+                <p class="mission-t">
+                    So if you have got a business, bring it here let's sell it and resell it and keep selling it.
                 </p>
             </div>
         </div>
-    </div>
 </section>
 
 {{-- Featured shops --}}
@@ -70,15 +68,18 @@
 </section>
 
 <hr> --}}
-<section class="other_features bg-white">
-    <div class="wrapper-for-other-fearture">
-        <h4 class="text-center">Our Short Story</h4>
-        <p>
-            We have made a point of duty to make your business thrive. This is why we have to always put and your business first by putting your in front of the world. The world will always to get the notice whatsoever your have to sell or offer.
-        </p>
-        <p>
-            So if got a business, bring it here let's sell it and resell it and keep selling it.
-        </p>
+<section class="mission">
+    <div class="row justify-content-center">
+        <div class="col-md-5 col-sm-10">
+            <h4 class='some-headers'>Our Short Story</h4>
+            <hr>
+            <p class="mss-text">
+                We have made a point of duty to make your business thrive. This is why we have to always put and your business first by putting your in front of the world. The world will always get the notice of whatsoever your have to sell or offer.
+            </p>
+            <p class="mss-text">
+                So if got a business, bring it here let's sell it and resell it and keep selling it.
+            </p>
+        </div>
     </div>
 </section>
 <hr>

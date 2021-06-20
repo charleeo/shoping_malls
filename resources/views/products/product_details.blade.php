@@ -71,7 +71,7 @@
                         </form>
                     </div>
                     <hr>
-                    <p class="p-3  mt-3">Description: {{$product->product_description}}</p>
+                    <p class="product-description">Description: {{$product->product_description}}</p>
                     <hr>
 
                     <h6 class="">
