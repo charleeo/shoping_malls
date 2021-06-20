@@ -8,12 +8,14 @@ use App\Models\ServiceAd;
 use App\Models\Shop;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use function PHPUnit\Framework\isEmpty;
 
 class DisplayProductsController extends Controller
 {
     public function index(){
+
         $products = Product::all();
         $productImages =[];
         if($products){
@@ -42,9 +44,6 @@ class DisplayProductsController extends Controller
         ->where('id','!=',$id)
         ->inRandomOrder()
         ->paginate(6);
-        // ->get(['id','product_name','price','quantity','product_description','delivery_status','location','product_images']);
-    
-
         return view('products.product_details',compact('product','product_categories','images','relatedItems','createdBySameSeller','user'));
     }
 

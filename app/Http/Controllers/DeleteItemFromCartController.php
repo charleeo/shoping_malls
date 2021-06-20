@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Commons\Commons;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 
@@ -27,7 +28,8 @@ class DeleteItemFromCartController extends Controller
                     $item_data = json_encode($cart_data);
                     $minutes = 60;
                     Cookie::queue(Cookie::make('shopping_cart', $item_data, $minutes));
-                    $grandTotal = UpdateCartController::getTheSumOfItemInACart($cart_data);
+                    
+                    $grandTotal =  Commons::getTheSumOfItemInACart($cart_data);
                     return response()->json([
                         'status'=>'Item Removed from Cart',
                         'cartGrandTotal'=> number_format($grandTotal,2)

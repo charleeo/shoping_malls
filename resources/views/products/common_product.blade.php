@@ -1,7 +1,10 @@
-<div class="products-details">
+<div class="products-details m-4">
+    <div class="card-header product-header">
+        <h4>{{$product->product_name}}</h4>
+    </div>
     <div class="product-images">
         @php ($images = explode('|',$product->product_images))
-        <img class="images-class" src="{{asset($images[0])}}" alt="">
+        <img class="images-class" src="{{asset($images[0])}}" alt="{{$product->product_name}}">
     </div>
     <div class="product-footer">
         <div class="product-prices-name">
@@ -11,9 +14,6 @@
                 &#8358;: {{$product->discount}}
                 @endif
                 </strike>
-            </div>
-            <div>
-                <span class="name"><b>{{$product->product_name}}</b></span>
             </div>
         </div>
         <div class="details">

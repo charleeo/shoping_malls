@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Commons\Commons;
 use App\Models\Product;
 use App\Models\ServiceAd;
-use App\Models\Shop;
-use Exception;
-use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 
 class DeleteProductController extends Controller
 {
@@ -20,39 +17,16 @@ class DeleteProductController extends Controller
     /**Delete a Product or an ad from the system */
     public function deleteProduct($id){
         $product = Product::find($id);
-        if(self::deleteFunction($product,'product_shop_id','product_images')){
+        if(Commons::deleteFunction($product,'product_shop_id','product_images')){
             return back()->with('success',"Item deleted Successfuly");
-        }
+        }  
     }
     
-    public static function deleteFunction($product,$product_shop_id,$product_images){
-        $user = Auth::user()->id;
-        $shop = Shop::where('business_owner_id','=',$user)->firstOrFail();
-        if($product AND $product->$product_shop_id !==$shop->id){
-            return back()->with('error',"You are trying to delete a resources you didn't create");
-        }else{
-            if($product){
-                $productImages = $product->$product_images;
-                $productImages = explode('|',$productImages);
-                foreach($productImages as $image){
-                    $imageToRemove= \public_path($image);
-                        if(file_exists($imageToRemove)){
-                        unlink($imageToRemove);
-                        }
-                }
-                if( $product->delete()){
-                    return true;
-                }else{
-                    throw new Exception('Error');
-                }
-            }
-        }
-    }
-
+    
     public function deleteService($id)
     {
        $service = ServiceAd::find($id);
-       if(self::deleteFunction($service,'service_shop_id','service_images')){
+       if(Commons::deleteFunction($service,'service_shop_id','service_images')){
         return back()->with('success',"Item deleted Successfuly");
        }
     }

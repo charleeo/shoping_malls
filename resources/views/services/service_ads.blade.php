@@ -32,11 +32,12 @@
            <textarea name="service_description" id="" cols="5" rows="2" placeholder="enter item descripton here" class="form-control"
            >{{ old('service_description', (isset($service->service_description))? $service->service_description: '') }}</textarea>
        </div>
-        
+
        @include('ads_type.multitple_file_input')
-        
+
        <div class="form-group">
-           <button class="btn  btn-primary">{{$text}}</button>
+           <button class="btn  btn-primary create">{{$text}}</button>
+           <div class="response-div"></div>
        </div>
        <input type="hidden" name="service_id" value="{{isset($service)?$service->id:''}}">
       </form>

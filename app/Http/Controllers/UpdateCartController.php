@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Commons\Commons;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
@@ -40,7 +41,7 @@ class UpdateCartController extends Controller
                         $minutes = 60;
                         
                         // get the total price of all items in the cart
-                       $grandTotal= self::getTheSumOfItemInACart($cart_data);
+                       $grandTotal= Commons::getTheSumOfItemInACart($cart_data);
                         
                         // get the value of the item being updated
                         $itemTotalValue = number_format($cart_data[$keys]['item_price'] * $cart_data[$keys]
@@ -57,16 +58,7 @@ class UpdateCartController extends Controller
             }
         }
     }
-    public static function  getTheSumOfItemInACart($cart_data){
-        $grandTotal=0;
-        $price = array_column($cart_data,'item_price');
-        $quantities = array_column($cart_data,'item_quantity');
-        $arrayMap = array_map(function($x,$y){
-        return $x *$y;
-        },$quantities,$price);
-        $grandTotal += array_sum($arrayMap);
-        return $grandTotal;
-    }
+    
 
     /*Check to make sure people don't order for more than what is in stock*/
     public static function checkQuantities(Request $request){

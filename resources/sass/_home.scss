@@ -13,17 +13,18 @@
     align-items: center;
     padding-top: 4rem;
     .pitch{
-        width: 630px;
+        // width: 630px;
             p{
-                text-transform: uppercase;
+                text-transform: capitalize;
                 text-decoration: initial;
                 color: #f8f8f5;
                 text-shadow: 3px 2px $dark;
-                margin: auto;
                 padding-top:5rem;
                 line-height: 2;
-                font-weight: bolder;
+                font-weight: lighter;
                 font-size: 1.8rem;
+                text-align:center;
+                font-family: 'Krub', serif;
             }
 
         }
@@ -36,26 +37,27 @@
         color: #ffffff;
         text-shadow: 3px 2px $dark;
         font-weight: 900;
+        font-family: 'Krub', serif;
+
 }
 
 
 
 .get-started,.learn-more{
-    background: #08021f;
+    background: inherit;
+    font-family: 'Tangerine', serif;
     &:hover{
-        background: inherit;
-        transition: 1s all;
-        color: #f8f8f5;
+        background: #f8f8f5;
+        transition: 0.5s all;
+        color: #2c2b2b;
     }
-}
-.get-started,.learn-more{
-    color: #eee8aa;
-    padding: 5px;
+    color: #f8f8f5;
+
+    padding: 10px;
     text-transform: capitalize;
     font-size: 2rem;
     border-radius: 5px;
     margin: 5px;
-    border: $dark 3px solid;
 }
 
 
@@ -106,7 +108,7 @@
 }
 #learnmore-div{
     border: 3px solid #eee8aa;
-    padding: 10px;
+    padding: 30px;
 }
 
 

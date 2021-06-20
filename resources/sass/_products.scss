@@ -1,19 +1,16 @@
 .products-page{
     background: #ffffff;
     min-height: 100vh;
-    padding-top: 10px;
 }
 .products-flex-deplay{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
+//   margin-top: 20px;
 }
 .products-details{
-    width: 220px;
-    margin: 0px 0 20px 20px;
+    width: 250px;
     box-shadow: 1px 4px 1px 4px #e9e7e7;
-    margin-bottom: 20px;
     border-radius: 10px;
     background: inherit;
 }
@@ -97,3 +94,14 @@
 // #servicesAds,#productsAds{
 //     display: none;
 // }
+.product-header{
+    background: #333333 !important;
+    h4{
+        color: #e9e7e7;
+        text-transform: capitalize;
+        font-family: 'Tangerine', serif;
+        font-weight: bolder;
+        font-size: 2rem;
+        text-align: center;
+    }
+}

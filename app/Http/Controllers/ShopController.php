@@ -107,10 +107,10 @@ class ShopController extends Controller
 
     }
 
-public function createProfilePhoto(){
-    $userID= Auth::user()->id;
+    public function createProfilePhoto(){
+        $userID= Auth::user()->id;
         $businessDetails= Shop::where('business_owner_id','=',$userID)->first();
-    return view('shops.shop_image',compact('businessDetails'));
-}
+        return view('shops.shop_image',compact('businessDetails'));
+    }
 
 }

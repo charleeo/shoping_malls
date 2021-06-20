@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Controllers\Commons\Commons;
 use App\Models\ProductCategory;
 use App\Models\ServiceAd;
 use App\Models\Shop;
@@ -57,12 +57,12 @@ class ServiceAdsController extends Controller
             $imagesFromDB = $serviceDetails->service_images;
             $imagesFromDB = explode('|',$imagesFromDB);
             $images = $request->file('image');
-           $imagesToDB= ProductController::uploadFiles($images,$extensions,$size,$path);
-           $error = $imagesToDB['error'];
-           if($error){
-               return back()->with('error',"$error");
-           }
-           $imagesToDB = implode('|', $imagesToDB['files_to_db']);
+            $imagesToDB= Commons::uploadFiles($images,$extensions,$size,$path);
+            $error = $imagesToDB['error'];
+            if($error){
+                return back()->with('error',"$error");
+            }
+            $imagesToDB = implode('|', $imagesToDB['files_to_db']);
         //    Unlink the old images
         if(count($imagesFromDB)>0){
                 foreach($imagesFromDB as $im){
@@ -72,16 +72,18 @@ class ServiceAdsController extends Controller
                 }
             }
         }
-    }//old resource update without file upload
+    }
+    //old resource update without file upload
     elseif($serviceID && !$request->hasFile('image')){
         $serviceDetails = ServiceAd::where(['id'=>$serviceID])->first();
         $imagesFromDB = $serviceDetails->service_images;
         $imagesToDB = $imagesFromDB;//return old images path back to DB
-    }//for new resource creation
+    }
+    //for new resource creation
     else if(!$serviceID){
         $request->validate(['image'=>['required']]);
         $images = $request->file('image');
-        $imagesToDB= ProductController::uploadFiles($images,$extensions,$size,$path);
+        $imagesToDB= Commons::uploadFiles($images,$extensions,$size,$path);
         $error = $imagesToDB['error'];
         if($error){
             return back()->with('error',$error);
@@ -109,7 +111,6 @@ class ServiceAdsController extends Controller
     $images = $service->service_images;
     $images = explode('|',$images);
     $text="Update";
-    // $service_categories = serviceCategory::all();
     return view('services.edit_service',compact('service','images','text'));
 }
 }
