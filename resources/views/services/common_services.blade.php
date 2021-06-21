@@ -1,6 +1,6 @@
 <div class="card mb-4 ml-3">
-    <div class="card-header bg-info">
-        <h4 class="some-headers">
+    <div class="card-header product-header">
+        <h4 >
             <b>{{$service->service_name}}</b>
         </h4>
     </div>

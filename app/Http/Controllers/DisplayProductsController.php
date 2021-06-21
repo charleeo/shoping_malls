@@ -15,7 +15,6 @@ use function PHPUnit\Framework\isEmpty;
 class DisplayProductsController extends Controller
 {
     public function index(){
-
         $products = Product::all();
         $productImages =[];
         if($products){

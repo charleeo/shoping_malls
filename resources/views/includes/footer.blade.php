@@ -38,8 +38,8 @@
             </div>
         </form>
     </div>
-<script src="{{ asset('js/app.js') }}" ></script>
-<script  src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    <script src="{{ asset('js/app.js') }}" ></script>
+    <script  src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
     integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
 </script>
 <script  src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
@@ -50,5 +50,6 @@
  <script src="{{asset('js/gallery.js')}}" ></script>
  <script src="{{asset('js/shopping_cart.js')}}" ></script>
  <script src="{{asset('js/create_ads.js')}}" ></script>
+ <script src="{{asset('js/make_payment.js')}}" ></script>
 </footer>
 

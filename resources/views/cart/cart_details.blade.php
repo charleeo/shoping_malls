@@ -15,7 +15,7 @@
     <hr>
     
     @if (isset($cart_data) && Cookie::get('shopping_cart') && count($cart_data)>0)
-        @php  $grandTotal =0;@endphp
+    @php  $grandTotal =0;@endphp
    <div class="shopping_cart_section px-2">
        <div class="d-flex pl-4">
            <div class="col-md-3 col-sm-3">Image</div>
@@ -38,3 +38,5 @@
     @endif
 </section>
 @endsection
+
+@include('orders.place_order_modal')

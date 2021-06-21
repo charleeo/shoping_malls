@@ -12,3 +12,18 @@
     </div>
 </section>
 
+
+<section class="you-too">
+    <h4 class="some-headers text-center">You too can also sell</h4>
+    <div class="you-too-row">
+        <div class="product text-center">
+            <img src="{{asset('assets/images/bg/image1.jpg')}}" alt="product" class="img circle-rounded">
+        </div>
+        <p class="tt">
+            It does not matter what you sell, either you are
+            <br/>
+            selling a service or a product, we are covered 
+        </p>
+    </div>
+</section>
+

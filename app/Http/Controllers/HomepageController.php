@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ServiceAd;
 use App\Models\Shop;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class HomepageController extends Controller
     {
         $products= Product::all();
         $shops = Shop::all();
-        return view('welcome')->with(['products'=>$products,'shops'=>$shops]);
+        $services = ServiceAd::get();
+        return view('welcome')->with(['products'=>$products,'shops'=>$shops,'services'=>$services]);
     }
 }

@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Product;
+use App\Models\ServiceAd;
+use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -30,6 +33,9 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function($view)
     {
+        $services = ServiceAd::all();
+        $products= Product::all();
+        $shops = Shop::all();
         $dropdown1 = [
             ['path'=>'/shops/create','text'=>'create/Edit shop'],
             ['path'=>'/shops/create-photo','text'=>'upload logo'],
@@ -64,7 +70,7 @@ class AppServiceProvider extends ServiceProvider
              'path'=>$path,
              'menus'=>$menus,
              'dropdown2'=>$dropdown2,
-             'deliveryStatus'=>$deliveryStatus
+             'deliveryStatus'=>$deliveryStatus,
              ] );
     });
         //  view()->share(['dropdown1'=>$dropdown1,'path'=>$path,'menus'=>$menus] );

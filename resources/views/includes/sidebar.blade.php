@@ -32,14 +32,14 @@
                 </div>
             </div>
         </div>
+    {{-- <a href="{{route('products.create')}}" class="sidebar-menu">
+        
+    </a> --}}
     <a href="{{route('products.create')}}" class="sidebar-menu">
-        Side bar
+        Transactions
     </a>
     <a href="{{route('products.create')}}" class="sidebar-menu">
-        Side bar
-    </a>
-    <a href="{{route('products.create')}}" class="sidebar-menu">
-        Side bar
+        Orders
     </a>
 
     <a class="sidebar-menu" href="{{ route('logout') }}"

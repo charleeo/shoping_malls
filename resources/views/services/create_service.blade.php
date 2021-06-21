@@ -8,11 +8,6 @@
 
      <div class="row justify-content-center">
          <div class="col-md-7 col-sm-11">
-             {{-- Advertisement type --}}
-             @if(!isset($service))
-                @include('ads_type.ads_type')
-             @endif
-             {{-- Ends here --}}
             
              {{-- For Service Ads --}}
              @include('services.service_ads')

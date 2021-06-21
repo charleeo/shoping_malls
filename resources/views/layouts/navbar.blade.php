@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg  default-bg" id='navbar'>
     @if(Auth::check() AND !Request::is('/') )
         <div class="toggler">
-            <i class="fas fa-arrow-left nav-link-item " style="color: #f3f1f799">sidebar</i>
+            <i class="fas fa-arrow-left nav-link-item "></i> <span>sidebar</span>
         </div>
     @endif
         <a class="navbar-brand" href="{{ url('/') }}">
