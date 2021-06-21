@@ -1,16 +1,15 @@
 <?php
 namespace App\Http\Controllers;
-
-use App\Http\Controllers\Commons\Commons;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\Shop;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Commons\Commons as CommonsCommons;
 
 class ProductController extends Controller
-{
+{ 
     public function __construct()
     {
        $this->middleware(['auth','shop']);
@@ -62,7 +61,8 @@ class ProductController extends Controller
                 $imagesFromDB = $productDetails->product_images;
                 $imagesFromDB = explode('|',$imagesFromDB);
                 $images = $request->file('image');
-               $imagesToDB= Commons:: uploadFiles($images,$extensions,$size,$path);
+        
+               $imagesToDB= CommonsCommons::uploadFiles($images,$extensions,$size,$path);
                $error = $imagesToDB['error'];
                if($error){
                    return back()->with('error',"$error");
@@ -86,7 +86,7 @@ class ProductController extends Controller
         else if(!$productID){
             $request->validate(['image'=>['required']]);
             $images = $request->file('image');
-            $imagesToDB= Commons::uploadFiles($images,$extensions,$size,$path);
+            $imagesToDB= CommonsCommons::uploadFiles($images,$extensions,$size,$path);
             $error = $imagesToDB['error'];
             if($error){
                 return back()->with('error',$error);
@@ -116,3 +116,4 @@ class ProductController extends Controller
         return view('products.edit_product',compact('product','product_categories','images','text'));
     }
 }
+
