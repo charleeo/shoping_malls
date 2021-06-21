@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Commons\Commons;
+
+use App\Http\Traits\FileUploadTrait;
 use App\Models\ProductCategory;
 use App\Models\ServiceAd;
 use App\Models\Shop;
@@ -57,7 +58,7 @@ class ServiceAdsController extends Controller
             $imagesFromDB = $serviceDetails->service_images;
             $imagesFromDB = explode('|',$imagesFromDB);
             $images = $request->file('image');
-            $imagesToDB= Commons::uploadFiles($images,$extensions,$size,$path);
+            $imagesToDB= FileUploadTrait::uploadFiles($images,$extensions,$size,$path);
             $error = $imagesToDB['error'];
             if($error){
                 return back()->with('error',"$error");
@@ -83,7 +84,7 @@ class ServiceAdsController extends Controller
     else if(!$serviceID){
         $request->validate(['image'=>['required']]);
         $images = $request->file('image');
-        $imagesToDB= Commons::uploadFiles($images,$extensions,$size,$path);
+        $imagesToDB= FileUploadTrait::uploadFiles($images,$extensions,$size,$path);
         $error = $imagesToDB['error'];
         if($error){
             return back()->with('error',$error);

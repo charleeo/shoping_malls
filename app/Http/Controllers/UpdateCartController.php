@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Commons\Commons;
+use App\Http\Traits\SumOfItemTrait;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
@@ -41,7 +41,7 @@ class UpdateCartController extends Controller
                         $minutes = 60;
                         
                         // get the total price of all items in the cart
-                       $grandTotal= Commons::getTheSumOfItemInACart($cart_data);
+                       $grandTotal= SumOfItemTrait::getTheSumOfItemInACart($cart_data);
                         
                         // get the value of the item being updated
                         $itemTotalValue = number_format($cart_data[$keys]['item_price'] * $cart_data[$keys]

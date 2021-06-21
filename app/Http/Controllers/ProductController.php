@@ -6,10 +6,11 @@ use App\Models\Shop;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Commons\Commons as CommonsCommons;
+use App\Http\Traits\FileUploadTrait;
 
 class ProductController extends Controller
 { 
+    use FileUploadTrait;
     public function __construct()
     {
        $this->middleware(['auth','shop']);
@@ -62,7 +63,7 @@ class ProductController extends Controller
                 $imagesFromDB = explode('|',$imagesFromDB);
                 $images = $request->file('image');
         
-               $imagesToDB= CommonsCommons::uploadFiles($images,$extensions,$size,$path);
+               $imagesToDB= FileUploadTrait::uploadFiles($images,$extensions,$size,$path);
                $error = $imagesToDB['error'];
                if($error){
                    return back()->with('error',"$error");
@@ -86,7 +87,7 @@ class ProductController extends Controller
         else if(!$productID){
             $request->validate(['image'=>['required']]);
             $images = $request->file('image');
-            $imagesToDB= CommonsCommons::uploadFiles($images,$extensions,$size,$path);
+            $imagesToDB= FileUploadTrait::uploadFiles($images,$extensions,$size,$path);
             $error = $imagesToDB['error'];
             if($error){
                 return back()->with('error',$error);
