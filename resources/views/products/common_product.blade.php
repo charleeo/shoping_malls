@@ -1,12 +1,12 @@
-<div class="products-details m-4">
+<div class="products-details mb-4 ml-4 card">
     <div class="card-header product-header">
         <h4>{{$product->product_name}}</h4>
     </div>
-    <div class="product-images">
+    <div class="product-images card-body">
         @php ($images = explode('|',$product->product_images))
         <img class="images-class" src="{{asset($images[0])}}" alt="{{$product->product_name}}">
     </div>
-    <div class="product-footer">
+    <div class="product-footer card-footer bg-primary">
         <div class="product-prices-name">
             <div class="prices">
                 <span class="prices">&#8358;<b>{{number_format($product->price)}}</b></span>

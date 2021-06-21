@@ -10,11 +10,11 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval='false'>
                 <div class="carousel-inner text-center">
                     @foreach ($images as $key=> $image)
-                    <div class="carousel-item {{$images[0]==$image?'active':''}}">
-                        <div class="gallery-image-wrapper">
+                    <div class="carousel-item images {{$images[0]==$image?'active':''}}">
+                        {{-- <div class="gallery-image-wrapper"> --}}
                             <img src="{{asset($image)}}"  alt="{{$product->product_name}}"
                             class='gallery-popup' data-key={{$key}}width="100%">
-                        </div>
+                        {{-- </div> --}}
                     </div>
                     @endforeach
                 </div>

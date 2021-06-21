@@ -31,7 +31,7 @@
                 <p class=" mission-t">
                     We have made a it point of duty to make your business thrive. This is why we have to always put and your business first by putting your in front of the world. The world will always to get the notice whatsoever your have to sell or offer.
                 </p>
-                <p class="mission-t">
+                <p class="mission-t text-dark">
                     So if you have got a business, bring it here let's sell it and resell it and keep selling it.
                 </p>
             </div>

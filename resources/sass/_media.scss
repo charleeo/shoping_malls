@@ -6,39 +6,26 @@
 @media(max-width:647px){
     .hero
     {
-    min-height: 90vh;
-    padding: 1rem ;
-    justify-content: flex-start !important;
-    align-items: center;
+    justify-content: flex-start;
     .pitch{
     width: 100%;
+    border-top: 5px solid #f3f4f542;
+    border-bottom: 5px solid #f3f4f542;
     p{
-        padding-top: 3rem;
-        margin-bottom: 2.5rem;
-            line-height: 1.8;
-            text-align: center !important;
-            font-size: 1.7rem;
-            border-bottom: 2px dashed #222222;
+            line-height: 1.5;
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: -2.5rem;
         }
     }
 
 }
 
 .get-started,.learn-more{
-    color: $white;
-    padding: 2px;
-    text-transform: capitalize;
     border-radius: 5px;
     margin: 5px;
 }
-.featured{
-    font-size: 1.3rem;
-    margin-right: 1rem;
-}
-.shops{
-    width: 130px;
-    margin-right: 1.5rem;
-}
+
 .toggler{
     display: block !important;
     text-align: start;
@@ -62,30 +49,10 @@
 
 @media(max-width:526px){
    
-    .shops{
-        width: 120px;
-        margin-right: 1.3rem;
-    }
-
-    .model-imges-wrapper{
-        width: 380px;
-    }
-
-
-    .models-images{
-       width: 130px;
-       margin: 10px;
-       height: 130px;
-       border-radius: 10%;
-    }
-
-    .different-models>p{
-        width: inherit;
-        justify-content: left;
-    }
-
-    .shops{
-        margin: 15px ;
+    #learnmore-div{
+        padding: 10px;
+        position: relative;
+        bottom: -4rem;
     }
 
     .products-flex-deplay{
@@ -96,20 +63,41 @@
         width: 300px;
     }
 
-
-    .wrapper-for-other-fearture{
-        padding: 10px !important;
-        p{
-            font-size: 1rem;
-
+    .hero
+    {
+        .welcome-text{
+            margin-top: -30px;
+            text-align: center;
         }
     }
-
 }
 
 @media(max-width:347px){
     .products-details{
         width: 220px;
+    }
+    .hero
+    {
+        .pitch{
+            p{
+                line-height: 2;
+                text-align: center;
+                font-size: 1.2rem;
+                margin-top: -3.5rem;
+            }
+        }
+        .welcome-text{
+            margin-top: -30px;
+            text-align: center;
+        }
+    }
+
+    .get-started,.learn-more{
+        font-size: 1rem;
+        padding: 2px;
+    }
+    #learnmore-div{
+        border: inherit !important;
     }
 }
 

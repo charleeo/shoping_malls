@@ -1,0 +1,20 @@
+.service_description{
+    height: 80%;
+    width: 100%;
+    background: #808080;
+    z-index: 10;
+    position: absolute;
+    padding: 10px;
+    bottom: 40px;
+    left: 0;
+    p{
+        color: #faf9f9;
+    }
+}
+
+.hide{
+    height: 0;
+    opacity: 0;
+    width: 0;
+    transition: 0.4s ease-in-out;
+}

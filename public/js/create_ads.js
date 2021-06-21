@@ -11,4 +11,14 @@ $(document).ready(function(){
     $('.create').click(function(){
       $('.response-div').html('Creating Advert. Please be patient')
     })
+
+    $('.service_details').mouseover(function(e){
+       let serviceDescription= $(this).closest('.card').find('.service_description')
+    //    if(serviceDescription.hasClass('hide')){
+           serviceDescription.toggleClass('hide')
+    //    }
+    })
+
+
+    
 })
