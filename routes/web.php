@@ -14,6 +14,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceAdsController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UpdateCartController;
+use App\Http\Controllers\SubAccountContoller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,7 +52,7 @@ Route::prefix('products')->group(function(){
 
 
 Route::prefix('services')->group(function(){
-   
+
     Route::get('/{service}/delete',[DeleteProductController::class,'deleteService'])->name('services.delete');
 
     Route::post('/store',[ServiceAdsController::class,'store'])->name('services.store');
@@ -88,7 +89,7 @@ Route::prefix('ads')->group(function () {
     Route::post('/delete_form_image',[GeneralPurposeController::class,'delete_form_image']);
 });
 
-
+Route::any('/api',[SubAccountContoller::class,'createSubAccount']);
 
 Route::prefix('{details}')->group(function(){
     Route::get('/',[BusinessDomainController::class,'show'])->name('home-page');
