@@ -26,17 +26,16 @@ trait APIAuthTrait
   }
 
   public static function setupRequest($method,$url,$token =null){
-      $authorization =null;
-      $delimeter ='=>';
+      $headers  =[];
+      $headers['Content-Type'] = 'application/json';
       $client = new Client();
         if($token !=null){
-        $authorization ='"Authorization"'. $delimeter."' Bearer {$token}'";
+        $headers['Authorization'] = "Bearer {$token}";
         }
         // dd($authorization);
         $response= $client->request($method, $url,[
             'headers'=>[
-                'Content-Type'=>'application/json',
-                $authorization,
+                   $headers
                 ],
         ]);
         $response= json_decode($response->getBody(),true);
