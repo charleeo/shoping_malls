@@ -1,4 +1,4 @@
-<div class="products-details mb-4 ml-4">
+<div class="products-details mb-4 mx-2">
     <div class="product-images">
         <div class="product-header p-1">
             <h4>{{$product->product_name}}</h4>
