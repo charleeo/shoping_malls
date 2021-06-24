@@ -1,9 +1,15 @@
 @media(max-width:820px){
     .products-details{
-        width: 250px;
+        width: 150px;
+    }
+    .product-images{
+        .images-class{
+            height: 120px;
+        }
     }
 }
 @media(max-width:647px){
+
     .hero
     {
     justify-content: flex-start;
@@ -41,9 +47,8 @@
 
 
 .products-details{
-    width: 210px;
+    width: 150px;
 }
-
 
 }
 
@@ -59,8 +64,10 @@
         justify-content: center;
       }
 
-    .products-details{
-        width: 300px;
+    .product-images{
+        .images-class{
+            height: 120px;
+        }
     }
 
     .hero
@@ -74,7 +81,7 @@
 
 @media(max-width:347px){
     .products-details{
-        width: 220px;
+        width: 200px;
     }
     .hero
     {

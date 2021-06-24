@@ -3,12 +3,16 @@
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\BusinessDomainController;
+use App\Http\Controllers\CheckoutOrderController;
 use App\Http\Controllers\DeleteItemFromCartController;
 use App\Http\Controllers\DeleteProductController;
 use App\Http\Controllers\DisplayProductsController;
 use App\Http\Controllers\DisplayServicesController;
 use App\Http\Controllers\GeneralPurposeController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\MakePaymentController;
+use App\Http\Controllers\OrderSummaryController;
+use App\Http\Controllers\PaymentSuccessfullController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceAdsController;
@@ -33,6 +37,8 @@ Route::prefix('shops')->group(function () {
     Route::post('/create',[ShopController::class,'storeBusiness'])->name('shops');
     Route::post('/profile',[ShopController::class,'uploadBusinessImage'])->name('business-profile-photo');
     Route::get('/create-photo',[ShopController::class,'createProfilePhoto'])->name('shops.image');
+    Route::get('/create_sub_account',[SubAccountContoller::class,'createSubAccountForm'])->name('sub-account');
+    Route::any('/store_sub_account',[SubAccountContoller::class,'createSubAccount'])->name('sub-account-store');
 });
 
 Route::prefix('products')->group(function(){
@@ -81,6 +87,13 @@ Route::prefix('cart')->group(function(){
     Route::delete('/delete',[DeleteItemFromCartController::class,'deletefromcart']);
     Route::get('/clear',[DeleteItemFromCartController::class,'clearCart']);
     Route::post('/check-quantities',[UpdateCartController::class,'checkQuantities']);
+    Route::get('/checkout',[OrderSummaryController::class,'orderDetailsBeforePayment']);
+});
+
+
+Route::prefix('/payments')->group(function(){
+    Route::get('/success',[PaymentSuccessfullController::class,'paymentWasSuccessfull']);
+    Route::post('/pay',[MakePaymentController::class,'initiateTransaction'])->name('payment-pay');
 });
 
 Route::prefix('ads')->group(function () {
@@ -89,7 +102,6 @@ Route::prefix('ads')->group(function () {
     Route::post('/delete_form_image',[GeneralPurposeController::class,'delete_form_image']);
 });
 
-Route::any('/api',[SubAccountContoller::class,'createSubAccount']);
 
 Route::prefix('{details}')->group(function(){
     Route::get('/',[BusinessDomainController::class,'show'])->name('home-page');

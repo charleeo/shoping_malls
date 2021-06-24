@@ -15,6 +15,15 @@ class CreateSubAccountsTable extends Migration
     {
         Schema::create('sub_accounts', function (Blueprint $table) {
             $table->id();
+            $table->string('email');
+            $table->string('accountNumber');
+            $table->string('bankCode');
+            $table->string('currencyCode')->default('NGN');
+            $table->string('defaultSplitPercentage')->default('100');
+            $table->string('subAccountCode');
+            $table->string('bankName');
+            $table->string('accountName');
+            $table->integer('shop_id');
             $table->timestamps();
         });
     }

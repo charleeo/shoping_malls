@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "68e9caddce5839519a4a0b94c31fa7a0",
+    "content-hash": "b5b2bc2dded352639deb433af442e35a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -855,6 +855,72 @@
                 "source": "https://github.com/guzzle/psr7/tree/1.8.2"
             },
             "time": "2021-04-26T09:17:50+00:00"
+        },
+        {
+            "name": "henryejemuta/laravel-monnify",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/henryejemuta/laravel-monnify.git",
+                "reference": "5078b6016991959756ec91dcc891f2f15529914c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/henryejemuta/laravel-monnify/zipball/5078b6016991959756ec91dcc891f2f15529914c",
+                "reference": "5078b6016991959756ec91dcc891f2f15529914c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.0.1",
+                "laravel/framework": "^8.0 || ^7.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "1.*",
+                "orchestra/testbench": "6.* || 5.*",
+                "phpunit/phpunit": "8.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "HenryEjemuta\\LaravelMonnify\\LaravelMonnifyServiceProvider"
+                    ],
+                    "aliases": {
+                        "Monnify": "HenryEjemuta\\LaravelMonnify\\Facades\\Monnify"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "HenryEjemuta\\LaravelMonnify\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Henry Ejemuta",
+                    "email": "henry.ejemuta@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A laravel package to seamlessly integrate monnify api within your laravel application",
+            "keywords": [
+                "bank transfer",
+                "card payment",
+                "laravel",
+                "monnify",
+                "payment"
+            ],
+            "support": {
+                "issues": "https://github.com/henryejemuta/laravel-monnify/issues",
+                "source": "https://github.com/henryejemuta/laravel-monnify/tree/v1.0.2"
+            },
+            "time": "2020-09-11T11:29:36+00:00"
         },
         {
             "name": "intervention/image",

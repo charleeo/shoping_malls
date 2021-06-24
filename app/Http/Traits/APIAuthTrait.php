@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 trait APIAuthTrait
 {
 
-    public static function authenticated(){
+    public static function authenticate(){
     $url = config('monnify.url').'v1/auth/login';
     $password =config('monnify.password');
     $secret_k  = config('monnify.secret_k');
@@ -25,29 +25,31 @@ trait APIAuthTrait
        return $accessToken;
   }
 
-  public static function setupRequest($method,$url,$token =null){
-      $headers  =[];
-      $headers['Content-Type'] = 'application/json';
+  public static function setupRequest($method,$url,$token =null,$body){
+      $headers=['headers'=>['Content-Type'=> 'application/json']];
       $client = new Client();
-        if($token !=null){
-        $headers['Authorization'] = "Bearer {$token}";
+        if($token !=null AND strlen($token) !=''){
+            $headers=['headers'=>['Content-Type'=> 'application/json',"Authorization"=>" Bearer {$token}"]];
         }
-        // dd($authorization);
-        $response= $client->request($method, $url,[
-            'headers'=>[
-                   $headers
-                ],
-        ]);
+        if($body){
+           $headers['form_params']= $body;
+        }
+        // dd($headers);
+        $response= $client->request($method, $url, $headers);
         $response= json_decode($response->getBody(),true);
         $result = $response['responseBody'];
         return $result;
   }
-   public static function getBanks(){
-    $url='https://sandbox.monnify.com/api/v1/banks';
-    $client = new Client();
-    $token= self::authenticated();
-    $response=  self::setupRequest('GET',$url,$token);
-    // $client->request('GET', $url,[
+//    public static function getBanks(){
+//     $url='https://sandbox.monnify.com/api/v1/banks';
+//     $token= self::authenticate();
+//     $response=  self::setupRequest('GET',$url,$token);
+//     return $response;
+//    }
+}
+
+
+// $client->request('GET', $url,[
     //     'headers'=>[
     //         'Content-Type'=>'application/json',
     //         "Authorization"=>"Bearer {$token}",
@@ -55,6 +57,3 @@ trait APIAuthTrait
     // ]);
     // $response= json_decode($response->getBody(),true);
     // $banks = $response['responseBody'];
-    return $response;
-   }
-}

@@ -20,7 +20,7 @@
     </div>
  </div>
 <div class="row justify-content-center">
-    <div class="proceed-to-payment col-md-6 col-sm-8">
-        <button class="btn btn-primary btn-sm form-control">Proceed To Payment</button>
+    <div class=" col-md-6 col-sm-8">
+        <a  href="/cart/checkout" class="btn btn-primary btn-sm form-control">Proceed To Payment</a>
     </div>
 </div>

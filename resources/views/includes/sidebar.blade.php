@@ -32,11 +32,8 @@
                 </div>
             </div>
         </div>
-    {{-- <a href="{{route('products.create')}}" class="sidebar-menu">
-        
-    </a> --}}
-    <a href="{{route('products.create')}}" class="sidebar-menu">
-        Transactions
+    <a href="{{route('sub-account')}}" class="sidebar-menu">
+        Create Subaccount
     </a>
     <a href="{{route('products.create')}}" class="sidebar-menu">
         Orders
