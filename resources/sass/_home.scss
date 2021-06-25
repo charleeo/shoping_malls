@@ -3,27 +3,30 @@
     // background: url("/assets/images/bg/image1.jpg"),rgba(80, 80, 79, 0.5);
     // linear-gradient(to left, #ffffff 10%,#0000);
     background: #ffffff;
-    height: 90vh;
+    height: 95vh;
     padding: 0.5rem 1rem;
+    overflow-y: hidden;
 }
 .divs{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 70vh;
+    height: 65vh;
+    overflow-y: hidden;
 }
 
 .learn-more{
-    background: url('/images/fpc5.jpg');
+    background: url('/images/image1.jpg');
     text-align: center;
     background-repeat: no-repeat;
-    background-position: left;
-    background-size: cover;
-    height: 30vh;
+    background-position: center;
+    background-size: contain;
+    height: 40vh;
     padding-top: 2rem;
+    overflow-y: hidden;
   a{
-      background: #6d4cf5;
+      background: #cbcad3;
       color: #f8f7f3;
       font-size: 3rem;
       padding: 10px 30px;
