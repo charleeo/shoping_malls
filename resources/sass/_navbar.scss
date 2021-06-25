@@ -1,39 +1,30 @@
-
-.default-bg{
-     background: $dark-blue;
+.new-bg,.default-bg{
+    background: #ffffff;
+    min-height: 4rem;
      ul>li{
          .nav-link{
-         color:#b8b1b1;
+         padding: 0;
+         color:#000000;
          text-transform: uppercase;
          &:hover{
-             color: #4d4d4b !important;
+             color: #8a8a87 !important;
              transition: 1s ease-in-out;
          }
         }
      }
 }
+
 .new-bg{
   background: $white;
   position: fixed !important;
   top: 0px;
-  transition: 0.5s all;
-  border-bottom: 4px #b8b1b1;
-  min-height: 4rem;
   width: 100%;
   z-index: 2;
-  text-transform: uppercase;
-  ul>li{
-      .nav-link{
-          color: #292927;
-          &:hover{
-            color: #802525 !important;
-            transition: 1s ease-in-out;
-        }
-      }
-  }
+
 }
 
 .active{
-    color:#865050 !important;
-    text-shadow:  1px 2px #3a3939;
+    color:#ffffff !important;
+    background: #8a8a87;
+    border-radius: 10px;
 }

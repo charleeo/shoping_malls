@@ -1,17 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik);
 @charset "UTF-8";
 
+.new-bg,
 .default-bg {
-  background: #0a0649;
+  background: #ffffff;
+  min-height: 4rem;
 }
 
+.new-bg ul > li .nav-link,
 .default-bg ul > li .nav-link {
-  color: #b8b1b1;
+  padding: 0;
+  color: #000000;
   text-transform: uppercase;
 }
 
+.new-bg ul > li .nav-link:hover,
 .default-bg ul > li .nav-link:hover {
-  color: #4d4d4b !important;
+  color: #8a8a87 !important;
   transition: 1s ease-in-out;
 }
 
@@ -19,26 +24,14 @@
   background: #ffffff;
   position: fixed !important;
   top: 0px;
-  transition: 0.5s all;
-  border-bottom: 4px #b8b1b1;
-  min-height: 4rem;
   width: 100%;
   z-index: 2;
-  text-transform: uppercase;
-}
-
-.new-bg ul > li .nav-link {
-  color: #292927;
-}
-
-.new-bg ul > li .nav-link:hover {
-  color: #802525 !important;
-  transition: 1s ease-in-out;
 }
 
 .active {
-  color: #865050 !important;
-  text-shadow: 1px 2px #3a3939;
+  color: #ffffff !important;
+  background: #8a8a87;
+  border-radius: 10px;
 }
 
 #sidebar {
@@ -147,7 +140,8 @@
 }
 
 .details .details-link {
-  color: #858580;
+  color: #d66e05;
+  padding-left: 3px;
 }
 
 .add-to-cart {
@@ -198,7 +192,7 @@
 
 .product-footer {
   background: #333333;
-  padding: 0 10px;
+  padding: 0 1px;
 }
 
 .product-business {
@@ -230,6 +224,24 @@
   font-size: 1.5rem;
   font-family: fantasy;
   line-height: 1.5;
+}
+
+.qty-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 3px;
+}
+
+.qty-section .q {
+  flex: 6;
+  margin: 3px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.qty-section .c {
+  flex: 6;
 }
 
 .item-image {
@@ -357,58 +369,13 @@ input:focus + label {
 }
 
 .hero {
-  background: #0a0649;
+  background: #ffffff;
   height: 95vh;
-  background-size: cover;
-  background-blend-mode: overlay;
-  background-position: center;
-  background-attachment: fixed;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding-top: 2rem;
-}
-
-.hero .pitch p {
-  text-transform: capitalize;
-  text-decoration: initial;
-  color: #f8f8f5;
-  text-shadow: 3px 2px #000000;
-  padding-top: 5rem;
-  line-height: 2;
-  font-weight: lighter;
-  font-size: 1.8rem;
-  text-align: center;
-  font-family: "Krub", serif;
-}
-
-.welcome-text {
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: #ffffff;
-  text-shadow: 3px 2px #000000;
-  font-weight: 900;
-  font-family: "Krub", serif;
-}
-
-.get-started,
-.learn-more {
-  background: inherit;
-  font-family: "Tangerine", serif;
-  color: #f8f8f5;
-  padding: 10px;
-  text-transform: capitalize;
-  font-size: 2rem;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-.get-started:hover,
-.learn-more:hover {
-  background: #f8f8f5;
-  transition: 0.5s all;
-  color: #2c2b2b;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
 .featured-shops {
@@ -522,29 +489,6 @@ input:focus + label {
 }
 
 @media (max-width: 647px) {
-  .hero {
-    justify-content: flex-start;
-  }
-
-  .hero .pitch {
-    width: 100%;
-    border-top: 5px solid #f3f4f542;
-    border-bottom: 5px solid #f3f4f542;
-  }
-
-  .hero .pitch p {
-    line-height: 1.5;
-    text-align: center;
-    font-size: 1.4rem;
-    margin-top: -2.5rem;
-  }
-
-  .get-started,
-  .learn-more {
-    border-radius: 5px;
-    margin: 5px;
-  }
-
   .toggler {
     display: block !important;
     text-align: start;
@@ -565,12 +509,6 @@ input:focus + label {
 }
 
 @media (max-width: 526px) {
-  #learnmore-div {
-    padding: 10px;
-    position: relative;
-    bottom: -4rem;
-  }
-
   .products-flex-deplay {
     justify-content: center;
   }
@@ -578,38 +516,11 @@ input:focus + label {
   .product-images .images-class {
     height: 120px;
   }
-
-  .hero .welcome-text {
-    margin-top: -30px;
-    text-align: center;
-  }
 }
 
 @media (max-width: 347px) {
   .products-details {
     width: 200px;
-  }
-
-  .hero .pitch p {
-    line-height: 2;
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: -3.5rem;
-  }
-
-  .hero .welcome-text {
-    margin-top: -30px;
-    text-align: center;
-  }
-
-  .get-started,
-  .learn-more {
-    font-size: 1rem;
-    padding: 2px;
-  }
-
-  #learnmore-div {
-    border: inherit !important;
   }
 }
 

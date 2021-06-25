@@ -1,20 +1,27 @@
 <div class="modal fade" id="orderyModal" tabindex="-1" role="dialog" aria-labelledby="orderyModalLabel" aria-hidden="true" >
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
+            <div class="modal-header ">
+                <h6 class="text-center">Enter Your Information below</h6>
+                <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" >&times;</span>
+                </button>
+              </div>
             <div class="modal-body">
-                <form action="{{route('products.all-created')}}" id="order-form" method="GET">
-                <input type="hidden" value="{{$grandTotal}}" name="grand_total">
+                <form action="{{route('payment-pay')}}" id="order-form" method="POST">
+                
+                <input type="hidden" value="{{$grandTotal}}" name="amount">
                 @csrf
                 <div class="row justify-content-center">
-                    <small>Enter Your Information below</small>
-                    <div class="col-md-6 col-sm-10">
+                    <div class="col-md-8 col-sm-10">
+
                         <div class="form-group">
-                            <label for="full-name">Fullname</label>
-                            <input type="text" name="fullname" id="fullname" class="form-control">
+                            <label for="customerName">Customer Name</label>
+                            <input type="text" name="customerName" id="customerName" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="delivery_email">Delivery Email</label>
-                            <input type="email" name="delivery_email" id="delivery_email" class="form-control">
+                            <label for="customerEmail">Customer Email</label>
+                            <input type="email" name="customerEmail" id="customerEmail" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="phone_number">Phone Number</label>
@@ -22,14 +29,20 @@
                         </div>
                         <div class="form-group">
                         <label for="address_line_1">Address Line 1</label>
-                        <textarea name="adress_line_1" id="address_line_1" cols="30" class="form-control" rows="3"></textarea>
+                        <textarea name="address_line_1" id="address_line_1" cols="30" class="form-control" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="address_line_2">Address Line 2</label>
-                            <textarea name="adress_line_2" id="address_line_2" class="form-control" cols="30" rows="3"></textarea>
+                            <label for="address_line_2">Address Line 2 (optiona) </label>
+                            <textarea name="address_line_2" id="address_line_2" class="form-control" cols="30" rows="3"></textarea>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary checkout">Check Out</button>
+                            <label for="paymentDescription">
+                                Description/Remark (optional)
+                            </label>
+                            <textarea name="paymentDescription" id="" cols="30" rows="3" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary checkou">Check Out</button>
                         </div>
                     </div>
                 </div>
@@ -38,3 +51,6 @@
       </div>
     </div>
   </div>
+
+
+  

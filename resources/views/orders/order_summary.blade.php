@@ -37,10 +37,7 @@
             </div>
         </div>
     </div>
-    <form action="{{route('payment-pay')}}" method="POST">
-        @csrf
-        <button>Pay</button>
-    </form>
+    @include('orders.place_order_modal')
      @else
       <p>Your Cart is currently empty</p>
      @endif
@@ -49,5 +46,3 @@
  
 
 @endsection
-
-@include('orders.place_order_modal')

@@ -33,9 +33,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('*', function($view)
     {
-        $services = ServiceAd::all();
-        $products= Product::all();
-        $shops = Shop::all();
+        
         $dropdown1 = [
             ['path'=>'/shops/create','text'=>'create/Edit shop'],
             ['path'=>'/shops/create-photo','text'=>'upload logo'],

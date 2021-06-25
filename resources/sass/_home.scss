@@ -2,64 +2,17 @@
 {
     // background: url("/assets/images/bg/image1.jpg"),rgba(80, 80, 79, 0.5);
     // linear-gradient(to left, #ffffff 10%,#0000);
-    background: $dark-blue;
+    background: #ffffff;
     height: 95vh;
-    background-size: cover;
-    background-blend-mode: overlay;
-    background-position: center;
-    background-attachment: fixed;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    padding-top: 2rem;
-    .pitch{
-        // width: 630px;
-            p{
-                text-transform: capitalize;
-                text-decoration: initial;
-                color: #f8f8f5;
-                text-shadow: 3px 2px $dark;
-                padding-top:5rem;
-                line-height: 2;
-                font-weight: lighter;
-                font-size: 1.8rem;
-                text-align:center;
-                font-family: 'Krub', serif;
-            }
+    justify-content: space-between;
+    padding: 1rem;
 
-        }
-    }
-
-
-.welcome-text{
-        font-size: 2rem;
-        text-transform: uppercase;
-        color: #ffffff;
-        text-shadow: 3px 2px $dark;
-        font-weight: 900;
-        font-family: 'Krub', serif;
 
 }
 
-
-
-.get-started,.learn-more{
-    background: inherit;
-    font-family: 'Tangerine', serif;
-    &:hover{
-        background: #f8f8f5;
-        transition: 0.5s all;
-        color: #2c2b2b;
-    }
-    color: #f8f8f5;
-
-    padding: 10px;
-    text-transform: capitalize;
-    font-size: 2rem;
-    border-radius: 5px;
-    margin: 5px;
-}
 
 
 .featured-shops{

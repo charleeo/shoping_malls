@@ -1,7 +1,7 @@
 @foreach ($cart_data as $data )
 <div class="to-be-removed" id="{{$data['item_id']}}">
     <div class="row justify-content-center remove-item">
-        <div class="col-md-12 col-sm-12 parent">
+        <div class="col-md-8 col-sm-12 parent">
             <div class="items-table">
             @php
             $images =explode('|',$data['item_image']);          

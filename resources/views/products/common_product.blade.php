@@ -19,25 +19,26 @@
             </div>
         </div>
         <div class="details">
-            <a href='{{route('products.show',["product"=>$product->id,"name"=>$product->product_name])}}?category={{$product->productCategory->id}}&shop={{$product->shop->id}}'class="details-link">
+            <a href='{{route('products.show',["product"=>$product->id,"name"=>$product->product_name])}}?category={{$product->productCategory->id}}&shop={{$product->shop->id}}'class=" details-link">
                 View <i class="fas fa-eye"></i>
             </a>
         </div>
-        <div class='add-cart pb-2 d-flex mt-2 '>
+        <div class='add-cart pb-1  mt-2 '>
             <form action="" method="POST">
                 @csrf
-                <div class="row product_data">
-                    <div class="col-md-5 col-sm-6">
-                        <input type="number" name="quantity"
-                        class=" qty border-0  rounded text-center" placeholder="qty:0" style="width: 100%" required
-                        >
+                <div class=" product_data ">
+                    <div class="qty-section">
+                        <div class="q">
+                            <input type="number" name="quantity"
+                            class=" qty border-0  px-1  " placeholder="qty:0">
+                        </div>
+                        <div class="c">
+                            <button style="font-size: 10px" class="add-to-cart ">{{_('Add  Cart')}} <i class="fa fa-shopping-cart fa-sm"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                        <button class="add-to-cart ">{{_('Add  Cart')}} <i class="fa fa-shopping-cart"></i>
-                        </button>
-                    </div>
-                    <small class="response pl-4  "></small>
                     <input  type="hidden" value="{{$product->id}}" name="product_id" class=" product_id">
+                    <div class="response pl-4  "></div>
                 </div>
             </form>
         </div>

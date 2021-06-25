@@ -10,27 +10,7 @@
 }
 @media(max-width:647px){
 
-    .hero
-    {
-    justify-content: flex-start;
-    .pitch{
-    width: 100%;
-    border-top: 5px solid #f3f4f542;
-    border-bottom: 5px solid #f3f4f542;
-    p{
-            line-height: 1.5;
-            text-align: center;
-            font-size: 1.4rem;
-            margin-top: -2.5rem;
-        }
-    }
 
-}
-
-.get-started,.learn-more{
-    border-radius: 5px;
-    margin: 5px;
-}
 
 .toggler{
     display: block !important;
@@ -53,12 +33,6 @@
 }
 
 @media(max-width:526px){
-   
-    #learnmore-div{
-        padding: 10px;
-        position: relative;
-        bottom: -4rem;
-    }
 
     .products-flex-deplay{
         justify-content: center;
@@ -70,41 +44,11 @@
         }
     }
 
-    .hero
-    {
-        .welcome-text{
-            margin-top: -30px;
-            text-align: center;
-        }
-    }
 }
 
 @media(max-width:347px){
     .products-details{
         width: 200px;
-    }
-    .hero
-    {
-        .pitch{
-            p{
-                line-height: 2;
-                text-align: center;
-                font-size: 1.2rem;
-                margin-top: -3.5rem;
-            }
-        }
-        .welcome-text{
-            margin-top: -30px;
-            text-align: center;
-        }
-    }
-
-    .get-started,.learn-more{
-        font-size: 1rem;
-        padding: 2px;
-    }
-    #learnmore-div{
-        border: inherit !important;
     }
 }
 

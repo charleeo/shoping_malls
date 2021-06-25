@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="hero">
+{{-- <section class="hero">
     <h1 class="welcome-text">
         shoping experiance you will love
     </h1>
@@ -18,7 +18,18 @@
         <a  href='#'class='learn-more'>learn more</a>
         <a class="get-started"href="/products/create" >Begin</a>
     </div>
+</section> --}}
+
+<section class="hero">
+    <div class="welcome-message">
+        <h1>AMAZING SHOPPING EXPERIENCE</h1>
+        <p>We help redefine your online shopping process and simplify it for you</p>
+    </div>
+    <div class="svg">
+        <img src="{{asset('images/fpc8.jpg')}}" alt="SVG">
+    </div>
 </section>
+
 
 @include('pages.other_features')
 @include('pages.featured_products')

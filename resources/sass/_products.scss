@@ -30,7 +30,8 @@
 
 .details{
     .details-link{
-        color: #858580;
+        color: $orange;
+        padding-left: 3px;
     }
 }
 .add-to-cart{
@@ -80,7 +81,7 @@
 
 .product-footer{
     background: #333333;
-    padding: 0 10px;
+    padding: 0 1px;
 }
 
 .product-business{
@@ -112,4 +113,19 @@
     font-size: 1.5rem;
     font-family: fantasy;
     line-height: 1.5;
+}
+.qty-section{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 3px;
+    .q{
+        flex: 6;
+        margin: 3px;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .c{
+        flex: 6;
+    }
 }
