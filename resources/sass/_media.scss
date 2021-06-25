@@ -10,7 +10,16 @@
 }
 @media(max-width:647px){
 
+.svg{
+    flex: 6;
+    img{
+        width: 100%;
+    }
+}
 
+.welcome-message{
+    flex: 6;
+}
 
 .toggler{
     display: block !important;
@@ -49,6 +58,14 @@
 @media(max-width:347px){
     .products-details{
         width: 200px;
+    }
+
+    .learn-more{
+      a{
+          font-size: 2rem;
+          padding: 10px 10px;
+
+      }
     }
 }
 

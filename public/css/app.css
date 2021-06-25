@@ -370,12 +370,53 @@ input:focus + label {
 
 .hero {
   background: #ffffff;
-  height: 95vh;
+  height: 90vh;
+  padding: 0.5rem 1rem;
+}
+
+.divs {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  height: 70vh;
+}
+
+.learn-more {
+  background: url("/images/fpc5.jpg");
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  height: 30vh;
+  padding-top: 2rem;
+}
+
+.learn-more a {
+  background: #6d4cf5;
+  color: #f8f7f3;
+  font-size: 3rem;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-family: "tangerine" sans-serif;
+}
+
+.learn-more a:hover {
+  color: #f0ffff;
+}
+
+.svg {
+  flex: 6;
+}
+
+.svg img {
+  width: 100%;
+}
+
+.welcome-message {
+  flex: 6;
 }
 
 .featured-shops {
@@ -412,18 +453,14 @@ input:focus + label {
   border-radius: 50%;
 }
 
-#learnmore-div {
-  border: 3px solid #eee8aa;
-  padding: 30px;
-}
-
 .mission {
   min-height: 70vh;
-  background: #eaebe695;
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  text-align: center;
 }
 
 .mss-text {
@@ -460,7 +497,7 @@ input:focus + label {
 }
 
 .you-too {
-  background: #f8f7f3;
+  background: #ffffff;
   padding: 2rem;
   min-height: 70vh;
   display: flex;
@@ -489,6 +526,18 @@ input:focus + label {
 }
 
 @media (max-width: 647px) {
+  .svg {
+    flex: 6;
+  }
+
+  .svg img {
+    width: 100%;
+  }
+
+  .welcome-message {
+    flex: 6;
+  }
+
   .toggler {
     display: block !important;
     text-align: start;
@@ -521,6 +570,11 @@ input:focus + label {
 @media (max-width: 347px) {
   .products-details {
     width: 200px;
+  }
+
+  .learn-more a {
+    font-size: 2rem;
+    padding: 10px 10px;
   }
 }
 

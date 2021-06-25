@@ -21,30 +21,38 @@
 </section> --}}
 
 <section class="hero">
-    <div class="welcome-message">
-        <h1>AMAZING SHOPPING EXPERIENCE</h1>
-        <p>We help redefine your online shopping process and simplify it for you</p>
+   <div class="divs">
+       <div class="welcome-message">
+           <h1>AMAZING SHOPPING EXPERIENCE</h1>
+           <p>We help redefine your online shopping process and simplify it for you</p>
+       </div>
+       <div class="svg">
+           <img src="{{asset('images/fpc8.jpg')}}" alt="SVG">
+       </div>
     </div>
-    <div class="svg">
-        <img src="{{asset('images/fpc8.jpg')}}" alt="SVG">
+    <div class="learn-more">
+        <a href="/about">learn more</a>
+
     </div>
 </section>
 
 
+
 @include('pages.other_features')
-@include('pages.featured_products')
-
-
-<section class="mission-1">
+<div class="mission-1 text-center">
         <div class='row justify-content-center '>
             <div class="col-md-6 col-sm-10">
-                <h4 class='some-headers'>Our Mission </h4>
+                <h4 class='some-headers text-center'>Our Mission </h4>
+                <img src="{{asset('images/fpc6.jpg')}}" alt="" class="img rounded-circle" width="300px">
                 <p class=" mission-t">
                     We have a mandate to take your business of the street and to present it to a global audience who will in turn become your full time customers
                 </p>
             </div>
         </div>
-</section>
+</div>
+@include('pages.featured_products')
+
+
 
 {{-- Featured shops --}}
 @include('pages.featured_services')
