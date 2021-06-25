@@ -380,7 +380,6 @@ input:focus + label {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 65vh;
   overflow-y: hidden;
 }
 
@@ -390,24 +389,22 @@ input:focus + label {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  height: 40vh;
   padding-top: 2rem;
   overflow-y: hidden;
 }
 
 .learn-more a {
-  background: #cbcad3;
-  color: #f8f7f3;
+  color: #0a0a08;
   font-size: 3rem;
   padding: 10px 30px;
   box-sizing: border-box;
   border-radius: 20px;
   text-transform: capitalize;
-  font-family: "tangerine" sans-serif;
+  font-family: "tangerine", sans-serif;
 }
 
 .learn-more a:hover {
-  color: #f0ffff;
+  color: #8d8f8f;
 }
 
 .svg {
@@ -530,7 +527,7 @@ input:focus + label {
 
 @media (max-width: 647px) {
   .svg {
-    flex: 6;
+    flex: 11;
   }
 
   .svg img {
@@ -538,7 +535,7 @@ input:focus + label {
   }
 
   .welcome-message {
-    flex: 6;
+    flex: 11;
   }
 
   .toggler {
@@ -561,6 +558,10 @@ input:focus + label {
 }
 
 @media (max-width: 526px) {
+  .divs {
+    flex-direction: column-reverse;
+  }
+
   .products-flex-deplay {
     justify-content: center;
   }

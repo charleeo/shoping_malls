@@ -11,14 +11,14 @@
 @media(max-width:647px){
 
 .svg{
-    flex: 6;
+    flex: 11;
     img{
         width: 100%;
     }
 }
 
 .welcome-message{
-    flex: 6;
+    flex: 11;
 }
 
 .toggler{
@@ -42,7 +42,9 @@
 }
 
 @media(max-width:526px){
-
+    .divs{
+        flex-direction:column-reverse;
+    }
     .products-flex-deplay{
         justify-content: center;
       }
